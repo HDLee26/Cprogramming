@@ -40,5 +40,5 @@ return 0;
 
 # 실행결과
 
-<img width="718" height="191" alt="image" src="https://github.com/HDLee26/Cprogramming/Images/image.png" />
+<img width="718" height="191" alt="image" src="https://github.com/HDLee26/Cprogramming/blob/main/Images/image.png" />
 
