@@ -26,9 +26,9 @@ double db = 3.4;
 
   <tr>
     <th style="border: 1px solid black; padding: 8px;">메모리</th>
-    <td style="border: 1px solid black; padding: 8px;">ch</td>
-    <td colspan="4" style="border: 1px solid black; padding: 8px;">in</td>
-    <td colspan="8" style="border: 1px solid black; padding: 8px;">db</td>
+    <td style="border: 1px solid black; padding: 8px; text-align: center;">ch</td>
+    <td colspan="4" style="border: 1px solid black; padding: 8px; text-align: center;">in</td>
+    <td colspan="8" style="border: 1px solid black; padding: 8px; text-align: center;">db</td>
   </tr>
 </table>
 
