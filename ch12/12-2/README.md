@@ -6,15 +6,32 @@ char ch = 'A';
 int in = 10;
 double db = 3.4;
 ```
+<table style="border-collapse: collapse; text-align: center;">
+  <tr>
+    <th style="border: 1px solid black; padding: 8px;">주소</th>
+    <th style="border: 1px solid black; padding: 8px;">100</th>
+    <th style="border: 1px solid black; padding: 8px;">101</th>
+    <th style="border: 1px solid black; padding: 8px;">102</th>
+    <th style="border: 1px solid black; padding: 8px;">103</th>
+    <th style="border: 1px solid black; padding: 8px;">104</th>
+    <th style="border: 1px solid black; padding: 8px;">105</th>
+    <th style="border: 1px solid black; padding: 8px;">106</th>
+    <th style="border: 1px solid black; padding: 8px;">107</th>
+    <th style="border: 1px solid black; padding: 8px;">108</th>
+    <th style="border: 1px solid black; padding: 8px;">109</th>
+    <th style="border: 1px solid black; padding: 8px;">110</th>
+    <th style="border: 1px solid black; padding: 8px;">111</th>
+    <th style="border: 1px solid black; padding: 8px;">112</th>
+  </tr>
 
-|-|-|-|-|-|-|-|-|-|-|-|-|-|-|
-|:----:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|메모리|ch|in||||db||||||||
-|주소|100|101|102|103|104|105|106|107|108|109|110|111|112|
+  <tr>
+    <th style="border: 1px solid black; padding: 8px;">메모리</th>
+    <td style="border: 1px solid black; padding: 8px;">ch</td>
+    <td colspan="4" style="border: 1px solid black; padding: 8px;">in</td>
+    <td colspan="8" style="border: 1px solid black; padding: 8px;">db</td>
+  </tr>
+</table>
 
-|주소|100|101|102|103|104|105|106|107|108|109|110|111|112|
-|:----:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|메모리|ch|in||||db||||||||
 
 
 |수식|결과값|결과값의 자료형|
