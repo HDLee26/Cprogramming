@@ -100,3 +100,10 @@ return 0;
 # 실습과제3
 - 그냥 정수 125의 자료형은 int이므로 포인터변수와 자료형을 맞춰주려면 int*로 형변환을 해줘야 함.
 - 포인터변수 ptr에 주소로 125번지를 집어넣은 것인데 애초에 메모리는 OS가 관리하는 것이고, 125번지에 어떤 데이터가 있는지도 모르는데 사용자가 임의로 값을 바꿔넣으면 안 됨.
+
+---
+# 실습과제4
+
+# 실행결과
+<img width="264" height="73" alt="image" src="https://github.com/user-attachments/assets/5bf0d278-feff-4489-b006-ddbfa3311b8a" />
+
