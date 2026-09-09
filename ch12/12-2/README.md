@@ -95,6 +95,10 @@ return 0;
 ```
 0을 반환하고 main함수 정상 종료
 
+# 실행결과
+<img width="318" height="102" alt="image" src="https://github.com/user-attachments/assets/0827d7ab-14af-4be5-bb9e-4b3678f6c6cc" />
+
+
 ---
 
 # 실습과제3
