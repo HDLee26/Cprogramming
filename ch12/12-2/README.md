@@ -104,6 +104,48 @@ return 0;
 ---
 # 실습과제4
 
+```c
+#include <stdio.h>
+```
+헤더파일 stdio.h을 포함하라
+```c
+int main(void)
+```
+메인함수 시작
+```c
+int a = 100, b = 200;
+```
+int형 변수 a, b 선언하고 각각 100, 200으로 초기화
+```c
+int sum;
+```
+int형 변수 sum 선언
+```c
+int* pa = &a;
+```
+int*형 포인터 pa 선언하고 a의 주소로 초기화
+```c
+int* pb = &b;
+```
+int*형 포인터 pb 선언하고 b의 주소로 초기화
+```c
+int* psum = &sum;
+```
+int*형 포인터 psum 선언하고 sum의 주소로 초기화
+```c
+*psum = *pa + *pb;
+```
+간접참조연산자를 이용해 연산
+```c
+printf("두 정수의 합: %d\n", *psum);
+```
+간접참조연산자를 이용해 sum의 값을 출력
+```c
+return 0;
+```
+0을 반환하고 main함수 정상 종료
+
+
 # 실행결과
 <img width="264" height="73" alt="image" src="https://github.com/user-attachments/assets/5bf0d278-feff-4489-b006-ddbfa3311b8a" />
 
