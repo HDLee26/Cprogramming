@@ -35,15 +35,15 @@ int grade[5];
 ```
 5칸짜리 int형 배열 grade 선언
 ```c
-	int sum = 0, i, average;
+int sum = 0, i, average;
 ```
 int형 변수 sum, i 선언 후 sum은 0으로 초기화
 ```c
-	double average;
+double average;
 ```
 double형 변수 average 선언
 ```c
-	for (i = 0; i < 5; i++)
+for (i = 0; i < 5; i++)
 ```
 grade에 순서대로 값을 저장하기 위한 반복문
 ```c
@@ -51,7 +51,7 @@ grade에 순서대로 값을 저장하기 위한 반복문
 ```
 배열명 이용하여 포인터 표현으로 입력한 값을 저장
 ```c
-	for (i = 0; i < 5; i++)
+for (i = 0; i < 5; i++)
 ```
 grade에 저장된 값들을 순서대로 가져와 sum에 더하여 저장하기 위한 반복문
 ```c
@@ -59,15 +59,15 @@ grade에 저장된 값들을 순서대로 가져와 sum에 더하여 저장하�
 ```
 배열명과 간접참조연산자를 이용해 sum에 더하여 저장
 ```c
-	average = sum / 5.0;
+average = sum / 5.0;
 ```
 평균을 구함
 ```c
-	printf("성적 평균 = %lf\n", average);
+printf("성적 평균 = %lf\n", average);
 ```
 평균 출력
 ```c
-	return 0;
+return 0;
 ```
 0을 반환하고 main함수 정상 종료
 
