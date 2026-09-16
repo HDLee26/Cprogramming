@@ -14,3 +14,62 @@
 증감 연산 : ±1×(포인터가 가리키는 자료형의 크기)만큼 주소 이동
 - 포인터 연산을 기존의 산술연산과 다르게 정의한 이유는 무엇일까?\
   char*, int*, double*의 크기가 다 다르기 때문에 
+
+---
+
+# 실습과제 2 코드 설명
+```c
+#define _CRT_SECURE_NO_WARNINGS
+```
+VS scanf 보안 경고 방지용
+```c
+#include <stdio.h>
+```
+헤더파일 stdio.h을 포함하라
+```c
+int main(void)
+```
+메인함수 시작
+```c
+int grade[5];
+```
+5칸짜리 int형 배열 grade 선언
+```c
+	int sum = 0, i, average;
+```
+int형 변수 sum, i 선언 후 sum은 0으로 초기화
+```c
+	double average;
+```
+double형 변수 average 선언
+```c
+	for (i = 0; i < 5; i++)
+```
+grade에 순서대로 값을 저장하기 위한 반복문
+```c
+		scanf("%d", (grade + i));
+```
+배열명 이용하여 포인터 표현으로 입력한 값을 저장
+```c
+	for (i = 0; i < 5; i++)
+```
+grade에 저장된 값들을 순서대로 가져와 sum에 더하여 저장하기 위한 반복문
+```c
+		sum += *(grade + i);
+```
+배열명과 간접참조연산자를 이용해 sum에 더하여 저장
+```c
+	average = sum / 5.0;
+```
+평균을 구함
+```c
+	printf("성적 평균 = %lf\n", average);
+```
+평균 출력
+```c
+	return 0;
+```
+0을 반환하고 main함수 정상 종료
+
+---
+# 실습과제 3
