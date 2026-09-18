@@ -161,3 +161,7 @@ printf("두 정수의 합: %d\n", *psum);
 return 0;
 ```
 - 0을 반환하고 main함수 정상 종료
+
+## 실행 결과
+<img width="253" height="72" alt="image" src="https://github.com/user-attachments/assets/6075f2bc-ae90-4b38-aadf-40e39e22013e" />
+
