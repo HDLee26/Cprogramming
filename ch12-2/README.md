@@ -46,55 +46,59 @@ double db = 3.4;
 
 # 실습과제 2 코드 설명
 - 변수 이름을 사용하지 않고 포인터를 이용하여 값을 출력하라
-  
+\\
 ```c
 #include <stdio.h>
 ```
-헤더파일 stdio.h을 포함하라
+- 헤더파일 stdio.h을 포함하라
 ```c
 int main(void)
 ```
-메인함수 시작
+- 메인함수 시작
 ```c
 int a = -100;
 ```
-int형 변수 a를 선언하고 -100으로 초기화
+- int형 변수 a를 선언하고 -100으로 초기화
 ```c
 char b = 'A';
 ```
-char형 변수 b를 선언하고 A로 초기화
+- char형 변수 b를 선언하고 A로 초기화
 ```c
 double c = 3.14;
 ```
-doublue형 변수 c를 선언하고 3.14로 초기화
+- doublue형 변수 c를 선언하고 3.14로 초기화
 ```c
 int* pa = &a;
 ```
-변수 a를 가리키도록 int*형 포인터 pa 선언 및 초기화
+- 변수 a를 가리키도록 int*형 포인터 pa 선언 및 초기화
 ```c
 char* pb = &b;
 ```
-변수 b를 가리키도록 char*형 포인터 pb 선언 및 초기화
+- 변수 b를 가리키도록 char*형 포인터 pb 선언 및 초기화
 ```c
 double* pc = &c;
 ```
-변수 c를 가리키도록 double*형 포인터 pc 선언 및 초기화
+- 변수 c를 가리키도록 double*형 포인터 pc 선언 및 초기화
 ```c
 printf("int형 변수 a의 값은: %d\n", *pa);
 ```
-변수 a의 값을 포인터와 간접참조 연산자를 통해 출력
+- 변수 a의 값을 포인터와 간접참조 연산자를 통해 출력
 ```c
 printf("char형 변수 b의 값은: %c\n", *pb);
 ```
-변수 b의 값을 포인터와 간접참조 연산자를 통해 출력
+- 변수 b의 값을 포인터와 간접참조 연산자를 통해 출력
 ```c
 printf("double형 변수 c의 값은: %lf\n", *pc);
 ```
-변수 c의 값을 포인터와 간접참조 연산자를 통해 출력
+- 변수 c의 값을 포인터와 간접참조 연산자를 통해 출력
 ```c
 return 0;
 ```
-0을 반환하고 main함수 정상 종료
+- 0을 반환하고 main함수 정상 종료
 
-# 실행결과
+## 실행결과
 <img width="318" height="102" alt="image" src="https://github.com/user-attachments/assets/0827d7ab-14af-4be5-bb9e-4b3678f6c6cc" />
+
+---
+
+
