@@ -5,7 +5,7 @@
 // ***************************
 
 #define _CRT_SECURE_NO_WARNINGS // VS scanf 함수 보안 경고 방지용 
-#pragma warning(disable:6031)   // 리턴값 관련 경고 방지용 
+#pragma warning(disable:6031)   // 리턴값 관련 경고 방지용  
 #include <stdio.h>
 
 int main(void)
