@@ -27,7 +27,7 @@ int main(void)
 	int a[] = { 10, 20, 30 }, i, sum = 0;
 
 	for (i = 0; i < 3; i++)
-		sum += *a++;
+		sum += *a++; // 이 줄이 오류이다 
 	printf("sum : %d\n", sum);
 
 	return 0;
