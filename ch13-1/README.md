@@ -17,7 +17,7 @@
 
 ---
 
-# 실습과제 2
+# 실습과제 2 코드 설명
 ```c
 #define _CRT_SECURE_NO_WARNINGS
 ```
@@ -71,7 +71,11 @@ return 0;
 ```
 0을 반환하고 main함수 정상 종료
 
+## 실행결과
+<img width="262" height="165" alt="image" src="https://github.com/user-attachments/assets/8263bf03-41fb-468c-b45e-00a75a15a070" />
+
 ---
+
 # 실습과제 3
 - 증감연산자 a++과 ++a의 차이를 설명하라
 후위증감연산은 그 줄의 모든 연산을 끝낸 후 가장 마지막에 실행되어 다음줄로 넘어감.
