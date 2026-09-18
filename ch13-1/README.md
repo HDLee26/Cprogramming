@@ -21,55 +21,59 @@
 ```c
 #define _CRT_SECURE_NO_WARNINGS
 ```
-VS scanf 보안 경고 방지용
+- VS scanf 함수 보안 경고 방지용
+```c
+#pragma warning(disable:6031)
+```
+- 리턴값 관련 경고 방지용
 ```c
 #include <stdio.h>
 ```
-헤더파일 stdio.h을 포함하라
+- 헤더파일 stdio.h을 포함하라
 ```c
 int main(void)
 ```
-메인함수 시작
+- 메인함수 시작
 ```c
 int grade[5];
 ```
-5칸짜리 int형 배열 grade 선언
+- 5칸짜리 int형 배열 grade 선언
 ```c
 int sum = 0, i, average;
 ```
-int형 변수 sum, i 선언 후 sum은 0으로 초기화
+- int형 변수 sum, i 선언 후 sum은 0으로 초기화
 ```c
 double average;
 ```
-double형 변수 average 선언
+- double형 변수 average 선언
 ```c
 for (i = 0; i < 5; i++)
 ```
-grade에 순서대로 값을 저장하기 위한 반복문
+- grade에 순서대로 값을 저장하기 위한 반복문
 ```c
 		scanf("%d", (grade + i));
 ```
-배열명 이용하여 포인터 표현으로 입력한 값을 저장
+- 배열명 이용하여 포인터 표현으로 입력한 값을 차례대로 저장
 ```c
 for (i = 0; i < 5; i++)
 ```
-grade에 저장된 값들을 순서대로 가져와 sum에 더하여 저장하기 위한 반복문
+- grade에 저장된 값들을 순서대로 가져와 sum에 더하여 저장하기 위한 반복문
 ```c
 		sum += *(grade + i);
 ```
-배열명과 간접참조연산자를 이용해 sum에 더하여 저장
+- 배열명과 간접참조연산자를 이용해 sum에 더하여 저장
 ```c
 average = sum / 5.0;
 ```
-평균을 구함
+- 성적의 평균을 구함
 ```c
 printf("성적 평균 = %lf\n", average);
 ```
-평균 출력
+- 평균 출력
 ```c
 return 0;
 ```
-0을 반환하고 main함수 정상 종료
+- 0을 반환하고 main함수 정상 종료
 
 ## 실행결과
 <img width="262" height="165" alt="image" src="https://github.com/user-attachments/assets/8263bf03-41fb-468c-b45e-00a75a15a070" />
