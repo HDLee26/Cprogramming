@@ -30,7 +30,7 @@ int main(void)
 ```c
 char s[50] = { 0 };
 ```
-- 문자열을 저장하기 위한 문자형 배열 선언 및 NULL 문자로 초기화
+- 문자열을 저장하기 위한 문자형 배열 s 선언 및 NULL 문자로 초기화
 ```c
 int i, cnt;
 ```
@@ -74,9 +74,95 @@ return 0;
 ```
 - 0을 반환하고 main함수 정상 종료
 
-### 실행결과
+## 실행결과
 <img width="263" height="183" alt="image" src="https://github.com/user-attachments/assets/11592ba6-aa99-437f-a6d2-8204fe0c38ad" />
 
 ---
 
+# 실습과제 3
+```c
+#define _CRT_SECURE_NO_WARNINGS
+```
+- VS scanf 함수 보안 경보 방지용
+```c
+#pragma warning(disable:6031)
+```
+- 리턴값 관련 경고 방지용
+```c
+#include <stdio.h>
+```
+- stdio.h 헤더파일을 포함하라
+```c
+int main(void)
+```
+- main함수 시작
+```c
+char s[50] = { 0 };
+```
+- 문자열을 저장하기 위한 문자형 배열 s 선언 및 NULL 문자로 초기화
+```c
+int i, cnt;
+```
+
+```c
+printf("문자열 입력: ");
+```
+
+```c
+scanf("%s", s);
+```
+- 입력된 문자열을 배열 s에 저장. 배열명 s가 주소이므로 &연산은 불필요
+```c
+// 문자열 길이 구하기
+```
+```c
+i = 0, cnt = 0;
+```
+
+```c
+while (s[i] != '\0')
+```
+- 문자형 배열 s에 저장된 문자가 
+```c
+i++;
+```
+- NULL 문자가 아닌 동안
+```c
+cnt++;
+```
+- cnt를 증가시켜 문자열의 길이를 구함
+```c
+for (int i = 0; i < cnt; i++)
+```
+- 대문자를 소문자로, 소문자를 대문자로 바꾸기 위한 반복
+```c
+  if (s[i] >= 65 && s[i] <= 90)
+```
+- 대문자이면
+```c
+s[i] += 32;
+```
+- 소문자로 변환
+```c
+else if (s[i] >= 97 && s[i] <= 122)
+```
+- 소문자이면
+```c
+s[i] -= 32;
+```
+- 대문자로 변환
+```c
+printf("%s", s);
+```
+- 바꾼 문자열을 출력
+```c
+return 0;
+```
+- 0을 반환하고 main함수 정상 종료
+
 ## 실행결과
+<img width="250" height="85" alt="image" src="https://github.com/user-attachments/assets/ccc17469-06d9-4f03-8a0f-1425e1bca419" />
+
+---
+
+
