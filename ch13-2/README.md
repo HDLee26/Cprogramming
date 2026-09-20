@@ -22,7 +22,7 @@
 ```c
 #include <stdio.h>
 ```
-- stdio.h 헤어파일을 포함하라
+- stdio.h 헤더파일을 포함하라
 ```c
 int main(void)
 ```
