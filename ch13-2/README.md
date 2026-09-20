@@ -74,8 +74,9 @@ return 0;
 ```
 - 0을 반환하고 main함수 정상 종료
 
-## 실행결과
+### 실행결과
 <img width="263" height="183" alt="image" src="https://github.com/user-attachments/assets/11592ba6-aa99-437f-a6d2-8204fe0c38ad" />
 
 ---
 
+## 실행결과
