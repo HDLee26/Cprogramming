@@ -165,4 +165,152 @@ return 0;
 
 ---
 
+# 실습과제 4
+```c
+#define _CRT_SECURE_NO_WARNINGS
+```
+- VS scanf 함수 보안 경보 방지용
+```c
+#pragma warning(disable:6031)
+```
+- 리턴값 관련 경고 방지용
+```c
+#include <stdio.h>
+```
+- stdio.h 헤더파일을 포함하라
+```c
+#include <string.h>
+```
+- string.h 헤더파일을 포함하라
+```c
+int main(void)
+```
+- main함수 시작
+```c
+char s1[51] = { 0 };
+```
+
+```c
+char s2[51] = { 0 };
+```
+- 문자열을 저장할 문자형 배열 s1, 21 선언 및 NULL 문자로 초기화
+```c
+int i, len1 = 0, len2 = 0, len;
+```
+- 제언변수 i 선언, 문자열 길이를 저장할 변수 len1, len2, len 선언.
+```c
+printf("문자열 입력1: ");
+```
+
+```c
+scanf("%50s", s1);
+```
+
+```c
+printf("문자열 입력2: ");
+```
+
+```c
+scanf("%50s", s2);
+```
+- 문자열 입력 받아 저장
+```c
+if (strcmp(s1, s2) == 0)
+```
+- 두 문자열이 동일한지 아닌지 비교
+```c
+printf("두 문자열은 같음\n");
+```
+- 같으면 안내문 출력 후
+```c
+return 0;
+```
+- 프로그램 종료
+```c
+for (int i = 0; s1[i] != 0; i++)
+```
+
+```c
+len1++;
+```
+
+```c
+for (int i = 0; s2[i] != 0; i++)
+```
+
+```c
+len2++;
+```
+- 문자열의 길이를 구함
+```c
+if (len1 < len2)
+```
+
+```c
+len = len1;
+```
+
+```c
+else
+```
+
+```c
+len = len2;
+```
+- 두 문자열 중 짧은 길이만큼만 비교하기 위한 처리
+```c
+for (int i = 0; i < len; i++)
+```
+- 앞 글자부터 차례로 사전식 순서를 비교하기 위한 반복문
+```c
+if (s1[i] < s2[i])
+```
+
+```c
+printf("사전에서 앞에 나오는 단어: %s", s1);
+```
+
+```c
+return 0;
+```
+- s1이 앞이면 안내문 출력 후 프로그램 종료
+```c
+else if (s1[i] > s2[i])
+```
+
+```c
+printf("사전에서 앞에 나오는 단어: %s", s2);
+```
+
+```c
+return 0;
+```
+- s2가 앞이면 안내문 출력 후 프로그램 종료
+```c
+if (len1 < len2)
+```
+
+```c
+printf("사전에서 앞에 나오는 단어: %s\n", s1);
+```
+
+```c
+else
+```
+
+```c
+printf("사전에서 앞에 나오는 단어: %s\n", s2);
+```
+- len 개까지의 문자가 모두 같은 경우를 위한 처리
+- 짧은 단어가 사전식 순서상 앞에 있음
+```c
+return 0;
+```
+- 0을 반환하고 프로그램 정상 종료
+
+## 실행 결과
+<img width="241" height="105" alt="image" src="https://github.com/user-attachments/assets/b5c2520c-a8ca-436a-90a4-54e5a899ba56" />
+<img width="270" height="94" alt="image" src="https://github.com/user-attachments/assets/c7a71d80-44c9-41a9-9fe6-029f399a838a" />
+<img width="283" height="100" alt="image" src="https://github.com/user-attachments/assets/3fe81752-9d03-4642-9fc9-056ab486d353" />
+
 
