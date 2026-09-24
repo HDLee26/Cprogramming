@@ -9,10 +9,27 @@
 다른 함수에 선언된 지역 변수의 값을 변경하고자 하는 경우에 주소에 의한 함수 호출 방식을 써야 한다.
 
 # 실습과제 2
+(원본 코드)
+```c
+#include <stdio.h>
+void add2(int value);
+
+int main(void)
+{
+	int number;
+	printf("정수를 입력하세요: ");
+	scanf("%d", &number);
+	add2(number);
+	printf("2만큼 증가한 값: %d\n", number);
+	return 0;
+}
+void add2(int value)
+{
+	value += 2;
+}
+```
 - add2 함수는 매개변수의 값을 2만큼 증가시키는 함수이다. 주어진 코드가 의도대로 작동하지 않는 이유를 설명하라.\
 인자값을 가진 변수 number와 매개변수로 쓰인 변수 value는 서로 다른 함수에 선언된 지역변수이다. 
 넘긴 인자값은 매개변수에 복사되는 것과 유사하므로 add2 함수 안의 지역변수에 값을 어떻게 변경해도 number의 값에도 영향을 주지 않는다.
-
-(원본 코드)
-
+\
 (수정 코드)
