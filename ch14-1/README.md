@@ -52,32 +52,37 @@ int main(void)
 ```c
 int number;
 ```
-
+- int형 변수 number 선언
 ```c
 printf("정수를 입력하세요: ");
 ```
-
+- 안내문 출력
 ```c
 scanf("%d", &number);
 ```
-
+- 정수 하나를 입력 받아 number에 저장
 ```c
 add2(&number);
 ```
-
+add2함수 호출하며 number의 주소를 인자로 넘김
 ```c
 printf("2만큼 증가한 값: %d\n", number);
 ```
-
+- number의 값 출력
 ```c
 return 0;
 ```
-
+- 0을 반환하고 main함수 정상 종료
 ```c
 void add2(int * ptr)
 ```
-
+정수형 주소를 매개변수로 하는 add2 함수
 ```c
 *ptr += 2;
 ```
+- 간접참조연산자로 ptr이 가리키는 변수(number)의 값을 2 증가시켜 저장
+
+---
+
+# 실습과제 3
 
