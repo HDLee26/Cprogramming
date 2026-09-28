@@ -9,7 +9,7 @@
 다른 함수에 선언된 지역 변수의 값을 변경하고자 하는 경우에 주소에 의한 함수 호출 방식을 써야 한다.
 ---
 # 실습과제 2
-- 주어진 코드
+### 주어진 코드
 ```c
 #include <stdio.h>
 void add2(int value);
@@ -32,27 +32,23 @@ void add2(int value)
 인자값을 가진 변수 number와 매개변수로 쓰인 변수 value는 서로 다른 함수에 선언된 지역변수이다. 
 넘긴 인자값은 매개변수에 복사되는 것과 유사하므로 add2 함수 안의 지역변수에 값을 어떻게 변경해도 number의 값에도 영향을 주지 않는다.
 
-- 수정한 코드
+### 수정한 코드
 ```c
 #define _CRT_SECURE_NO_WARNINGS
 ```
-
+- VS scanf 함수 보안 경보 방지용
 ```c
 #pragma warning(disable:6031)
 ```
-
+- 리턴값 관련 경고 방지용
 ```c
 #include <stdio.h>
 ```
-
-```c
-void add2(int * ptr);
-```
-
+- stdio.h 헤더파일을 포함하라
 ```c
 int main(void)
 ```
-
+- main함수 시작
 ```c
 int number;
 ```
