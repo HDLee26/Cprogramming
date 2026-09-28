@@ -68,7 +68,7 @@ scanf("%d", &number);
 ```c
 add2(&number);
 ```
-add2함수 호출하며 number의 주소를 인자로 넘김
+- add2함수 호출하며 number의 주소를 인자로 넘김
 ```c
 printf("2만큼 증가한 값: %d\n", number);
 ```
@@ -168,7 +168,7 @@ int main(void)
 ```c
 int x, y, z;
 ```
-정수형 변수 x, y, z 선언
+- 정수형 변수 x, y, z 선언
 ```c
 printf("정수 x를 입력하시오: ");
 scanf("%d", &x);
@@ -209,3 +209,6 @@ tmp = *px;
 *pz = tmp;
 ```
 - 간접참조연산으로 값 교환
+
+---
+
