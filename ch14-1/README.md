@@ -145,3 +145,90 @@ return value += 2;
 ---
 
 # 실습과제 4
+```c
+#define _CRT_SECURE_NO_WARNINGS
+```
+
+```c
+#pragma warning(disable:6031)
+```
+
+```c
+#include <stdio.h>
+```
+
+```c
+void swap(int*, int*, int*);
+```
+
+```c
+int main(void)
+```
+
+```c
+int x, y, z;
+```
+
+```c
+printf("정수 x를 입력하시오: ");
+```
+
+```c
+scanf("%d", &x);
+```
+
+```c
+printf("정수 y를 입력하시오: ");
+```
+
+```c
+scanf("%d", &y);
+```
+
+```c
+printf("정수 z를 입력하시오: ");
+```
+
+```c
+scanf("%d", &z);
+```
+
+```c
+printf("swap함수 호출 전 x = %d, y = %d, z = %d\n", x, y, z);
+```
+
+```c
+swap(&x, &y, &z);
+```
+
+```c
+printf("swap함수 호출 후 x = %d, y = %d, z = %d\n", x, y, z);
+```
+
+```c
+return 0;
+```
+
+```c
+void swap(int* px, int* py, int* pz)
+```
+
+```c
+int tmp;
+```
+
+```c
+tmp = *px;
+```
+
+```c
+*px = *py;
+```
+
+```c
+*py = *pz;
+```
+
+```c
+*pz = tmp;
+```
