@@ -211,4 +211,77 @@ tmp = *px;
 - 간접참조연산으로 값 교환
 
 ---
+# 실습과제 5
+```c
+#define _CRT_SECURE_NO_WARNINGS
+```
+- VS scanf 함수 보안 경보 방지용
+```c
+#pragma warning(disable:6031)
+```
+- 리턴값 관련 경고 방지용
+```c
+#include <stdio.h>
+```
+- stdio.h 헤더파일을 포함하라
+```c
+void SquareByValue(int);
+```
+- SquareByValue함수 선언
+```c
+void SquareByPointer(int*);
+```
+- SquareByPointer 함수 선언
+```c
+int main(void)
+```
+- main 함수 시작
+```c
+int num;
+```
+- int형 변수 num선언
+```c
+printf("정수를 입력하시오: ");
+```
+- 안내문 출력
+```c
+scanf("%d", &num);
+```
+- 정수를 입력 받아 num에 저장
+```c
+SquareByValue(num);
+```
+- SquareByValue함수 호출
+```c
+printf("값에 의한 호출로 바꾼 값: %d\n", num);
+```
+- 값 변화 확인 - 변하지 않음
+```c
+SquareByPointer(&num);
+```
+- SquareByPointer 함수 호출
+```c
+printf("주소에 의한 호출로 바꾼 값: %d\n", num);
+```
+- 값 변화 확인 - 변함
+```c
+return 0;
+```
+- 0을 반환하고 main 함수 정상 종료
+```c
+void SquareByValue(int value)
+```
+- SquareByValue 함수 정의부. 반환형 없음
+```c
+value += 100;
+```
+- value에 100을 더하고 저장
+```c
+void SquareByPointer(int* ptr)
+```
+- SquareByPointer 함수 정의부. 반환형 없음
+```c
+*ptr += 100;
+```
+- 간접참조연산자를 이용해 ptr가 가리키는 변수의 값에 100을 더하고 저장
 
