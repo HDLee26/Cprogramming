@@ -9,7 +9,7 @@
 다른 함수에 선언된 지역 변수의 값을 변경하고자 하는 경우에 주소에 의한 함수 호출 방식을 써야 한다.
 ---
 # 실습과제 2
-- (원본 코드)
+- 주어진 코드
 ```c
 #include <stdio.h>
 void add2(int value);
@@ -32,4 +32,56 @@ void add2(int value)
 인자값을 가진 변수 number와 매개변수로 쓰인 변수 value는 서로 다른 함수에 선언된 지역변수이다. 
 넘긴 인자값은 매개변수에 복사되는 것과 유사하므로 add2 함수 안의 지역변수에 값을 어떻게 변경해도 number의 값에도 영향을 주지 않는다.
 
-- (수정 코드)
+- 수정한 코드
+```c
+#define _CRT_SECURE_NO_WARNINGS
+```
+
+```c
+#pragma warning(disable:6031)
+```
+
+```c
+#include <stdio.h>
+```
+
+```c
+void add2(int * ptr);
+```
+
+```c
+int main(void)
+```
+
+```c
+int number;
+```
+
+```c
+printf("정수를 입력하세요: ");
+```
+
+```c
+scanf("%d", &number);
+```
+
+```c
+add2(&number);
+```
+
+```c
+printf("2만큼 증가한 값: %d\n", number);
+```
+
+```c
+return 0;
+```
+
+```c
+void add2(int * ptr)
+```
+
+```c
+*ptr += 2;
+```
+
