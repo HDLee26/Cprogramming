@@ -148,87 +148,64 @@ return value += 2;
 ```c
 #define _CRT_SECURE_NO_WARNINGS
 ```
-
+- VS scanf 함수 보안 경보 방지용
 ```c
 #pragma warning(disable:6031)
 ```
-
+- 리턴값 관련 경고 방지용
 ```c
 #include <stdio.h>
 ```
-
+- stdio.h 헤더파일을 포함하라
 ```c
 void swap(int*, int*, int*);
 ```
-
+- swap 함수 선언
 ```c
 int main(void)
 ```
-
+- main함수 시작
 ```c
 int x, y, z;
 ```
-
+정수형 변수 x, y, z 선언
 ```c
 printf("정수 x를 입력하시오: ");
-```
-
-```c
 scanf("%d", &x);
-```
-
-```c
 printf("정수 y를 입력하시오: ");
-```
-
-```c
 scanf("%d", &y);
-```
-
-```c
 printf("정수 z를 입력하시오: ");
-```
-
-```c
 scanf("%d", &z);
 ```
-
+- 변수 x, y, z에 값을 저장
 ```c
 printf("swap함수 호출 전 x = %d, y = %d, z = %d\n", x, y, z);
 ```
-
+- swap전 원래 값 출력
 ```c
 swap(&x, &y, &z);
 ```
-
+- swap함수 호출
 ```c
 printf("swap함수 호출 후 x = %d, y = %d, z = %d\n", x, y, z);
 ```
-
+- swap후 값 출력
 ```c
 return 0;
 ```
-
+- 0을 반환하고 main 함수 정상 종료
 ```c
 void swap(int* px, int* py, int* pz)
 ```
-
+- swap 함수 정의부. 반환형 없음, 매개변수 int*형 px, py, pz
 ```c
 int tmp;
 ```
-
+- 임시로 값을 저장할 정수형 변수 tmp 선언
 ```c
 tmp = *px;
-```
-
-```c
 *px = *py;
-```
-
-```c
 *py = *pz;
-```
-
-```c
 *pz = tmp;
 ```
+- 간접참조연산으로 값 교환
