@@ -46,6 +46,10 @@ void add2(int value)
 ```
 - stdio.h 헤더파일을 포함하라
 ```c
+void add2(int * ptr);
+```
+- add2 함수 선언
+```c
 int main(void)
 ```
 - main함수 시작
@@ -76,7 +80,7 @@ return 0;
 ```c
 void add2(int * ptr)
 ```
-정수형 주소를 매개변수로 하는 add2 함수
+정수형 주소를 매개변수로 하는 add2 함수 정의 부분
 ```c
 *ptr += 2;
 ```
