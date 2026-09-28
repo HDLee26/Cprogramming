@@ -89,4 +89,59 @@ void add2(int * ptr)
 ---
 
 # 실습과제 3
+```c
+#define _CRT_SECURE_NO_WARNINGS
+```
+- VS scanf 함수 보안 경보 방지용
+```c
+#pragma warning(disable:6031)
+```
+- 리턴값 관련 경고 방지용
+```c
+#include <stdio.h>
+```
+- stdio.h 헤더파일을 포함하라
+```c
+int add2(int value);
+```
+- add2 함수 선언
+```c
+int main(void)
+```
+- main함수 시작
+```c
+int number, added_number;
+```
+- 정수형 변수 number, added_number 선언
+```c
+printf("정수를 입력하세요: ");
+```
+- 안내문 출력
+```c
+scanf("%d", &number);
+```
+- 정수를 입력 받아 number에 저장
+```c
+added_number = add2(number);
+```
+- add2 함수의 반환값을 added_number에 저장
+```c
+printf("2만큼 증가한 값: %d\n", added_number);
+```
+- added_number의 값을 출력
+```c
+return 0;
+```
+- 0을 반환하고 main함수 정상 종료
+```c
+int add2(int value)
+```
+- add2 함수 정의부분. 반환형 int, 매개변수 value
+```c
+return value += 2;
+```
+- value에 2를 더하고 저장하고 그 값을 반환
 
+---
+
+# 실습과제 4
