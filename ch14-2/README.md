@@ -10,79 +10,71 @@
 ```c
 #define _CRT_SECURE_NO_WARNINGS
 ```
-
+- VS scanf 함수 보안 경보 방지용
 ```c
 #pragma warning(disable:6031)
 ```
-
+- 리턴값 관련 경고 방지용
 ```c
 #include <stdio.h>
 ```
-
+- stdio.h 헤더파일을 포함하라
 ```c
 int get_max(int* arr, int n);
 ```
-
+- 최댓값 구하는 함수 get_max 선언
 ```c
 int main(void)
 ```
-
+- main함수 시작
 ```c
 int grade[5];
 ```
-
+- 성적 5개를 저장할 정수형 배열 grade 선언 
 ```c
 int max;
 ```
-
+- 최댓값 저장할 변수 max 선언
 ```c
 for (int i = 0; i < 5; i++)
+  printf("성적을 입력하시오: ");
+  scanf("%d", &grade[i]);
 ```
-
-```c
-printf("성적을 입력하시오: ");
-```
-
-```c
-scanf("%d", &grade[i]);
-```
-
+- 성적 5개 입력 받는 루프문
 ```c
 max = get_max(grade, 5);
 ```
-
+- get_max 함수 호출하고 리턴값을 max에 저장
 ```c
 printf("최댓값 : %d\n", max);
 ```
-
+- 최댓값 출력
 ```c
 return 0;
 ```
-
+- 0을 반환하고 main함수 정상 종료
 ```c
 int get_max(int* arr, int n)
 ```
-
+- get_max 함수 정의 시작
 ```c
 int max;
 ```
-
+- 최댓값을 저장할 변수 max 선언
 ```c
 max = *arr;
 ```
-
+- 우선 배열의 가장 첫번째 값을 최댓값으로 저장
 ```c
 for (int i = 1; i < n; i++)
+  if (*(arr + i) > max)
+    max = *(arr + i);
 ```
-
-```c
-if (*(arr + i) > max)
-```
-
-```c
-max = *(arr + i);
-```
-
+- max에 저장된 값을 배열의 두 번째 요소의 값부터 차례대로 비교하며 큰 수를 max에 갱신해 저장
 ```c
 return max;
 ```
+- 구한 최댓값을 리턴
+
+---
+
