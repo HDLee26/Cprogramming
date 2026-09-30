@@ -36,9 +36,10 @@ int max;
 ```
 - 최댓값 저장할 변수 max 선언
 ```c
-for (int i = 0; i < 5; i++)
+for (int i = 0; i < 5; i++){
   printf("성적을 입력하시오: ");
   scanf("%d", &grade[i]);
+  }
 ```
 - 성적 5개 입력 받는 루프문
 ```c
