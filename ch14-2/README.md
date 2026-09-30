@@ -142,7 +142,75 @@ for (int i = 0; i < len; i++){
 ---
 
 # 실습과제 4
-
+```c
+#define _CRT_SECURE_NO_WARNINGS
+```
+- VS scanf 함수 보안 경보 방지용
+```c
+#pragma warning(disable:6031)
+```
+- 리턴값 관련 경고 방지용
+```c
+#include <stdio.h>
+```
+- stdio.h 헤더파일을 포함하라
+```c
+void get_wnpdec(double, int*, double*);
+```
+- 정수와 소수부 구하는 함수 get_wnpdec 선언
+```c
+int main(void)
+```
+- main 함수 시작
+```c
+double input;
+```
+- 입력 받은 실수를 저장할 double형 변수 input 선언
+```c
+int wnp;
+```
+- 정수부를 저장할 변수 wnp 선언
+```c
+double dec;
+```
+- 소수부를 저장할 변수 dec 선언
+```c
+printf("실수를 입력하시오: ");
+```
+- 안내문 출력
+```c
+scanf("%lf", &input);
+```
+- 입력 받은 실수를 input에 저장
+```c
+get_wnpdec(input, &wnp, &dec);
+```
+- get_wnpdec함수 호출
+```c
+printf("정수부: %d\n", wnp);
+```
+- 정수부 출력
+```c
+printf("소수부: %lf\n", dec);
+```
+- 소수부 출력
+```c
+return 0;
+```
+- 0을 반환하고 main함수 정상 종료
+```c
+void get_wnpdec(double num, int* wnp, double* dec)
+```
+- get_wnpdec 함수 정의 시작
+```c
+*wnp = (int)num;
+```
+- 캐스팅 연산자로 받은 실수의 정수부만 떼어내고 간접참조연산자로 wnp에 저장
+```c
+*dec = num - (int)num;
+```
+- 소수부를 간접참조연산자로 dec에 저장
+  
 ### 실행결과
 <img width="275" height="99" alt="image" src="https://github.com/user-attachments/assets/37072c75-f870-4d2f-91c4-f4b26d81badf" />
 
