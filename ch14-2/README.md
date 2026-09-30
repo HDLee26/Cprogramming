@@ -135,9 +135,16 @@ for (int i = 0; i < len; i++){
 ```
 - 키보드로 입력한 값을 배열에 저장하기 위한 루프문\
 배열 data에 저장하기 위해 배열명으로 주소를 가져오고 인덱스 번호를 하나씩 키워 차례대로 저장하고 있다
+
 ### 실행결과
 <img width="251" height="221" alt="image" src="https://github.com/user-attachments/assets/bdba0afe-1270-421b-bb1b-0f2b0eacaa07" />
 
 ---
+
+# 실습과제 4
+
+### 실행결과
+<img width="275" height="99" alt="image" src="https://github.com/user-attachments/assets/37072c75-f870-4d2f-91c4-f4b26d81badf" />
+
 
 
