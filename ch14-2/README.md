@@ -82,4 +82,62 @@ return max;
 ---
 
 # 실습과제 3
+```c
+#define _CRT_SECURE_NO_WARNINGS
+```
+- VS scanf 함수 보안 경보 방지용
+```c
+#pragma warning(disable:6031)
+```
+- 리턴값 관련 경고 방지용
+```c
+#include <stdio.h>
+```
+- stdio.h 헤더파일을 포함하라
+```c
+void get_data(int* param, int len);
+```
+- 입력 받은 데이터를 배열에 저장하는 함수 get_data 선언
+```c
+int main(void)
+```
+- main함수 시작
+```c
+int data[5] = { 0 };
+```
+- 데이터 5개를 저장할 정수형 배열 data 선언
+```c
+int len = sizeof(data) / sizeof(data[0]);
+```
+- 배열의 요소의 개수를 구하여 변수 len에 저장
+```c
+get_data(data, len);
+```
+- get_data 함수 호출하고 배열명 data와 길이 len을 인자로 넘김
+```c
+for (int i = 0; i < len; i++)
+  printf("%d번째 data: %d\n", i + 1, data[i]);
+```
+- 배열 data에 저장된 값을 차례대로 출력하는 루프
+```c
+return 0;
+```
+- 0을 반환하고 main함수 정상 종료
+```c
+void get_data(int* arr, int len)
+```
+- 함수 get_data 정의 시작
+```c
+for (int i = 0; i < len; i++){
+  printf("%d번째 data를 입력하시오: ", i+1);
+  scanf("%d", arr + i);
+}
+```
+- 키보드로 입력한 값을 배열에 저장하기 위한 루프문\
+배열 data에 저장하기 위해 배열명으로 주소를 가져오고 인덱스 번호를 하나씩 키워 차례대로 저장하고 있다
+### 실행결과
+<img width="251" height="221" alt="image" src="https://github.com/user-attachments/assets/bdba0afe-1270-421b-bb1b-0f2b0eacaa07" />
+
+---
+
 
