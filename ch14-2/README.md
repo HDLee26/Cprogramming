@@ -7,3 +7,82 @@
   값이 여러 개 있을 때 일단 최댓값 변수에 첫 번째 값 넣고 차례대로 다른 값들이랑 비교하면서 큰 값으로 바로 최댓값을 갱신하면 됨.
 ---
 # 실습과제 2
+```c
+#define _CRT_SECURE_NO_WARNINGS
+```
+
+```c
+#pragma warning(disable:6031)
+```
+
+```c
+#include <stdio.h>
+```
+
+```c
+int get_max(int* arr, int n);
+```
+
+```c
+int main(void)
+```
+
+```c
+int grade[5];
+```
+
+```c
+int max;
+```
+
+```c
+for (int i = 0; i < 5; i++)
+```
+
+```c
+printf("성적을 입력하시오: ");
+```
+
+```c
+scanf("%d", &grade[i]);
+```
+
+```c
+max = get_max(grade, 5);
+```
+
+```c
+printf("최댓값 : %d\n", max);
+```
+
+```c
+return 0;
+```
+
+```c
+int get_max(int* arr, int n)
+```
+
+```c
+int max;
+```
+
+```c
+max = *arr;
+```
+
+```c
+for (int i = 1; i < n; i++)
+```
+
+```c
+if (*(arr + i) > max)
+```
+
+```c
+max = *(arr + i);
+```
+
+```c
+return max;
+```
