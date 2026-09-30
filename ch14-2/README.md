@@ -76,6 +76,10 @@ for (int i = 1; i < n; i++)
 return max;
 ```
 - 구한 최댓값을 리턴
+### 실행결과
+<img width="285" height="160" alt="image" src="https://github.com/user-attachments/assets/20dca238-f8ab-40d1-8389-f6ad5d1c9e4f" />
 
 ---
+
+# 실습과제 3
 
