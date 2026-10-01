@@ -6,7 +6,6 @@
 int main(void)
 {
 	int m[3][3] = { 0 };
-	//int m[3][3] = { {-5, 2, 35}, {-20, 5, 100}, {-75, 5, -25} };
 	int max;
 	int row, col;
 
