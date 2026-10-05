@@ -1,4 +1,5 @@
-### 피보나치 수열
+## 피보나치 수열
+### 재귀
 ```c
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
@@ -36,4 +37,35 @@ int Fibonacci(int n)
 - $F(1) = 0$
 - $F(2) = 1$
 - $F(n) = F(n-1) + F(n-2)$
+
+### 반복문
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+void Fibonacci(int n);
+
+int main(void)
+{
+    int input;
+    printf("피보나치 수열을 출력함.\n");
+    printf("몇 번째 항까지 계산?(양의 정수 입력): ");
+    scanf("%d", &input);
+
+    Fibonacci(input);
+    return 0;
+}
+
+void Fibonacci(int n)
+{
+    int a = 0, b = 1, next;
+
+    for (int i = 1; i <= n; i++)
+    {
+        printf("%d ", a);
+        next = a + b;
+        a = b;
+        b = next;
+    }
+}
+
 
