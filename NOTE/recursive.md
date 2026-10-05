@@ -32,6 +32,7 @@ int Fibonacci(int n)
     return Fibonacci(n - 1) + Fibonacci(n - 2);
 }
 ```
-$F(1) = 0$
-$F(2) = 1$
-$F(n) = F(n-1) + F(n-2)$
+- 다음 정의를 그대로 옮긴 것이다
+$F(1) = 0$\
+$F(2) = 1$\
+$F(n) = F(n-1) + F(n-2)$\
