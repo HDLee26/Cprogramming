@@ -69,9 +69,12 @@ void printMatrix(int* m)
 			printf("%d\t", *(m + j + 2 * i));
     }
 		printf("\n");
-  |
+  }
 ```
 - 이중루프로 이차원 배열의 모든 요소에 접근하여 간접참조연산자로 값을 가져와 출력
 ### 실행결과
 <img width="111" height="58" alt="image" src="https://github.com/user-attachments/assets/52b80929-03f1-437f-81fe-643f755e69c7" />
 
+---
+
+# 실행결과 2
