@@ -1,4 +1,13 @@
+// ***************************
+// 제목 : 두 행렬의 합 - 함수
+// 날짜 : 2026년 10월 1일
+// 작성 : 2600160 이현도
+// ***************************
+
 #include <stdio.h>
+
+void addMatrix(int*, int*, int*); // int matrix[][2]
+void printMatrix(int*);
 
 int main(void)
 {
@@ -6,22 +15,33 @@ int main(void)
 	int m2[2][2] = { {-2, 3}, {0, -5} };
 	int msum[2][2] = { 0 };
 
-	int* pm1 = &m1[0][0];
-	int* pm2 = &m2[0][0];
-	int* pmsum = &msum[0][0];
+	addMatrix(m1, m2, msum);
+	printMatrix(msum);
 
-	// 행렬의 합
+	return 0;
+}
+// 두 행렬을 더하는 함수
+void addMatrix(int* m1, int* m2, int* msum)
+{
 	for (int i = 0; i < 2; i++)
-		for (int j = 0; j < 2;j++)
-			*(pmsum + j + 2 * i) = *(pm1 + j + 2 * i) + *(pm2 + j + 2 * i);
+		for (int j = 0; j < 2; j++)
+		{
+			// *(*(msum + i) + j) = *(*(m1 + i) + j) + *(*(m2 + i) + j);
+			*(msum + j + 2 * i) = *(m1 + j + 2 * i) + *(m2 + j + 2 * i);
+		}
 
-	// 결과 출력
+}
+
+// 행렬을 출력하는 함수
+void printMatrix(int* m)
+{
 	for (int i = 0; i < 2; i++)
 	{
 		for (int j = 0; j < 2;j++)
-			printf("%d\t", *(pmsum + j + 2 * i));
+		{
+			// *(*(matrix + i) + j)
+			printf("%d\t", *(m + j + 2 * i));
+		}
 		printf("\n");
 	}
-
-	return 0;
 }
