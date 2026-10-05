@@ -47,11 +47,7 @@ void addMatrix(int* m1, int* m2, int* msum)
 - 두 행렬을 더하는 함수 정의 시작
 ```c
 	for (int i = 0; i < 2; i++)
-
 		for (int j = 0; j < 2; j++)
-
-			// *(*(msum + i) + j) = *(*(m1 + i) + j) + *(*(m2 + i) + j);
-
 			*(msum + j + 2 * i) = *(m1 + j + 2 * i) + *(m2 + j + 2 * i);
 ```
 - 이중루프로 이차원 배열의 모든 요소에 접근하여 간접참조연산자로 값을 가져와 연산
@@ -64,10 +60,7 @@ void printMatrix(int* m)
 	for (int i = 0; i < 2; i++)
   {
 		for (int j = 0; j < 2;j++)
-    {
-			// *(*(matrix + i) + j)
 			printf("%d\t", *(m + j + 2 * i));
-    }
 		printf("\n");
   }
 ```
@@ -77,4 +70,4 @@ void printMatrix(int* m)
 
 ---
 
-# 실행결과 2
+
