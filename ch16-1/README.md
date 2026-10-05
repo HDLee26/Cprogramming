@@ -70,4 +70,16 @@ void printMatrix(int* m)
 
 ---
 
+＃ 실습과제 2
+
+### 실행결과
+
+---
+
+# 실습과제 3
+
+### 실행결과
+<img width="254" height="242" alt="image" src="https://github.com/user-attachments/assets/89b637f1-f6e1-4d46-84c5-228c9db99ebf" />
+---
+
 
