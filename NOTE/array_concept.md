@@ -43,7 +43,7 @@ int main(void)
 <img width="262" height="142" alt="image" src="https://github.com/user-attachments/assets/8c668448-e854-4947-9cc7-cee88d8a4d24" />
 
 ## 배열과 함수
-- 함수의 매개변수로 쓰일 때만 int arr[] == int* arr
+- 함수의 매개변수로 쓰일 때만 ```int arr[] == int* arr```
 ```c
 void func(int arr[]);
 void func(int* arr);
