@@ -24,6 +24,12 @@ p--;  // 마지막 문자로 이동
 
 printf("%c\n", *p);
 ```
+### while문
+```c
+int len = 0;
+while (word[len] != '\0')
+    len++;
+```
 
 ## 문자열을 입력 받자
 ### fgets() 함수
