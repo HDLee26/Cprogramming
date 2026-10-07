@@ -61,9 +61,10 @@ void func(int arr[]) {
 }
 
 int main() {
-    int arr[5] = 0;
-    printf("%zu\n", sizeof(arr));
-    func(arr);
+    int arr[5] = { 0 };
+    printf("%zu\n", sizeof(arr)); // 20, 실제 배열의 크기
+    func(arr);                    // 8, 포인터의 크기(주소값 8 B)
+    return 0;
 }
 ```
 - int형 원소가 5개 (20 B), 그러나 나오는 값은 포인터의 크기 (8 B).
