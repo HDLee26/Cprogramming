@@ -44,8 +44,30 @@ int main(void)
 
 # 배열과 함수
 - 함수의 매개변수로 쓰일 때만 ```int arr[] == int* arr```
+- 표기를 배열처럼 할 수 있을 뿐 실제 작동방식은 전부 **포인터**이다. 따라서 넘어가는 값도 첫 번째 원소의 주소뿐이다.
 ```c
 void func(int arr[]);
 void func(int* arr);
 ```
+### 왜 이렇게 만들었나
+- 함수가 배열 전체를 값 복사로 받으면 배열의 원소를 전부 복사해야 하고, 시간이 오래 걸리고, 메모리도 많이 먹음. 하지만 시작 위치 즉 첫 번째 원소의 주소만 넘기면 효율적임.
 
+### 몇 개 실습해보자
+```c
+#include <stdio.h>
+
+void func(int arr[]) {
+    printf("%zu\n", sizeof(arr));
+}
+
+int main() {
+    int arr[5] = 0;
+    printf("%zu\n", sizeof(arr));
+    func(arr);
+}
+```
+- int형 원소가 5개 (20 B), 그러나 나오는 값은 포인터의 크기 (8 B).
+```c
+void func(int arr[], int n)
+```
+- 첫 번째 원소의 주소만 받기 때문에 배열의 길이를 알 수 없음. 따라서 배열의 길이 정보를 항상 따로 넘겨줘야 함.
