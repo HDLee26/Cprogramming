@@ -17,9 +17,8 @@ int main() {
 ```c
 char *p = str;
 
-while (*p != '\0') {
+while (*p != '\0') 
     p++;
-}
 p--;  // 마지막 문자로 이동
 
 printf("%c\n", *p);
