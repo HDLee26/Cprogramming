@@ -1,4 +1,4 @@
-## 배열과 포인터
+# 배열과 포인터
 ```c
 double *ptr = arr;
 
@@ -9,7 +9,7 @@ arr[0], arr[1], arr[2]       // 배열 인덱스로 접근
 // arr[i] == *(arr + i)
 ```
 
-## 자료형
+# 자료형
 ```c
 double arr[] = {1.0, 2.0, 3.0};
 ```
@@ -42,7 +42,7 @@ int main(void)
 ### 실행결과
 <img width="262" height="142" alt="image" src="https://github.com/user-attachments/assets/8c668448-e854-4947-9cc7-cee88d8a4d24" />
 
-## 배열과 함수
+# 배열과 함수
 - 함수의 매개변수로 쓰일 때만 ```int arr[] == int* arr```
 ```c
 void func(int arr[]);
