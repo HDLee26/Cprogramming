@@ -1,4 +1,4 @@
-## 문자열의 길이를 구하자
+# 문자열의 길이를 구하자
 ### strlen() 함수
 ```c
 #include <stdio.h>
@@ -30,7 +30,7 @@ while (word[len] != '\0')
     len++;
 ```
 
-## 문자열을 입력 받자
+# 문자열을 입력 받자
 ### fgets() 함수
 ```c
 fgets(str, sizeof(str), stdin);
