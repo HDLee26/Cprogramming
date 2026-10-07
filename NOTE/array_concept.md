@@ -21,7 +21,7 @@ double arr[] = {1.0, 2.0, 3.0};
 |&arr |	배열 전체의 주소 |	double (*)[3] |	배열 전체 |
 |&arr + 1 |	배열 전체 크기만큼 1칸 이동 |	double (*)[3]	|배열 바로 다음 위치|
 
-- 직접 확인해보는 코드
+### 직접 확인해보는 코드
 ```c
 #include <stdio.h>
 
@@ -39,7 +39,7 @@ int main(void)
 }
 
 ```
-- 실행결과
+### 실행결과
 <img width="262" height="142" alt="image" src="https://github.com/user-attachments/assets/8c668448-e854-4947-9cc7-cee88d8a4d24" />
 
 ## 배열과 함수
