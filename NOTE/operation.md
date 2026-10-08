@@ -1,4 +1,6 @@
 # 연산
+## 연산 우선순위와 결합방향
+<img width="572" height="616" alt="image" src="https://github.com/user-attachments/assets/0d23ffc0-40fa-43d5-ac61-3f69092774d7" />
 ## 증감연산
 ```c
 #include <stdio.h>
@@ -133,7 +135,6 @@ int main(void)
     return 0;
 }
 ```
-## 연산 우선순위와 결합방향
-<img width="572" height="616" alt="image" src="https://github.com/user-attachments/assets/0d23ffc0-40fa-43d5-ac61-3f69092774d7" />
+
 
 ---
