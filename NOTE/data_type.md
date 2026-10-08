@@ -24,14 +24,33 @@ int main(void)
     //연산 결과를 저장하면 다시 1, 2 bytes로 돌아감. 애초에 res1, res2를 char, short로 선언했으니까.
 
     return 0;
-
 }
 ```
 - 15행 16행 CPU가 연산하기에 가장 적합한 데이터의 크기가 int형이기 때문에 int보다 작은 것들 연산시에는 자동으로 int형으로 바뀌며 이를 정수의 승격이라고 한다.
 - 연산을 자주하는 경우에는 int형으로 선언하는 것이 좋고, 메모리 공간을 매우 아낄 때는 char형 short형 이용.
 
 ## 실수형 자료형의 크기
-## char형
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    float fnum1 = 3.14, fnum2 = 6.28;
+    double dnum1 = 1.4142, dnum2 = 2.8284;
+
+    printf("size of float: %zu\n", sizeof(fnum1));     // 4
+    printf("size of double: %zu\n", sizeof(dnum1));    // 8
+    printf("size of float add: %zu\n", sizeof(fnum1 + fnum1));   // 4
+    printf("size of double add: %zu\n", sizeof(dnum1 + dnum2));  // 8
+    printf("size of float & double add: %zu\n", sizeof(fnum1 + dnum1));   // 8
+    // float형 변수와 double형 변수를 연산하면 float형 변수는 double형으로 자동 형 변환된다. 
+    
+    return 0;
+}
+```
+- 실수는 가장 중요한 요소가 '정밀도'임. 그래서 보편적으로 double을 씀.
+
+## 문자를 위한 자료형
 ## 리터럴 상수 (literal)
 ## 정수의 승격
 ## 강제 형 변환 (casting 연산)
