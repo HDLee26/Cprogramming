@@ -72,5 +72,26 @@ int main(void)
 - char가 문자의 표현을 위한 자료형이기 때문에 '문자형'이라고도 한지만 엄밀히 '정수형'이다. 다시 말하지만 문자도 정수로 저장하기 때문이다.
 
 ## 리터럴 상수 (literal)
+- 리터럴 상수란 변경이 불가능한 데이터. 변수명을 갖지 않는다. ```int add = 30 + 40;```에서 30과 40이 리터럴이다. 30과 40도 메모리 공간 어딘가에 저장되어있음. (연산 결과인 70은 add란 변수에 저장되어있다.)
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    //리터럴 상수의 디폴트 자료형 확인
+    printf("literal int size: %zd\n", sizeof(7));        // 4 정수는 기본적으로 int
+    printf("literal double size: %zd\n", sizeof(3.141)); // 8 실수는 기본적으로 double
+    printf("literal char size: %zd\n", sizeof('A'));     // 4 문자도 기본적으로 int형임에 주의. 
+
+    // 만약 리터럴도 자료형을 지정해주고 싶으면 접미사를 붙인다
+    unsigned int num1 = 12004U;
+    long long num2 = 9203382LL;
+    float num3 = 3.134F;
+
+    return 0;
+}
+```
+- 8행 문자도 기본적으로 int형으로 저장된다. 왜냐하면 'A'의 아스키코드값이 65로 정수이고, 컴퓨터는 그 정수 아스키코드값을 저장하기 때문이다.
+
 ## 정수의 승격
 ## 강제 형 변환 (casting 연산)
