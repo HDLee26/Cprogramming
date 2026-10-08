@@ -30,3 +30,28 @@ int main(void)
     return 0;
 }
 ```
+## 비교연산
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    int num1 = 10;
+    int num2 = 12;
+    int res1, res2, res3, res4;
+
+    //조건이 참이면 1을, 거짓이면 0을 반환한다.
+    //C언어는 0이 아닌 모든 값을 참으로 간주하지만, 1이 참을 의미하는 대표적인 값이다.
+    res1 = (num1 == num2); // 0 (false)
+    res2 = (num1 != num2); // 1 (true)
+    res3 = (num1 <= num2); // 1 (true)
+    res4 = (num1 > num2); // 0 (false)
+
+    printf("result1: %d\n", res1);
+    printf("result2: %d\n", res2);
+    printf("result3: %d\n", res3);
+    printf("result4: %d\n", res4);
+
+    return 0;
+}
+```
