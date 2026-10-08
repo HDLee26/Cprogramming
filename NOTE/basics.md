@@ -55,3 +55,31 @@ int main(void)
     return 0;
 }
 ```
+## 논리연산
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    int num1 = 10, num2 = 12;
+    int res1, res2, res3, res4;
+
+    res1 = (num1 == 10 && num2 == 12); // 1 (true), 논리AND
+    res2 = (num1 < 12 || num2 > 12); // 1 (true), 논리OR
+    res3 = (!num1); // 0 (false), 논리NOT
+    // 앞서 했듯이 C에서는 0을 제외한 모든 값을 참으로 간주하는데
+    // !을 붙여 참이 아니다 했으므로 0을 반환함.
+    res4 = (!res3); // 1 (true)
+
+    printf("result1: %d\n", res1);
+    printf("result2: %d\n", res2);
+    printf("result3: %d\n", res3);
+    printf("result4: %d\n", res4);
+
+    return 0;
+}
+```
+## 연산 우선순위와 결합방향
+<img width="572" height="616" alt="image" src="https://github.com/user-attachments/assets/0d23ffc0-40fa-43d5-ac61-3f69092774d7" />
+
+---
