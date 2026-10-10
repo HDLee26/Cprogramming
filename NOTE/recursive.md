@@ -67,5 +67,47 @@ void Fibonacci(int n)
         b = next;
     }
 }
+```
+## 팩토리얼
+### 재귀
+```c
+#include <stdio.h>
 
+int Factorial(int n)
+{
+    if (n==0)   // 탈출조건
+        return 1;
+    else
+        return n * Factorial(n-1);
+}
 
+int main(void)
+{
+    for (int i = 0; i < 10; i++)
+        printf("%d! = %d\n", i, Factorial(i));
+
+    return 0;
+}
+```
+### 반복문
+```c
+#include <stdio.h>
+
+int Factorial(int n)
+{
+    int i, tot = 1;
+
+    for (i = n; i > 0; i--) 
+        tot *= i;
+
+    return tot;
+}
+
+int main(void)
+{
+    for (int i = 0; i < 10; i++)
+        printf("%d! = %d\n", i, Factorial(i));
+
+    return 0;
+}
+```
