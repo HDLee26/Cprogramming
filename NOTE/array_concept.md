@@ -1,3 +1,46 @@
+# 배열의 크기와 길이
+```c
+#include <stdio.h>
+
+int main(void)
+{
+	// 1차원 배열 선언 및 초기화
+	int arr1[4] = { 1, 2, 3, 4 };
+	int arr2[] = { 1, 2, 3, 4, 5, 6, 7 };  // 길이를 알아서 맞춰줌.
+	int arr3[5] = { 1, 2 };             // 빈칸은 0으로 채움.
+	int arr1Len, arr2Len, arr3Len, i;
+
+	// 배열의 크기 -- int형으로 선언되었으므로 값 하나당 4바이트. 크기 = 길이 * 4
+	printf("배열 arr1의 크기: %zu\n", sizeof(arr1));
+	printf("배열 arr2의 크기: %zu\n", sizeof(arr2));
+	printf("배열 arr3의 크기: %zu\n", sizeof(arr3));
+	putchar('\n');
+
+	// 배열의 길이 -- int형으로 선언했으므로 4로 나눠야 길이만 나옴.
+	arr1Len = sizeof(arr1) / sizeof(int);
+	arr2Len = sizeof(arr2) / sizeof(int);
+	arr3Len = sizeof(arr3) / sizeof(int);
+	printf("배열 arr1의 길이: %d\n", arr1Len);
+	printf("배열 arr2의 길이: %d\n", arr2Len);
+	printf("배열 arr3의 길이: %d\n", arr3Len);
+	putchar('\n');
+
+	// 배열에 저장된 값 출력  
+	for (i = 0; i < arr1Len; i++)
+		printf("%d ", arr1[i]);
+	putchar('\n');
+
+	for (i = 0; i < arr2Len; i++)
+		printf("%d ", arr2[i]);
+	putchar('\n');
+
+	for (i = 0; i < arr3Len; i++)
+		printf("%d ", arr3[i]);
+	putchar('\n');
+
+	return 0;
+}
+```
 # 배열과 포인터
 ```c
 double *ptr = arr;
