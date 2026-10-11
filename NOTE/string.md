@@ -82,23 +82,44 @@ for (int i = 0; i < 1000; i++) {
 
 int main(void)
 {
-    char str1[] = "Array Hello?";
-    char * str2 = "Pointer Hello?"; 
-    printf("%s %s\n", str1, str2);
+    char arr[] = "Array Hello?";
+    char * ptr = "Pointer Hello?"; 
+    printf("%s %s\n", arr, ptr);
 
-    // char형 배열은 문자열의 일부를 수정할 수 있다.
-    str1[strlen(str1 - 1)] = '!';
-    printf("%s\n", str1);
+    // char형 배열은 인덱스 연산으로 문자열의 일부를 수정할 수 있다.
+    arr[strlen(arr) - 1] = '!';
+    printf("%s\n", arr);
 
     // 포인터 변수는 가리키는 대상을 (통째로) 바꿀 수 있다.
-    str2 = "Another Pointer string";
-    printf("%s\n", str2);
+    ptr = "Another Pointer string";
+    printf("%s\n", ptr);
 
     return 0;
 }
-
 ```
-  
+### char형 배열과 char형 포인터의 차이
+<img width="368" height="198" alt="image" src="https://github.com/user-attachments/assets/1ea65899-bf18-4d30-b201-71b5ef3395e2" />
+- arr[]은 문자열 전체를 배열에 저장한 것이고, 
+ptr는 문자열이 메모리 어딘가에 할당 된 후 포인터로 시작 위치를 가리키게 한 것이다.
+- 이때 ptr은 배열을 가리키고 있는 것이 아니므로 인덱스 연산을 통한 요소의 수정이 불가능하다. 
+대신 포인터 변수이므로 다른 문자열 리터럴을 가리키게 할 수 있음.
+- arr[]은 배열이므로 인덱스 연산으로 요소의 수정이 가능하다. 
+다만 배열명 arr은 첫 번째 요소의 주소를 가리키는데, 
+이 가리키는 주소를 변경할 수 없으므로 (그래서 포인터 상수로도 부른다)
+메모리 상의 다른 문자열 리터럴을 가리킬 수 없고
+배열을 비우고 원래 가리키고 있는 주소에 다시 값을 받아 저장해야 한다.
+
+### printf 함수의 작동 방식
+```c
+char * str = "Pointer String";
+```
+- char형 포인터 변수 str에 저장되는 것은 문자열 리터럴의 시작 위치인 'P'의 주소이다.
+```c
+printf("Show This String");
+```
+- printf 함수에 인자로 쓰인 문자열도 문자열 리터럴이므로 당연히 메모리 공간 어딘가에 저장된 후 그 시작 위치인 맨 앞글자의 주소(이 경우 'S'의 주소)를 함수에 반환한다.
+- 그러면 printf 함수는 반환받은 주소부터 (즉 맨 앞글자부터) \0 null문자를 만날 때까지의 값들을 출력하는 것이다.
+
 # 문자열 선언 (심화) 
 - // 261007 배우고 업데이트할 것
 ## 동적 할당 calloc (Heap 메모리)
