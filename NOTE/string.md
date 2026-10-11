@@ -1,6 +1,6 @@
 # 문자형 배열의 선언
 
-### 선언 및 초기화
+## 선언 및 초기화
 ```c
 char str1[] = "Hello";
 ```
@@ -15,7 +15,7 @@ char str3[] = {'H', 'e', 'l', 'l', 'o'};
 ```
 - 단순히 문자들의 나열일 뿐, **문자열이 아니다.**
 
-### 빈 문자열 선언
+## 빈 문자열 선언
 ```c
 char str[100] = "";
 ```
@@ -76,18 +76,18 @@ for (int i = 0; i < 1000; i++) {
 - 동적할당과 함수로 임시 그릇 100 B를 1000번 재사용할 수 있음. 메모리 절약.
   
 # 문자형 배열 선언 (심화) // 261007 배우고 업데이트할 것
-### 동적 할당 calloc (Heap 메모리)
+## 동적 할당 calloc (Heap 메모리)
 ```char *str = (char*)calloc(100, sizeof(char));```
 - 메모리에 할당함과 동시에 내부를 모두 0으로 초기화. 사용 후 ```free(str);```로 메모리를 해제해야 함.
 ### 메모리를 직접 제어 memset() 함수
 ```memset(str, 0, sizeof(str));```
 - str 배열의 시작 위치부터 배열의 전체 크기만큼의 메모리 공간을 0으로 덮어씀.
-### 전역 변수로 선언
+## 전역 변수로 선언
 ```static char str[100];```
 - C언어에서 초기화되지 않은 전역 변수나 정적(static) 변수는 메모리의 BSS(Block Started by Symbol) 영역이라는 특별한 곳에 저장됨. 운영체제가 프로그램을 메모리에 올릴 때 이 구역을 통째로 0으로 초기화함.
 
 # 문자열의 길이를 구하자
-### strlen() 함수
+## strlen() 함수
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -101,7 +101,7 @@ int main() {
     return 0;
 }
 ```
-### 포인터 이용
+## 포인터 이용
 ```c
 char *p = str;
 
@@ -111,7 +111,7 @@ p--;  // 마지막 문자로 이동
 
 printf("%c\n", *p);
 ```
-### while문
+## while문
 ```c
 int len = 0;
 while (word[len] != '\0')
@@ -119,7 +119,7 @@ while (word[len] != '\0')
 ```
 
 # 문자열을 입력 받자
-### fgets() 함수
+## fgets() 함수
 ```c
 fgets(str, sizeof(str), stdin);
 ```
