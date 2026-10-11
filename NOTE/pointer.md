@@ -10,12 +10,11 @@ int *ptr2;
 - 그냥 하나씩 선언하는게 실수 방지에 좋음
 
 # 포인터 연산
-```c
-/*  포인터변수: 주소값을 저장하기 위한 변수
-	항상 시작 주소가 저장됨
-	&연산자: 주소를 반환하는 연산자 ptr = &num;
-	*연산자: 포인터가 가리키는 주소에 접근하는 연산자 (선언할 때는 아님) */
+- 포인터 변수: 주소를 저장하기 위한 변수. 항상 시작 주소가 저장됨.
+- &연산자: 주소를 반환하는 연산자 ```ptr = &num;```
+- *연산자: 포인터가 가리키는 주소에 접근하는 연산자 (선언할 때는 아님)
 
+```c
 #include <stdio.h>
 
 int main(void)
@@ -44,5 +43,34 @@ int main(void)
 	printf("%f\n", *ptr2);
 
 	return 0;
+}
+```
+
+# 증감연산
+- 포인터 변수에 저장된 주소값을 대상으로 증감연산이 가능하다. 그 결과로 주소값이 **자료형의 크기**에 따라 증감한다.
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    int num1 = 3;
+    double num2 = 3.14;
+    int * ptr1 = &num1;
+    double * ptr2 = &num2;
+
+    // 주소값 출력 -- ptr 보존
+    printf("ptr1 주소 | ptr2 주소 \n");
+    for (int i =0; i < 3; i++)
+        printf("%p | %p \n", ptr1 + i, ptr2 + i);
+    putchar('\n');
+
+    // 주소값 출력 -- ptr 비보존
+    printf("%p | %p\n", ptr1, ptr2);
+    ptr1++; ptr2++;
+    printf("%p | %p\n", ptr1, ptr2);
+    ptr1++; ptr2++;
+    printf("%p | %p\n", ptr1, ptr2);
+
+    return 0;
 }
 ```
