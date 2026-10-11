@@ -99,6 +99,7 @@ int main(void)
 ```
 ### char형 배열과 char형 포인터의 차이
 <img width="368" height="198" alt="image" src="https://github.com/user-attachments/assets/1ea65899-bf18-4d30-b201-71b5ef3395e2" />
+
 - arr[]은 문자열 전체를 배열에 저장한 것이고, 
 ptr는 문자열이 메모리 어딘가에 할당 된 후 포인터로 시작 위치를 가리키게 한 것이다.
 - 이때 ptr은 배열을 가리키고 있는 것이 아니므로 인덱스 연산을 통한 요소의 수정이 불가능하다. 
