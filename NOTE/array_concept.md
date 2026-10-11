@@ -144,3 +144,22 @@ int main(void)
 }
 
 ```
+
+# 문자열 배열
+- 정확히 말하자면 문자열을 저장하는 포인터 배열이다. char형 배열에 문자열 리터럴들을 저장한 것인데 각 문자열의 맨 앞글자의 주소를 저장하기 때문이다.
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    // 각 문자열의 첫글자의 주소가 포인터 배열에 저장됨
+    char * strArr[] = {"Simple", "String", "Array"};
+    int len = sizeof(strArr) / sizeof(strArr[0]);
+
+    printf("주소 | 값 \n");
+    for (int i = 0; i < len; i++)
+        printf("%p | %s \n", strArr[i], strArr[i]);
+    
+    return 0;
+}
+```
