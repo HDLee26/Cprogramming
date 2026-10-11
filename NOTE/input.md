@@ -78,3 +78,29 @@ int main() {
 }
 
 ```
+
+# 문자열을 입력 받자
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+	char str[51];
+	int idx = 0;
+
+	// fgets함수
+	printf("문자열 입력(50자 제한): ");
+	fgets(str, sizeof(str), stdin);  // 배열 str에 sizeof(str)-1까지 읽어서 저장. 공백, 탭, 개행까지 모두 저장됨.
+	str[strcspn(str, "\n")] = '\0';  // 문자열에서 \n이 처음 나오는 위치를 찾아서 그자리를 \0로 바꿈
+	printf("입력 받은 문자열: %s\n", str);
+
+	// 개행 문자 \n 있는 곳에서 끊기
+	printf("문자열 입력(50자 제한): ");
+	scanf("%[^\n]s", str);
+	printf("입력 받은 문자열: %s\n", str);
+
+	return 0;
+}
+```
