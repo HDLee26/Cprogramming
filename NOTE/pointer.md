@@ -77,6 +77,39 @@ int main(void)
 # const 선언
 - C에서 const는 "값의 수정을 막는다"는 의미임. 컴파일 시 상수가 되는 것이 아님.
 - 포인터의 const 선언도 값을 변경하는 방법에 제한을 두는 것
+- #include <stdio.h>
+```c
+int main(void)
+{
+    int num1 = 20, num2 = 40, num3 = 60;
+
+    const int* ptr1 = &num1;
+    int* const ptr2 = &num2;
+    const int* const ptr3 = &num3;
+
+
+    // 1. 포인터 연산 불가
+    // *ptr = 30; *error* 포인터 연산을 통해 값을 변경하는 건 불가함.
+    num1 = 100; // 직접 바꾸는 건 됨. num이 const된 게 아니니까.
+
+    // 2. 포인터가 가리키는 대상 변경 불가 == 주소 변경 불가 == 포인터 상수
+    // ptr2 = &num1; *error* 가리키는 대상을 변경하는 건 불가.
+    *ptr2 = 200; // 포인터 연산을 통해 가리키는 변수의 값을 변경할 수 있음.
+
+    // 3. 주소 변경 불가 & 포인터 연산 불가
+    // *ptr3 = 300; *error* 포인터 연산 불가
+    // ptr3 = &num1; *error* 주소 고정
+
+    // 번외. num4 고정해도 포인터 연산으로 변경 가능. 에러도 안 뜸. 조심할 것.
+    const int num4 = 80;
+    int* ptr4 = &num4;
+    *ptr4 = 400;
+    printf("%d \n", num4);
+
+    return 0;
+}
+```
+### 간략 정리
 ```c
 const int * ptr; -- 포인터 연산 불가, 가리키는 대상의 값 고정
 int * const ptr; --  주소 변경 불가, 가리키는 대상 고정
