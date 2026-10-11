@@ -74,3 +74,11 @@ int main(void)
     return 0;
 }
 ```
+# const 선언
+- C에서 const는 "값의 수정을 막는다"는 의미임. 컴파일 시 상수가 되는 것이 아님.
+- 포인터의 const 선언도 값을 변경하는 방법에 제한을 두는 것
+```c
+const int * ptr; -- 포인터 연산 불가, 가리키는 대상의 값 고정
+int * const ptr; --  주소 변경 불가, 가리키는 대상 고정
+const int * const ptr; -- 포인터 연산불가 & 주소 변경 불가
+```
