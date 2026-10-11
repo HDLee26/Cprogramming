@@ -76,6 +76,28 @@ for (int i = 0; i < 1000; i++) {
 - 동적할당과 함수로 임시 그릇 100 B를 1000번 재사용할 수 있음. 메모리 절약.
 
 ## char형 포인터 (상수 형태의 문자열)
+```c
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    char str1[] = "Array Hello?";
+    char * str2 = "Pointer Hello?"; 
+    printf("%s %s\n", str1, str2);
+
+    // char형 배열은 문자열의 일부를 수정할 수 있다.
+    str1[strlen(str1 - 1)] = '!';
+    printf("%s\n", str1);
+
+    // 포인터 변수는 가리키는 대상을 (통째로) 바꿀 수 있다.
+    str2 = "Another Pointer string";
+    printf("%s\n", str2);
+
+    return 0;
+}
+
+```
   
 # 문자열 선언 (심화) 
 - // 261007 배우고 업데이트할 것
