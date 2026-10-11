@@ -115,3 +115,32 @@ int main() {
 void func(int arr[], int n)
 ```
 - 첫 번째 원소의 주소만 받기 때문에 배열의 길이를 알 수 없음. 따라서 배열의 길이 정보를 항상 따로 넘겨줘야 함.
+
+# 포인터배열
+- 포인터 변수도 변수이므로 배열로 만들 수 있다.
+포인터 변수로 이루어진, 그래서 주소값의 저장이 가능한 배열을 포인터 배열이라고 한다.
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    int num1 = 10, num2 = 20, num3 = 30, num4 = 40;
+    double num5 = 1.1, num6 = 2.2, num7 = 3.3, num8 = 4.4;
+    int* arr1[4] = { &num1, &num2, &num3, &num4 }; // 주소를 저장
+    double* arr2[4] = { &num5, &num6, &num7, &num8 };
+    int len = sizeof(arr1) / sizeof(arr1[0]);
+
+    printf("주소 | 값\n");
+    for (int i = 0; i < len; i++)
+        printf("%p | %d \n", arr1[i], *arr1[i]);
+    putchar('\n');
+
+    printf("주소 | 값\n");
+    for (int i = 0; i < len; i++)
+        printf("%p | %f \n", arr2[i], *arr2[i]);
+    putchar('\n');
+
+    return 0;
+}
+
+```
