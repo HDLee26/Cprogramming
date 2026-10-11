@@ -53,23 +53,23 @@ int main(void)
 
 int main(void)
 {
-    int num1 = 3;
-    double num2 = 3.14;
-    int * ptr1 = &num1;
-    double * ptr2 = &num2;
-
-    // 주소값 출력 -- ptr 보존
-    printf("ptr1 주소 | ptr2 주소 \n");
-    for (int i =0; i < 3; i++)
-        printf("%p | %p \n", ptr1 + i, ptr2 + i);
+    int arr[4] = {11, 22, 33, 44};
+    int * ptr = arr;       // int * ptr = &arr[0];
+    int i;
+    int len = sizeof(arr) / sizeof(arr[0]);
+   
+    // 배열의 요소에 차례로 접근 (ptr 보존)
+    printf("주소 | 값 \n");
+    for (i = 0; i < len; i++)
+        printf("%p | %d \n", ptr + i, *(ptr + i));
     putchar('\n');
 
-    // 주소값 출력 -- ptr 비보존
-    printf("%p | %p\n", ptr1, ptr2);
-    ptr1++; ptr2++;
-    printf("%p | %p\n", ptr1, ptr2);
-    ptr1++; ptr2++;
-    printf("%p | %p\n", ptr1, ptr2);
+    // 첫 번째 요소로만 연산 (ptr 비보존)
+    printf("%p | %d \n", ptr, *ptr); ptr++;    // 첫번째 요소 출력 후 다음 요소의 주소로 이동
+    printf("%p | %d \n", ptr, *ptr); ptr++;    // 두번째 요소 출력 후 다음 요소의 주소로 이동
+    printf("%p | %d \n", ptr, *ptr); ptr--;    // 세번째 요소 출력 후 이전 요소의 주소로 이동
+    printf("%p | %d \n", ptr, *ptr); ptr--;    // 두번째 요소 출력 후 이전 요소의 주소로 이동
+    printf("%p | %d \n", ptr, *ptr); 
 
     return 0;
 }
