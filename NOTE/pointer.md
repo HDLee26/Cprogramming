@@ -138,3 +138,18 @@ int main(void)
 - 64비트 CPU에서 포인터 변수의 크기는 8 바이트
 - 주소값 하나당 8바이트로 처리함.
 # 이중포인터
+- 포인터도 변수이므로 주소가 있다. 주소연산 가능.
+```c
+#include <stdio.h>
+
+int main(void)
+{
+	double num = 3.141592;
+	int* ptr = &num;
+
+	printf("%p\n", ptr);
+	printf("%p\n", &ptr);
+
+	return 0;
+}
+```
