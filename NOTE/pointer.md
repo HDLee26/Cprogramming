@@ -127,10 +127,10 @@ int main(void)
 	double d = 3.14;
 	char* pc = &c;
 
-	printf("i의 크기: %zu\n", sizeof(i));
-	printf("c의 크기: %zu\n", sizeof(c));
-	printf("d의 크기: %zu\n", sizeof(d));
-	printf("pc의 크기: %zu\n", sizeof(pc));
+	printf("i의 크기: %zu\n", sizeof(i));   // 4
+	printf("c의 크기: %zu\n", sizeof(c));   // 1
+	printf("d의 크기: %zu\n", sizeof(d));   // 8
+	printf("pc의 크기: %zu\n", sizeof(pc)); // 8
 	
 	return 0;
 }
