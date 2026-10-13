@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+void swap(int** dp1, int** dp2)
+{
+	int* temp;
+	temp = *dp1;
+	*dp1 = *dp2;
+	*dp2 = temp;
+}
+
+int main(void)
+{
+	int num1 = 100, num2 = 200;
+	int* ptr1 = &num1;
+	int* ptr2 = &num2;
+
+	*ptr1 += 150;
+	*ptr2 -= 150;
+
+	printf("가리키는 대상 교환 전\n");
+	printf("ptr1이 가리키는 주소: %p | 들어있는 값: %d\n", (void*)ptr1, *ptr1);
+	printf("ptr2이 가리키는 주소: %p | 들어있는 값: %d\n", (void*)ptr2, *ptr2);
+
+	swap(&ptr1, &ptr2);
+
+	printf("가리키는 대상 교환 후\n");
+	printf("ptr1이 가리키는 주소: %p | 들어있는 값: %d\n", (void*)ptr1, *ptr1);
+	printf("ptr2이 가리키는 주소: %p | 들어있는 값: %d\n", (void*)ptr2, *ptr2);
+
+
+	return 0;
+}
