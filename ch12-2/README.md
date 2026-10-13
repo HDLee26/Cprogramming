@@ -165,3 +165,62 @@ return 0;
 ## 실행 결과
 <img width="253" height="72" alt="image" src="https://github.com/user-attachments/assets/6075f2bc-ae90-4b38-aadf-40e39e22013e" />
 
+# 실습과제 5
+```c
+#include <stdio.h>
+```
+- 헤더파일 stdio.h을 포함하라
+```c
+int main(void)
+```
+- 메인함수 시작
+```c
+	int num1 = 100, num2 = 200;
+```
+- 정수형 변수 num1, num2 선언하고 100, 200으로 초기화
+```c
+	int * ptr1 = &num1;
+```
+- int* 포인터 ptr1 에 변수 num1 주소 저장
+```c
+	int * ptr2 = &num2;
+```
+- int* 포인터 ptr2 에 변수 num2 주소 저장
+```c
+	int * tmp;
+```
+- 주소 임시 저장할 포인터 변수 tmp
+```c
+	*ptr1 += 150;
+```
+- 간접참조연산으로 num1의 값을 150 더해 저장
+```c
+	*ptr2 -= 150;
+```
+- 간접참조연산으로 num2의 값을 150 빼서 저장
+```c
+	printf("가리키는 대상 교환 전\n");
+	printf("ptr1이 가리키는 주소: %p | 들어있는 값: %d\n", ptr1, *ptr1);
+	printf("ptr2이 가리키는 주소: %p | 들어있는 값: %d\n", ptr2, *ptr2);
+```
+- 포인터 변수의 값(주소)을 교환하기 전의 주소와 들어있는 값 확인
+```c
+	tmp = ptr1;
+	ptr1 = ptr2;
+	ptr2 = tmp;
+```
+- 임시변수를 이용한 값 교환 (여기선 주소값을 교환하였음)
+```c
+	printf("가리키는 대상 교환 후\n");
+	printf("ptr1이 가리키는 주소: %p | 들어있는 값: %d\n", ptr1, *ptr1);
+	printf("ptr2이 가리키는 주소: %p | 들어있는 값: %d\n", ptr2, *ptr2);
+```
+- 포인터 변수의 값(주소)을 교환한 후의 주소와 들어있는 값 확인
+```c
+	return 0;
+```
+- 0을 반환하고 프로그램 정상 종료
+
+### 실행결과
+<img width="467" height="165" alt="image" src="https://github.com/user-attachments/assets/01f38124-324b-4e27-8aa9-48724b71f637" />
+
