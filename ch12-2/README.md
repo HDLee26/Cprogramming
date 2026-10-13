@@ -220,6 +220,7 @@ int main(void)
 	return 0;
 ```
 - 0을 반환하고 프로그램 정상 종료
+- 주소값을 교환하는 부분을 함수로 작성하려면 이중포인터 개념을 조금 알아야 함.
 
 ### 실행결과
 <img width="467" height="165" alt="image" src="https://github.com/user-attachments/assets/01f38124-324b-4e27-8aa9-48724b71f637" />
