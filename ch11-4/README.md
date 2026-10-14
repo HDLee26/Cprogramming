@@ -6,3 +6,62 @@
   - "B" : 문자열 리터럴. 끝에 자동으로 '\0' 포함되어 2바이트 차지. 서식지정자 %s.
 
 # 실습과제 2
+```c
+// 키보드로부터 입력 받은 문자를 출력하는 프로그램
+```
+-
+```c
+#define _CRT_SECURE_NO_WARNINGS
+```
+-
+```c
+#pragma warning(disable:6031)
+```
+-
+```c
+#include <stdio.h>
+```
+-
+```c
+int main(void)
+```
+-
+```c
+	char ch;
+```
+-
+```c
+	while (1)
+```
+-
+```c
+		printf("문자 입력: ");
+```
+-
+```c
+		scanf(" %c", &ch);
+```
+-
+```c
+		printf("입력한 문자 : %c | 아스키코드 : %d\n", ch, ch);
+```
+-
+```c
+		// 탈출 조건
+```
+-
+```c
+		if ((ch == 'q') || (ch == 'Q'))
+```
+-
+```c
+			printf("프로그램 종료\n");
+```
+-
+```c
+			break;
+```
+-
+```c
+	return 0;
+```
