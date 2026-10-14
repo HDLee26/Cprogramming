@@ -40,9 +40,9 @@ int main(void)
 ```c
 int grade[5];
 ```
-- 5칸짜리 int형 배열 grade 선언
+- 성적을 저장할 5칸짜리 int형 배열 grade 선언
 ```c
-int sum = 0, i, average;
+int sum = 0, i;
 ```
 - int형 변수 sum, i 선언 후 sum은 0으로 초기화
 ```c
@@ -51,20 +51,15 @@ double average;
 - double형 변수 average 선언
 ```c
 for (i = 0; i < 5; i++)
-```
-- grade에 순서대로 값을 저장하기 위한 반복문
-```c
+		printf("성적을 입력하시오: ");
 		scanf("%d", (grade + i));
 ```
-- 배열명 이용하여 포인터 표현으로 입력한 값을 차례대로 저장
+- 성적을 입력 받기 위한 루프문. 배열명을 이용하여 포인터 연산을 함.
 ```c
 for (i = 0; i < 5; i++)
-```
-- grade에 저장된 값들을 순서대로 가져와 sum에 더하여 저장하기 위한 반복문
-```c
 		sum += *(grade + i);
 ```
-- 배열명과 간접참조연산자를 이용해 sum에 더하여 저장
+- grade에 저장된 값들을 순서대로 가져와 sum에 더하여 저장하기 위한 반복문
 ```c
 average = sum / 5.0;
 ```
