@@ -54,4 +54,50 @@ int main(void)
 
 ---
 
+# 실습과제 3
+```c
+#define _CRT_SECURE_NO_WARNINGS
+```
+- VS scanf 함수 보안 경보 방지용
+```c
+#pragma warning(disable:6031)
+```
+- 리턴값 관련 경고 방지용
+```c
+#include <stdio.h>
+```
+- stdio.h 헤더파일을 포함하라
+```c
+#include <string.h>
+```
+- string.h 헤더파일을 포함하라
+```c
+int main(void)
+```
+- main 함수 시작
+```c
+	char str[101] ="";
+```
+- 입력할 문자열 저장할 char형 배열 선언
+```c
+	printf("소문자 문자열 입력(100글자): ");
+	scanf("%100s", str);
+```
+- 100글자 입력 받아 저장 (띄어쓰기 없어야 함)
+```c
+	for (int i = 0; i < strlen(str); i++)
+		str[i] -= 32;
+```
+- 소문자 -> 대문자 변환. 아스키코드상 소대문자가 32칸 차이 남을 이용.
+```c
+	printf("변환결과: %s\n", str);
+```
+- 결과 출력
+```c
+	return 0;
+```
+- 0을 반환하고 main 함수 정상 종료
+
+### 실행결과
+<img width="355" height="83" alt="image" src="https://github.com/user-attachments/assets/84276dc6-32d6-4075-8f3e-4aa361c689af" />
 
