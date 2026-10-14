@@ -122,6 +122,13 @@ int main(void)
 
 ---
 
+# 실습과제 4
+
+### 실행결과
+<img width="261" height="225" alt="image" src="https://github.com/user-attachments/assets/2e118184-5deb-46d0-83b0-e996a051dcec" />
+
+---
+
 
 
 
