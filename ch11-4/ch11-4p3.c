@@ -13,6 +13,9 @@ int main(void)
 
 	for (int i = 0; i < strlen(str); i++)
 		str[i] -= 32;
+	//for (int i = 0; str[i] != 0; i++)
+	//	str[i] -= 32;
+	
 
 	printf("변환결과: %s\n", str);
 	
