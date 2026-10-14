@@ -105,3 +105,100 @@ int main(void)
 
 # 번외
 - string.h의 strlen, strcpy, strcat 함수를 직접 구현하기
+```c
+#include <stdio.h>
+```
+- stdio.h 헤더파일을 포함하라
+
+```c
+size_t my_strlen(const char str[])
+```
+- 문자열 길이 구하는 함수 정의 시작
+```c
+	size_t i = 0;
+	while (str[i] != '\0')
+		i++;
+```
+- 인자로 받은 char형 배열에서 null 문자를 만날 때까지 i를 증가시킴
+```c
+	return i;
+```
+- 구한 문자열 길이 반환
+
+```c
+void my_strcpy(char dest[], const char src[])
+```
+- 문자열 복사하는 함수 정의 시작
+```c
+	size_t i;
+	for (i = 0; src[i] != '\0'; i++)
+		dest[i] = src[i];
+```
+- src의 null문자에 만날 때까지 차례로 dest에 문자 저장
+```c
+	dest[i] = '\0';
+```
+- 복붙이 끝난 문자열 끝에 null문자를 붙여줌
+
+```c
+void my_strcat(char dest[], const char src[])
+```
+- dest의 끝에 src를 이어붙지는 함수 정의 시작
+```c
+	size_t i = my_strlen(dest);
+```
+- dest의 null문자의 위치를 찾아서 저장
+```c
+	size_t j = 0;
+	while (src[j] != '\0')
+		dest[i++] = src[j++];
+```
+- src의 null문자에 만날 때까지, dest의 null문자에서부터 차례로 문자를 복붙
+```c
+	dest[i] = '\0';
+```
+- 이어붙이는 작업 끝낸 후 dest 끝에 null문자 붙여줌
+
+```c
+int main(void)
+```
+- main 함수 시작
+```c
+	char str[101] = "Computer Science";
+```
+- source가 될 문자열
+```c
+	char copy[101] = "";
+```
+- 복붙한 문자열을 저장할 배열
+```c
+	char mystr[201] = "My major : ";
+```
+- 이어붙일 문자열
+```c
+	printf("문자열의 길이: %zu\n", my_strlen(str));
+```
+- str의 문자열의 길이 출력
+```c
+	my_strcpy(copy, str);
+	printf("복사한 문자열: %s\n", copy);
+```
+- copy에 저장한 복붙한 문자열을 출력 
+```c
+	my_strcat(mystr, str);
+	printf("이어붙인 문자열: %s\n", mystr);
+```
+- mystr에 저장한 이어붙인 문자열을 출력
+```c
+	return 0;
+```
+- 0을 반환하고 main함수 정상 종료
+
+## size_t
+- 객체의 크기나 바이트 수를 표현하는 부호 없는 정수형. 문자열 길이, 배열의 크기, 메모리 크기를 다룰 때 씀. 서식지정자 %zu
+- 64비트 환경에서 8바이트인데 8바이트를 전부 쓸 수 있는 건 아니라고 함
+
+### 실행결과
+<img width="365" height="103" alt="image" src="https://github.com/user-attachments/assets/3ba7730f-d3d5-49a4-881f-a36d784a242c" />
+
+
