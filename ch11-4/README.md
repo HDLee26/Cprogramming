@@ -101,3 +101,7 @@ int main(void)
 ### 실행결과
 <img width="355" height="83" alt="image" src="https://github.com/user-attachments/assets/84276dc6-32d6-4075-8f3e-4aa361c689af" />
 
+---
+
+# 번외
+- string.h의 strlen, strcpy, strcat 함수를 직접 구현하기
