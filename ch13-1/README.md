@@ -194,6 +194,117 @@ int main(void)
 
 ---
 
+# 실습과제 5
+```c
+#define _CRT_SECURE_NO_WARNINGS // 보안오류방지
+```
+-
+```c
+#pragma warning(disable:6031)  // 리턴값관련 경고 방지
+```
+-
+```c
+#include <stdio.h>
+```
+-
+```c
+int main(void)
+```
+-
+```c
+	double arr[5] = { 0 };
+```
+-
+```c
+	double* ptr = arr; // &arr[0]
+```
+-
+```c
+	int len = sizeof(arr) / sizeof(arr[0]);
+```
+-
+```c
+	int i;
+```
+-
+```c
+	// 입력
+```
+-
+```c
+	for (i = 0; i < len; i++)
+```
+-
+```c
+		printf("%d번째 값 입력: ", i + 1);
+```
+-
+```c
+		scanf("%lf", ptr + i);
+```
+-
+```c
+	// 방식 5개
+```
+-
+```c
+	for (i = 0; i < len; i++)
+```
+-
+```c
+		arr[i] += 2.0;
+```
+-
+```c
+	for (i = 0; i < len; i++)
+```
+-
+```c
+		*(arr + i) += 2.0;
+```
+-
+```c
+	for (i = 0; i < len; i++)
+```
+-
+```c
+		*(ptr + i) += 2.0;
+```
+-
+```c
+	for (i = 0; i < len; i++)
+```
+-
+```c
+		ptr[i] += 2.0;
+```
+-
+```c
+	for (i = 0; i < len; i++)
+```
+-
+```c
+		*ptr++ += 2.0;
+```
+-
+```c
+	// 출력
+```
+-
+```c
+	for (i = 0; i < len; i++)
+```
+-
+```c
+		printf("arr[%d] = %f\n", i, arr[i]);
+```
+-
+```c
+	return 0;
+```
+
+### 실행결과
+<img width="259" height="237" alt="image" src="https://github.com/user-attachments/assets/8c4cf841-ac9f-4193-8541-f7255276efef" />
 
 
 
