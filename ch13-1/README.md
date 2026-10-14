@@ -123,6 +123,71 @@ int main(void)
 ---
 
 # 실습과제 4
+- 포인터 변수의 증감연산을 통해 배열의 요소에 접근한다
+```c
+#define _CRT_SECURE_NO_WARNINGS
+```
+- VS scanf 함수 보안 경고 방지용
+```c
+#pragma warning(disable:6031)
+```
+- 리턴값 관련 경고 방지용
+```c
+#include <stdio.h>
+```
+- 헤더파일 stdio.h을 포함하라
+```c
+int main(void)
+```
+- 메인함수 시작
+```c
+	double arr[5] = { 0 };
+```
+- 실수 5개 저장할 배열 선언
+```c
+	double* ptr = NULL;
+```
+- 배열 arr의 첫번째 요소를 가리키게 할 포인터 선언
+```c
+	int len = sizeof(arr) / sizeof(arr[0]);
+```
+- 배열의 길이를 구함 
+```c
+	int i;
+```
+- 루프문 제어변수
+```c
+	ptr = arr;
+```
+- 포인터 ptr을 배열의 첫 번째 원소의 주소로 초기화
+```c
+	for (i = 0; i < len; i++)
+		printf("%d번째 값 입력: ", i+1);
+		scanf("%lf", ptr++);
+```
+- 포인터 변수 ptr의 증감연산을 통해 입력 받은 실수들을 차례로 배열 arr에 저장. 
+```c
+	ptr = arr;
+```
+- 포인터 ptr을 배열의 첫 번째 원소의 주소로 초기화
+```c
+	for (i = 0; i < len; i++)
+		*ptr++ += 2.0;
+```
+- 포인터 변수 ptr의 증감연산을 통해 저장된 값들마다 2.0씩 더한다.
+```c
+	ptr = arr;
+```
+- 포인터 ptr을 배열의 첫 번째 원소의 주소로 초기화
+```c
+	for (i = 0; i < len; i++)
+		printf("arr[%d] = %f\n", i, *(ptr++));
+```
+- 포인터 변수 ptr의 증감연산과 간접참조연산을 통해 값을 출력 
+```c
+	return 0;
+```
+- 0을 반환하고 main 함수 정상 종료
 
 ### 실행결과
 <img width="261" height="225" alt="image" src="https://github.com/user-attachments/assets/2e118184-5deb-46d0-83b0-e996a051dcec" />
