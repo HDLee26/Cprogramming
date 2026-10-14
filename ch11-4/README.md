@@ -7,61 +7,51 @@
 
 # 실습과제 2
 ```c
-// 키보드로부터 입력 받은 문자를 출력하는 프로그램
-```
--
-```c
 #define _CRT_SECURE_NO_WARNINGS
 ```
--
+- VS scanf 함수 보안 경보 방지용
 ```c
 #pragma warning(disable:6031)
 ```
--
+- 리턴값 관련 경고 방지용
 ```c
 #include <stdio.h>
 ```
--
+- stdio.h 헤더파일을 포함하라
 ```c
 int main(void)
 ```
--
+- main함수 시작
 ```c
 	char ch;
 ```
--
+- 문자 저장할 변수 ch 선언
 ```c
 	while (1)
 ```
--
+- 무한루프 구성 시작
 ```c
 		printf("문자 입력: ");
-```
--
-```c
 		scanf(" %c", &ch);
-```
--
-```c
 		printf("입력한 문자 : %c | 아스키코드 : %d\n", ch, ch);
 ```
--
-```c
-		// 탈출 조건
-```
--
+- 입력 받은 문자와 그 아스키코드를 출력
+- 입력 버퍼에 남은 공백 문자를 무시하기 위해 scanf에 " %c"로 작성
+
 ```c
 		if ((ch == 'q') || (ch == 'Q'))
-```
--
-```c
 			printf("프로그램 종료\n");
-```
--
-```c
 			break;
 ```
--
+- 무한루프 탈출 조건. 입력 받은 문자가 q 혹은 Q이면 탈출.
 ```c
 	return 0;
 ```
+- 0을 반환하고 main 함수 정상 종료
+
+### 실행결과
+<img width="307" height="297" alt="image" src="https://github.com/user-attachments/assets/92ba31be-a8ff-4d87-8b15-232e32e5cad6" />
+
+---
+
+
