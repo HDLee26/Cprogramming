@@ -195,114 +195,82 @@ int main(void)
 ---
 
 # 실습과제 5
+- 배열 각 요소들에 접근하는 5가지 방법을 통해 값을 증가시켰다
 ```c
-#define _CRT_SECURE_NO_WARNINGS // 보안오류방지
+#define _CRT_SECURE_NO_WARNINGS
 ```
--
+- VS scanf 함수 보안 경고 방지용
 ```c
-#pragma warning(disable:6031)  // 리턴값관련 경고 방지
+#pragma warning(disable:6031)
 ```
--
+- 리턴값 관련 경고 방지용
 ```c
 #include <stdio.h>
 ```
--
+- 헤더파일 stdio.h을 포함하라
 ```c
 int main(void)
 ```
--
+- 메인함수 시작
 ```c
 	double arr[5] = { 0 };
 ```
--
+- 실수 5개 저장할 배열 선언
 ```c
 	double* ptr = arr; // &arr[0]
 ```
--
+- 배열 arr의 첫번째 요소를 가리키는 포인터 선언
 ```c
 	int len = sizeof(arr) / sizeof(arr[0]);
 ```
--
+- 배열 arr의 길이를 구함
 ```c
 	int i;
 ```
--
-```c
-	// 입력
-```
--
+- 루프문 제어변수
+
 ```c
 	for (i = 0; i < len; i++)
-```
--
-```c
 		printf("%d번째 값 입력: ", i + 1);
-```
--
-```c
 		scanf("%lf", ptr + i);
 ```
--
-```c
-	// 방식 5개
-```
--
+- 포인터 변수에 덧셈 연산으로 입력 받은 값을 차례로 배열에 저장
+
 ```c
 	for (i = 0; i < len; i++)
-```
--
-```c
 		arr[i] += 2.0;
 ```
--
+- 방식1 : 배열 인덱스 연산
 ```c
 	for (i = 0; i < len; i++)
-```
--
-```c
 		*(arr + i) += 2.0;
 ```
--
+- 방식2 : 배열명을 이용한 포인터 연산
 ```c
 	for (i = 0; i < len; i++)
-```
--
-```c
 		*(ptr + i) += 2.0;
 ```
--
+- 포인터 연산 (덧셈, 간접참조)
 ```c
 	for (i = 0; i < len; i++)
-```
--
-```c
 		ptr[i] += 2.0;
 ```
--
+- 포인터를 이용해 배열처럼 인덱스 연산
 ```c
 	for (i = 0; i < len; i++)
-```
--
-```c
 		*ptr++ += 2.0;
 ```
--
-```c
-	// 출력
-```
--
+- 포인터 연산 (증감, 간접참조)
+
 ```c
 	for (i = 0; i < len; i++)
-```
--
-```c
 		printf("arr[%d] = %f\n", i, arr[i]);
 ```
--
+- 배열에 최종적으로 저장된 값을 차례로 출력
 ```c
 	return 0;
 ```
-
+- 0을 반환하고 main함수 정상 종료
 ### 실행결과
 <img width="259" height="237" alt="image" src="https://github.com/user-attachments/assets/8c4cf841-ac9f-4193-8541-f7255276efef" />
 
