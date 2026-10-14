@@ -27,12 +27,15 @@ int main(void)
 	// 각 요소 2.0 증가
 	ptr = arr;
 	for (i = 0; i < len; i++)
+	{
 		*ptr++ += 2.0;
+		//ptr++;
+	}
 
 	// 출력
 	ptr = arr;
 	for (i = 0; i < len; i++)
-		printf("arr[%d] = %f\n", i, arr[i]);
+		printf("arr[%d] = %f\n", i, *(ptr++));
 
 	return 0;
 }
