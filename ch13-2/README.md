@@ -234,5 +234,8 @@ int main(void)
 ```
 - 0을 반환하고 main함수 정상 종료
 
+### 실행결과
+<img width="320" height="66" alt="image" src="https://github.com/user-attachments/assets/7f055282-da68-4a29-b575-0e837834bc0b" />
+
 
 
