@@ -32,50 +32,34 @@ char s[50] = { 0 };
 ```
 - 문자열을 저장하기 위한 문자형 배열 s 선언 및 NULL 문자로 초기화
 ```c
-int i, cnt;
+int cnt;
 ```
-- 정수형 변수 i와 cnt 선언
+- 문자열의 길이를 저장할 변수 cnt 선언
 ```c
 printf("문자열을 입력하시오: ");
-```
-
-```c
-scanf("%s", s);
+scanf("%[^\n]s", s);
 ```
 - 입력된 문자열을 배열 s에 저장. 배열명 s가 주소이므로 &연산은 불필요
+
 ```c
-// 문자열 길이 구하기
-```
-```c
-i = 0, cnt = 0;
-```
-```c
+cnt = 0;
 while (s[i] != '\0')
+  cnt++;
 ```
-- 문자형 배열 s에 저장된 문자가 
-```c
-i++;
-```
-- NULL 문자가 아닌 동안
-```c
-cnt++;
-```
-- cnt를 증가시켜 문자열의 길이를 구함
+- char형 배열 s에 저장된 문자가 NULL 문자가 아닌 동안 cnt를 증가시켜 문자열의 길이를 구함
 ```c
 for (int i = 0; i < cnt; i++)
+  printf("%d번재 문자 %c\n", i+1, s[i]);
 ```
-- 문자를 각각 출력하기 위한 반복문
-```c
-printf("%d번재 문자 %c\n", i+1, s[i]);
-```
-- 입력받은 문자열을 각 문자별로 출력
+- 저장된 문자열을 문자별로 각각 출력
 ```c
 return 0;
 ```
 - 0을 반환하고 main함수 정상 종료
 
-## 실행결과
-<img width="263" height="183" alt="image" src="https://github.com/user-attachments/assets/11592ba6-aa99-437f-a6d2-8204fe0c38ad" />
+### 실행결과
+<img width="305" height="277" alt="image" src="https://github.com/user-attachments/assets/d5de9b0b-a33f-4ba9-b24b-6985bd0c73d8" />
+
 
 ---
 
