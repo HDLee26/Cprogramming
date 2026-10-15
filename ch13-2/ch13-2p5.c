@@ -1,0 +1,23 @@
+// string.h 없이 각 문자열의 첫 글자들 중에서 최소값을 찾는 프로그램
+// 완전한 사전식 순서가 아님
+#include <stdio.h>
+
+int main(void)
+{
+	// 문자열 배열 (포인터 배열)
+	char* fruits[] = { "banana", "apple", "orange", "melon" };
+	size_t len = sizeof(fruits) / sizeof(fruits[0]); // 32 ÷ 8
+	const char* first; // 문자열을 저장할 char* 포인터
+
+	first = fruits[0];
+	for (size_t i = 1; i < len; i++)
+	{
+		// 비교할 때는 문자열의 첫 글자를 꺼내서, 결과 저장은 첫 글자의 주소로.
+		if (*fruits[i] < *first) 
+			first = fruits[i];
+	}
+
+	printf("사전에서 가장 앞에 나오는 단어: %s\n", first);
+
+	return 0;
+}
