@@ -167,13 +167,13 @@ int main(void)
 int main(void)
 {
     // 각 문자열의 첫글자의 주소가 포인터 배열에 저장됨
-    char * strArr[] = {"Simple", "String", "Array"};
-    int len = sizeof(strArr) / sizeof(strArr[0]);
+    char* strArr[] = { "Simple", "String", "Array" };
+    size_t len = sizeof(strArr) / sizeof(strArr[0]);
 
     printf("주소 | 값 \n");
-    for (int i = 0; i < len; i++)
+    for (size_t i = 0; i < len; i++)
         printf("%p | %s \n", strArr[i], strArr[i]);
-    
+
     return 0;
 }
 ```
