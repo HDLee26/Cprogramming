@@ -12,21 +12,19 @@
 int main(void)
 {
 	char s[50] = { 0 };
-	int i, cnt;
+	int len;
 
-	printf("문자열 입력: ");
+	printf("문자열 입력(대소문자만 이용): ");
 	scanf("%s", s);
 
 	// 문자열 길이 구하기
-	i = 0, cnt = 0;
-	while (s[i] != '\0')
-	{
-		i++;
-		cnt++;
-	}
+	len = 0;
+	while (s[len] != '\0')
+		len++;
+	
 
 	// 대->소, 소->대
-	for (int i = 0; i < cnt; i++)
+	for (int i = 0; i < len; i++)
 	{
 		if (s[i] >= 65 && s[i] <= 90)
 			s[i] += 32;
@@ -38,5 +36,4 @@ int main(void)
 	printf("%s", s);
 
 	return 0;
-
 }
