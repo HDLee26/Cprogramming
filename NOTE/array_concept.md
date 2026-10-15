@@ -141,22 +141,22 @@ int main(void)
     double num5 = 1.1, num6 = 2.2, num7 = 3.3, num8 = 4.4;
     int* arr1[4] = { &num1, &num2, &num3, &num4 }; // 주소를 저장
     double* arr2[4] = { &num5, &num6, &num7, &num8 };
-    int len1 = sizeof(arr1) / sizeof(arr1[0]);
-	int len2 = sizeof(arr2) / sizeof(arr2[0]);
+    size_t len1 = sizeof(arr1) / sizeof(arr1[0]);
+    size_t len2 = sizeof(arr2) / sizeof(arr2[0]);
+    size_t i;
 
     printf("주소 | 값\n");
-    for (int i = 0; i < len1; i++)
+    for (i = 0; i < len1; i++)
         printf("%p | %d \n", arr1[i], *arr1[i]);
     putchar('\n');
 
     printf("주소 | 값\n");
-    for (int i = 0; i < len2; i++)
+    for (i = 0; i < len2; i++)
         printf("%p | %f \n", arr2[i], *arr2[i]);
     putchar('\n');
 
     return 0;
 }
-
 ```
 
 # 문자열 배열
