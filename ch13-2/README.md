@@ -271,9 +271,11 @@ return 0;
 ```
 - 0을 반환하고 프로그램 정상 종료
 
-## 실행 결과
-<img width="241" height="105" alt="image" src="https://github.com/user-attachments/assets/b5c2520c-a8ca-436a-90a4-54e5a899ba56" />
-<img width="270" height="94" alt="image" src="https://github.com/user-attachments/assets/c7a71d80-44c9-41a9-9fe6-029f399a838a" />
-<img width="283" height="100" alt="image" src="https://github.com/user-attachments/assets/3fe81752-9d03-4642-9fc9-056ab486d353" />
+### 실행 결과
+<img width="290" height="103" alt="image" src="https://github.com/user-attachments/assets/3a082f47-9142-4de1-b58b-bb81ffffaa72" />
+<img width="312" height="107" alt="image" src="https://github.com/user-attachments/assets/83e14e22-4203-4dd0-91ac-1ca7772d59ed" />
+<img width="301" height="103" alt="image" src="https://github.com/user-attachments/assets/6f77c6ed-04ef-4294-a076-49440b99d11e" />
+
+
 
 
