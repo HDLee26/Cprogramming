@@ -75,7 +75,7 @@ for (int i = 0; i < 1000; i++) {
 - 이름 같은 것들 길어야 10글자임. 혹시 몰라 100글자 담을 수 있게 1000명 분을 정적 배열로 준비하면 ```char names[1000][100];``` 무려 100 KB를 무조건 써야 함.
 - 동적할당과 함수로 임시 그릇 100 B를 1000번 재사용할 수 있음. 메모리 절약.
 
-## char형 포인터 (상수 형태의 문자열)
+## char*형 포인터 (상수 형태의 문자열)
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -97,7 +97,7 @@ int main(void)
     return 0;
 }
 ```
-### char형 배열과 char형 포인터의 차이
+### char형 배열과 char*형 포인터의 차이
 <img width="368" height="198" alt="image" src="https://github.com/user-attachments/assets/1ea65899-bf18-4d30-b201-71b5ef3395e2" />
 
 - arr[]은 문자열 전체를 배열에 저장한 것이고, 
