@@ -192,6 +192,47 @@ int main(void)
 <img width="312" height="107" alt="image" src="https://github.com/user-attachments/assets/83e14e22-4203-4dd0-91ac-1ca7772d59ed" />
 <img width="301" height="103" alt="image" src="https://github.com/user-attachments/assets/6f77c6ed-04ef-4294-a076-49440b99d11e" />
 
+---
+
+# 실습과제 5
+```c
+#include <stdio.h>
+```
+- stdio.h 헤더파일을 포함하라
+```c
+int main(void)
+```
+- main함수 시작
+```c
+	char* fruits[] = { "banana", "apple", "orange", "melon" };
+```
+- 과일 이름 4개가 든 문자열 배열 선언
+```c
+	size_t len = sizeof(fruits) / sizeof(fruits[0]); // 32 ÷ 8
+```
+- 배열의 길이를 저장할 변수 선언
+```c
+	const char* first; 
+```
+- 문자열의 첫글자의 주소를 저장할 char* 포인터. const char*은 가리키는 문자열의 내용을 수정하지 않겠다는 의미.
+```c
+	first = fruits[0];
+```
+- first가 첫 번째 문자열을 가리키게 함
+```c
+	for (size_t i = 1; i < len; i++)
+		if (*fruits[i] < *first)
+			first = fruits[i];
+```
+- 비교할 때는 문자열의 첫 글자를 꺼내서, 결과 저장은 첫 글자의 주소로.
+```c
+	printf("사전에서 가장 앞에 나오는 단어: %s\n", first);
+```
+- 결과 출력
+```c
+	return 0;
+```
+- 0을 반환하고 main함수 정상 종료
 
 
 
