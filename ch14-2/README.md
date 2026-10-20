@@ -216,5 +216,19 @@ void get_wnpdec(double num, int* wnp, double* dec)
 ### 실행결과
 <img width="275" height="99" alt="image" src="https://github.com/user-attachments/assets/37072c75-f870-4d2f-91c4-f4b26d81badf" />
 
+---
+
+# 실습과제 5
+- 아래에 정의된 함수는 인자로 전달되는 정보를 참조하여 int형 배열요소 전체를 출력하는 함수이다. 매개변수 arr을 대상으로 const 선언을 한 이유는 무엇이겠는가?
+```c
+void ShowAllData(const int* arr, int len)
+{
+  int i;
+  for(i = 0; i<len; i++)
+    printf("%d ", arr[i]);
+}
+```
+- int* 앞에 const 선언을 한 것은 이 함수는 배열의 요소를 출력할 뿐 포인터 연산으로 값을 변경하는 일은 없기 때문에 막아둔 것이다. arr 앞에 const 선언이 없는 것은 가리키는 주소가 배열의 요소들을 순환하며 계속 바뀌기 때문이다.  
+
 
 
