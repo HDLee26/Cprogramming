@@ -6,7 +6,7 @@
 
 #include <stdio.h>
 
-void addMatrix(int*, int*, int*); // int matrix[][2]
+void addMatrix(int*, int*, int*);
 void printMatrix(int*);
 
 int main(void)
