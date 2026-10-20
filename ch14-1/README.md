@@ -225,13 +225,13 @@ tmp = *px;
 ```
 - stdio.h 헤더파일을 포함하라
 ```c
-void SquareByValue(int);
+void AddByValue(int);
 ```
-- SquareByValue함수 선언
+- AddByValue함수 선언
 ```c
-void SquareByPointer(int*);
+void AddByPointer(int*);
 ```
-- SquareByPointer 함수 선언
+- AddByPointer 함수 선언
 ```c
 int main(void)
 ```
@@ -249,7 +249,7 @@ scanf("%d", &num);
 ```
 - 정수를 입력 받아 num에 저장
 ```c
-SquareByValue(num);
+AddByValue(num);
 ```
 - SquareByValue함수 호출
 ```c
@@ -257,7 +257,7 @@ printf("값에 의한 호출로 바꾼 값: %d\n", num);
 ```
 - 값 변화 확인 - 변하지 않음
 ```c
-SquareByPointer(&num);
+AddByPointer(&num);
 ```
 - SquareByPointer 함수 호출
 ```c
@@ -269,7 +269,7 @@ return 0;
 ```
 - 0을 반환하고 main 함수 정상 종료
 ```c
-void SquareByValue(int value)
+void AddByValue(int value)
 ```
 - SquareByValue 함수 정의부. 반환형 없음
 ```c
@@ -277,11 +277,11 @@ value += 100;
 ```
 - value에 100을 더하고 저장
 ```c
-void SquareByPointer(int* ptr)
+void AddByPointer(int* ptr)
 ```
 - SquareByPointer 함수 정의부. 반환형 없음
 ```c
 *ptr += 100;
 ```
 - 간접참조연산자를 이용해 ptr가 가리키는 변수의 값에 100을 더하고 저장
-
+- AddByValue 함수는 매개변수에 인자의 값을 복사해 받아 매개변수에 100을 더했으므로 num에 아무런 영향이 없지만 AddByPointer 함수는 인자로 num의 주소를 넘기고 간접참조연산을 통해 num의 값을 변경했다.
