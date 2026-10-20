@@ -4,11 +4,9 @@
 ```
 - stdio.h 헤더파일을 포함하라
 ```c
-void addMatrix(int*, int*, int*); // int matrix[][2]
+void addMatrix(int*, int*, int*); 
 ```
 - 행렬의 합 구하는 함수 선언
-- 매개변수로 int* matrix와 int matrix[][2]는 같은 동작을 함
-- int matrix[][2]는 열이 2개인 이차원 배열을 받는 매개변수임
 ```c
 void printMatrix(int*);
 ```
@@ -19,12 +17,9 @@ int main(void)
 - main 함수 시작
 ```c
 	int m1[2][2] = { {2,4}, {5, -5} };
-```
-- 행렬1
-```c
 	int m2[2][2] = { {-2, 3}, {0, -5} };
 ```
-- 행렬 2
+- 연산할 행렬 선언 및 초기화
 ```c
 	int msum[2][2] = { 0 };
 ```
