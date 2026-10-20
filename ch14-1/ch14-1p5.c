@@ -9,8 +9,8 @@
 
 #include <stdio.h>
 
-void SquareByValue(int);
-void SquareByPointer(int*);
+void AddByValue(int);
+void AddByPointer(int*);
 
 int main(void)
 {
@@ -18,19 +18,19 @@ int main(void)
 	printf("정수를 입력하시오: ");
 	scanf("%d", &num);
 
-	SquareByValue(num);
+	AddByValue(num);
 	printf("값에 의한 호출로 바꾼 값: %d\n", num);
-	SquareByPointer(&num);
+	AddByPointer(&num);
 	printf("주소에 의한 호출로 바꾼 값: %d\n", num);
 
 	return 0;
 }
 
-void SquareByValue(int value)
+void AddByValue(int value)
 {
 	value += 100;
 }
-void SquareByPointer(int* ptr)
+void AddByPointer(int* ptr)
 {
 	*ptr += 100;
 }
