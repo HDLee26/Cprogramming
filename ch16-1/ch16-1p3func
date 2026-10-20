@@ -4,13 +4,14 @@
 // 작성 : 2600160 이현도
 // ***************************
 
+// 나중에 배열 포인터로도 해볼것
 #define _CRT_SECURE_NO_WARNINGS
 #pragma warning(disable:6031)
 
 #include <stdio.h>
 
-void inputMatrix(int* m); // int m[][3]
-void getMax(int* m, int* max, int* row, int* col); // int m[][3]
+void inputMatrix(int m[][3]);
+void getMax(int m[][3], int* max, int* row, int* col);
 void printResult(int max, int row, int col);
 
 int main(void)
@@ -20,37 +21,37 @@ int main(void)
 	int max;
 	int row, col;
 
-	inputMatrix(&m[0][0]); // m
-	getMax(m, &max, &row, &col);
+	inputMatrix(&m[0][0]); 
+	getMax(&m[0][0], &max, &row, &col);
 	printResult(max, row, col);
 
 	return 0;
 }
 // 3x3 행렬에 값을 넣는 함수
-void inputMatrix(int* m) // int m[][3]
+void inputMatrix(int m[][3])
 {
 	for (int i = 0; i < 3; i++)
 	{
 		for (int j = 0; j < 3; j++)
 		{
 			printf("%d행 %d열 원소 입력: ", i + 1, j + 1);
-			scanf("%d", m + j + 3 * i); // &m[i][j]
+			scanf("%d", &m[i][j]); 
 		}
 	}
 }
 // 최댓값과 위치를 찾는 함수
-void getMax(int* m, int* max, int* row, int* col) // int m[][3]
+void getMax(int m[][3], int* max, int* row, int* col) 
 {
-	*max = *m; // m[0][0]
+	*max = m[0][0];
 	*row = 1, *col = 1;
 
 	for (int i = 0; i < 3; i++)
 	{
 		for (int j = 0; j < 3; j++)
 		{
-			if (*(m + j + 3 * i) > *max) // m[i][j]
+			if (m[i][j] > *max) // *(m + j + 3 * i)
 			{
-				*max = *(m + j + 3 * i); // m[i][j]
+				*max = m[i][j]; // *(m + j + 3 * i)
 				*row = i + 1;
 				*col = j + 1;
 			}
