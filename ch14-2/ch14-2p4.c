@@ -22,7 +22,7 @@ int main(void)
 	get_wnpdec(input, &wnp, &dec);
 
 	printf("정수부: %d\n", wnp);
-	printf("소수부: %lf\n", dec);
+	printf("소수부: %f\n", dec);
 
 	return 0;
 }
