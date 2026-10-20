@@ -223,9 +223,9 @@ void get_wnpdec(double num, int* wnp, double* dec)
 ```c
 void ShowAllData(const int* arr, int len)
 {
-  int i;
-  for(i = 0; i<len; i++)
-    printf("%d ", arr[i]);
+    int i;
+    for(i = 0; i<len; i++)
+        printf("%d ", arr[i]);
 }
 ```
 - int* 앞에 const 선언을 한 것은 이 함수는 배열의 요소를 출력할 뿐 포인터 연산으로 값을 변경하는 일은 없기 때문에 막아둔 것이다. arr 앞에 const 선언이 없는 것은 가리키는 주소가 배열의 요소들을 순환하며 계속 바뀌기 때문이다.  
