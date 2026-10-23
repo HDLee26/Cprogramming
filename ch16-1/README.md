@@ -65,9 +65,118 @@ void printMatrix(int* m)
 
 ---
 
-＃ 실습과제 2
+# 실습과제 2
+```c
+#define _CRT_SECURE_NO_WARNINGS
+```
+- VS scanf 함수 보안 경보 방지용
+```c
+#pragma warning(disable:6031)
+```
+- 리턴값 관련 경고 방지용
+```c
+#include <stdio.h>
+```
+- stdio.h 헤더파일을 포함하라
+```c
+void inputScores(int scores[][3]);
+```
+- 이차원 배열에 세 학생의 성적을 입력하는 함수
+```c
+double getAverage(int std_scores[], int cnt);
+```
+-각 학생의 세 과목의 평균을 구하는 함수
+```c
+void getFirstStudent(int scores[][3], double avg[], int* topStudent, double* topAvg);
+```
+- 평균 최고 점수와 그 학생의 인덱스를 포인터를 통해 넘기는 함수
+```c
+int main(void)
+```
+- main 함수 시작
+```c
+	int scores[3][3] = { 0 };
+```
+- 점수를 저장할 이차원 배열
+```c
+	double avg[3] = { 0 };
+```
+- 각 학새의 평균을 저장할 배열
+```c
+	int topStudent;
+```
+- 최고 평균 학생의 인덱스 저장할 변수
+```c
+	double topAvg;
+```
+- 최고 평균 점수를 저장할 변수
+```c
+	inputScores(scores);
+```
+- 점수 입력 받는 함수 호출
+```c
+	getFirstStudent(scores, avg, &topStudent, &topAvg);
+```
+- 평균 최고 점수와 그 학생의 인덱스를 구하는 함수 호출
+```c
+	printf("최우수 학생은 %d번째 학생이고 평균 점수는 %.2f점이다.\n", topStudent + 1, topAvg);
+``` 
+- 결과 출력
+```c
+	return 0;
+```
+- 0을 반환하고 main 함수 정상 종료
+```c
+void inputScores(int scores[][3])
+```
+- 이차원 배열에 세 학생의 성적을 입력하는 함수 정의 시작
+```c
+	for (int i = 0; i < 3; i++)
+		printf("%d번째 학생의 국어, 영어, 수학 성적을 입력: ", i + 1);
+		for (int j = 0 ; j < 3; j++)
+			scanf("%d", &scores[i][j]);
+```
+- 이차원 배열에 점수를 입력 받는 이중루프 i-학생(행) j-과목(열)
+```c
+void getFirstStudent(int scores[][3], double avg[], int* topStudent, double* topAvg)
+```
+- 평균 최고 점수와 그 학생의 인덱스를 포인터를 통해 넘기는 함수 정의 시작
+```c
+	for (int i = 0; i < 3; i++)
+		avg[i] = getAverage(scores[i], 3);
+```
+- i번째 학생의 점수가 든 행을 넘기고 반환된 평균 점수를 받아서 저장
+```c
+	*topStudent = 0;
+	*topAvg = avg[0];
+```
+- 인덱스 0번째 학생의 평균으로 임시 초기화
+```c
+	for (int i = 1; i < 3; i++)
+		if (avg[i] > *topAvg) {
+			*topAvg = avg[i];
+			*topStudent = i;
+		}
+```
+- 최고 평균 점수와 그 학생의 인덱스를 구함
+```c
+double getAverage(int std_scores[], int cnt)
+```
+- 세 과목의 평균을 구하는 함수 정의 시작
+```c
+	int sum = 0;
+	for (int i = 0; i < cnt; i++)
+		sum += std_scores[i];
+```
+- 학생 한 명의 세 과목의 합을 구함
+```c
+	return (double)sum / cnt;
+```
+- 평균을 구해서 반환함
+
 
 ### 실행결과
+<img width="445" height="123" alt="image" src="https://github.com/user-attachments/assets/01abf41f-f250-4880-bfc3-b909d58ef40c" />
 
 ---
 
