@@ -277,4 +277,8 @@ void getMaxIndex(int matrix[][COL], int* max, int* row, int* col)
 
 ---
 
+# 실습과제 4
+
+### 실행결과
+<img width="260" height="181" alt="image" src="https://github.com/user-attachments/assets/bfeee4cc-9683-428f-9650-4f69c93dc6cd" />
 
