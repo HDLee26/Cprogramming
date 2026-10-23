@@ -278,6 +278,81 @@ void getMaxIndex(int matrix[][COL], int* max, int* row, int* col)
 ---
 
 # 실습과제 4
+```c
+#define _CRT_SECURE_NO_WARNINGS
+```
+- VS scanf 함수 보안 경보 방지용
+```c
+#pragma warning(disable:6031)
+```
+- 리턴값 관련 경고 방지용
+```c
+#include <stdio.h>
+```
+- stdio.h 헤더파일을 포함하라
+```c
+void input(char arr[][11], int n);
+```
+- 각 행에 문자열을 입력받는 함수 선언
+```c
+void get_strlen(char arr[][11], int n);
+```
+- 각 문자열의 길이를 구하는 함수 선언
+```c
+int main(void)
+```
+- main 함수 시작
+```c
+	char strs[4][11] = { '\0' };
+```
+- 10글자짜리 문자열 4개 저장할 이차원 배열
+```c
+	int rows = sizeof(strs) / sizeof(strs[0]);
+```
+- 문자열의 개수 저장할 변수
+```c
+	input(strs, rows);
+	get_strlen(strs, rows);
+```
+- 각 행에 문자열을 입력받는 함수 호출
+- 각 문자열의 길이를 구하는 함수 호출
+```c
+	return 0;
+```
+- 0을 반환하고 main 함수 정상 종료
+```c
+void input(char arr[][11], int n)
+```
+- 각 행에 문자열을 입력받는 함수 정의
+```c
+	for (int i = 0; i < n; i++) {
+		printf("%d번째 문자열 입력: ", i + 1);
+		scanf("%10s", &arr[i][0]);
+	}
+```
+- i번째 행의 시작 주소부터 최대 10개의 문자를 입력 받음
+```c
+void get_strlen(char arr[][11], int n)
+```
+- 각 문자열의 길이를 구하는 함수 정의
+```c
+	for (int i = 0; i < n; i++)
+		int len = 0;
+```
+-
+```c
+		for (int j = 0; arr[i][j] != '\0'; j++)
+```
+-
+```c
+			len++;
+```
+-
+```c
+		printf("%d번 문자열의 길이: %d\n", i + 1, len);
+```
+-
+
 
 ### 실행결과
 <img width="260" height="181" alt="image" src="https://github.com/user-attachments/assets/bfeee4cc-9683-428f-9650-4f69c93dc6cd" />
