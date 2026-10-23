@@ -81,15 +81,15 @@ void printMatrix(int* m)
 ```c
 void inputScores(int scores[][3]);
 ```
-- 이차원 배열에 세 학생의 성적을 입력하는 함수
+- 이차원 배열에 세 학생의 성적을 입력하는 함수 선언
 ```c
 double getAverage(int std_scores[], int cnt);
 ```
--각 학생의 세 과목의 평균을 구하는 함수
+-각 학생의 세 과목의 평균을 구하는 함수 선언
 ```c
 void getFirstStudent(int scores[][3], double avg[], int* topStudent, double* topAvg);
 ```
-- 평균 최고 점수와 그 학생의 인덱스를 포인터를 통해 넘기는 함수
+- 평균 최고 점수와 그 학생의 인덱스를 포인터를 통해 넘기는 함수 선언
 ```c
 int main(void)
 ```
@@ -101,7 +101,7 @@ int main(void)
 ```c
 	double avg[3] = { 0 };
 ```
-- 각 학새의 평균을 저장할 배열
+- 각 학생의 평균을 저장할 배열
 ```c
 	int topStudent;
 ```
@@ -181,6 +181,96 @@ double getAverage(int std_scores[], int cnt)
 ---
 
 # 실습과제 3
+```c
+#define _CRT_SECURE_NO_WARNINGS
+```
+- VS scanf 함수 보안 경보 방지용
+```c
+#pragma warning(disable:6031)
+```
+- 리턴값 관련 경고 방지용
+```c
+#include <stdio.h>
+```
+- stdio.h 헤더파일을 포함하라
+```c
+#define ROW 3
+#define COL 3
+```
+- 배열의 행과 열을 각각 3으로 정의
+```c
+void input(int matrix[][COL]);
+```
+- 배열에 값을 입력 받는 함수 선언
+```c
+void getMaxIndex(int matrix[][COL], int* max, int* row, int* col);
+```
+- 입력 받는 배열에서 최댓값과 그 위치(행과 열)를 포인터를 통해 넘기는 함수 선언
+```c
+int main(void)
+```
+- main 함수 시작
+```c
+	int m[ROW][COL] = { 0 };
+	int max;
+	int mrow, mcol;
+```
+- 입력 받은 값을 저장할 이차원 배열
+- 최댓값을 저장할 변수
+- 위치를 저장할 변수들
+```c
+	input(m);
+```
+- 배열에 값을 입력 받는 함수 호출
+```c
+	getMaxIndex(m, &max, &mrow, &mcol);
+```
+- 입력 받은 배열에서 최댓값과 그 위치를 찾는 함수 호출
+```c
+	printf("최댓값: %d\n", max);
+	printf("위치: %d행 %d열\n", mrow, mcol);
+```
+- 결과 출력
+```c
+	return 0;
+```
+- 0을 반환하고 main 함수 정상 종료
+```c
+void input(int matrix[][COL])
+```
+- 한 행마다 COL개의 정수를 입력 받는 함수 정의
+```c
+	for (int i = 0; i < ROW; i++)
+		printf("%d행 원소 %d개 입력: ", i + 1, COL);
+```
+- 한 행마다 안내문 출력하고
+```c
+		for (int j = 0; j < COL; j++)
+			scanf("%d", &matrix[i][j]);
+```
+- 지정된 열 개수만큼 값 입력 받음
+```c
+void getMaxIndex(int matrix[][COL], int* max, int* row, int* col)
+```
+- 최댓값과 위치 찾는 함수 정의
+```c
+	*max = matrix[0][0];
+	*row = 1;
+	*col = 1;
+```
+- 최댓값을 첫번째 원소의 값으로 임시 저장
+- 위치를 1행 1열로 임시 저장
+```c
+	for (int i = 0; i < ROW; i++)
+		for (int j = 0; j < COL; j++)
+			if (matrix[i][j] > *max) {
+				*max = matrix[i][j];
+				*row = i + 1;
+				*col = j + 1;
+			}
+```
+- 배열의 원소들 중에서 최댓값과 그 위치를 찾음
+
 
 ### 실행결과
 <img width="255" height="161" alt="image" src="https://github.com/user-attachments/assets/b086e0e2-9dcb-4b84-9646-fc62de911d2a" />
