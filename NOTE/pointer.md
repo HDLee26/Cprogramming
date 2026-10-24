@@ -161,7 +161,7 @@ int main(void)
 	- 다른 함수에 있는 포인터 변수에 든 주소값을 변경하는 경우
 	- 함수의 인자로 포인터 배열을 넘기는 경우 매개변수는 이중 포인터로
  
-### 함수의 매개변수
+## 함수의 매개변수
 - 함수의 인자로 포인터 배열을 넘기는 경우 매개변수는 이중 포인터로 선언해야 함
 - 배열명: 첫 번째 원소의 주소 -> 첫 번째 원소가 주소값, 주소값의 주소 -> 이중포인터
 ```c
@@ -172,7 +172,7 @@ void print(int** ptrarr, size_t len) { // void print(int* ptrarr[])  ㄱ
 		printf("%d ", **(ptrarr + i)); // *ptrarr[i]  ㄴ1
 	putchar('\n');
 }
-void prn_str(char* strarr, size_t len) { // void prn_str(char* strarr[])  ㄱ
+void prn_str(char** strarr, size_t len) { // void prn_str(char* strarr[])  ㄱ
 	for (size_t i = 0; i < len; i++)
 		printf("%s\n", *(strarr + i));  // strarr[i]  ㄴ2
 }
@@ -182,8 +182,8 @@ int main(void) {
 	int* ptrarr[] = {&num1, &num2, &num3};         
 	char* strarr[] = { "eagle", "tiger", "lion", "squirrel" };   // ㄷ
 
-	print(ptrarr, sizeof(ptrarr) / sizeof(ptrarr[0]));    
-	prn_str(ptrarr, sizeof(strarr) / sizeof(strarr[0]));  
+	print(ptrarr, sizeof(ptrarr) / sizeof(ptrarr[0]));    // ptrarr -> &ptrarr[0] (int**)
+	prn_str(strarr, sizeof(strarr) / sizeof(strarr[0]));  
 	return 0;
 }
 ```
@@ -192,6 +192,12 @@ int main(void) {
   ```**ptrarr == *ptrarr[0]``` 첫 번째 원소(주소)가 가리키는 값  
 - ㄴ2 출력 서식 문자 %s는 문자열의 시작 위치가 필요함. ```**(ptrarr + i)``` 하면 첫 글자만 나옴(%c)
 - ㄷ 각 문자열의 첫 글자의 주소를 저장함. 고로 포인터 배열.
+### 간략 정리
+|표현|의미|값|
+|---|---|---|
+|ptrarr + i | i 번째 포인터 원소의 주소 | &ptrarr[i]|
+|*(ptrarr + i)| i 번째 원소에 들어있는 주소 | ptrarr[i] |
+|**(ptrarr + i) | 그 주소에 저장된 값 | *ptrarr[i]|
 
 # 배열 포인터
 - 이차원 배열을 함수의 인자로 받을 때 
