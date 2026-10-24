@@ -172,7 +172,7 @@ void print(int** ptrarr, size_t len) { // void print(int* ptrarr[])  ㄱ
 		printf("%d ", **(ptrarr + i)); // *ptrarr[i]  ㄴ1
 	putchar('\n');
 }
-void prn_str(char** strarr, size_t len) { // void prn_str(char* strarr[])  ㄱ
+void prn_str(const char** strarr, size_t len) { // void prn_str(char* strarr[])  ㄱ
 	for (size_t i = 0; i < len; i++)
 		printf("%s\n", *(strarr + i));  // strarr[i]  ㄴ2
 }
