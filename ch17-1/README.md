@@ -84,5 +84,49 @@ int get_max(int* ptrarr[], int len)
 
 ---
 
+# 실습과제 3
+```c
+#include <stdio.h>
+```
+- stdio.h 헤더파일을 포함하라
+```c
+void prn_str(char** ptrarr, int len);
+```
+- 포인터 배열의 문자열을 출력하는 함수 선언
+```c
+int main(void)
+```
+- main 함수 시작
+```c
+	char* ptrarr[] = { "eagle", "tiger", "lion", "squirrel" };
+```
+- 문자열 4개 저장한 포인터 배열
+- 각 원소의 첫 글자의 주소를 저장하므로 포인터 배열이 필요함
+```c
+	size_t len = sizeof(ptrarr) / sizeof(ptrarr[0]);
+```
+- 문자열의 개수를 구함
+```c
+	prn_str(ptrarr, len);
+```
+- 포인터 배열의 문자열을 출력하는 함수 호출
+```c
+	return 0;
+```
+- 0을 반환하고 main 함수 정상 종료
+```c
+void prn_str(char** ptrarr, int len)
+```
+- 포인터 배열의 문자열을 출력하는 함수 정의
+```c
+	for (size_t i = 0; i < len; i++)
+		printf("%s\n", *(ptrarr + i));
+```
+- 각 문자열의 시작 위치를 찾아 문자열 전체 출력
+- **(ptrarr + i) 하면 첫 글자 하나 나옴
+
+### 실행결과
+<img width="218" height="122" alt="image" src="https://github.com/user-attachments/assets/dd6fb188-99bb-4f9a-8848-da9abfc18ad7" />
+
 
 
