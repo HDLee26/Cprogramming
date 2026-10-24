@@ -148,9 +148,11 @@ int main(void)
 {
 	double num = 3.141592;
 	double* ptr = &num;
+	double** dptr = &ptr
 
 	printf("%p\n", ptr);
 	printf("%p\n", &ptr);
+	printf("%p\n", dptr);
 
 	return 0;
 }
