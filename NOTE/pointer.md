@@ -163,36 +163,34 @@ int main(void)
  
 ### 함수의 매개변수
 - 함수의 인자로 포인터 배열을 넘기는 경우 매개변수는 이중 포인터로 선언해야 함
-- 배열명: 첫 번째 원소의 주소 -> 첫 번째 원소가 주소값, 주소의 주소 -> 이중포인터
+- 배열명: 첫 번째 원소의 주소 -> 첫 번째 원소가 주소값, 주소값의 주소 -> 이중포인터
 ```c
 #include <stdio.h>
 
-void print(int** ptrarr, size_t len) { // void print(int* ptrarr[])
+void print(int** ptrarr, size_t len) { // void print(int* ptrarr[])  ㄱ
 	for (size_t i = 0; i < len; i++)
-		printf("%d ", **(ptrarr + i)); // *ptrarr[i]
+		printf("%d ", **(ptrarr + i)); // *ptrarr[i]  ㄴ1
+	putchar('\n');
+}
+void prn_str(char* strarr, size_t len) { // void prn_str(char* strarr[])  ㄱ
+	for (size_t i = 0; i < len; i++)
+		printf("%s\n", *(strarr + i));  // strarr[i]  ㄴ2
 }
 
 int main(void) {
 	int num1 = 10, num2 = 20, num3 = 30;
-	int* ptrarr[] = {&num1, &num2, &num3};
+	int* ptrarr[] = {&num1, &num2, &num3};         
+	char* strarr[] = { "eagle", "tiger", "lion", "squirrel" };   // ㄷ
 
-	print(ptrarr, sizeof(ptrarr) / sizeof(ptrarr[0]));
+	print(ptrarr, sizeof(ptrarr) / sizeof(ptrarr[0]));    
+	prn_str(ptrarr, sizeof(strarr) / sizeof(strarr[0]));  
 	return 0;
 }
 ```
-```c
-void func(int** ptrarr) == void func(int* ptarr[])
-// void func(int* arr) == void func(int arr[])
-```
-- 포인터 배열도 일차원 배열이므로 배열 표현으로도 쓸 수 있음
-```c
-*(ptrarr + 0) == ptrarr[0] -> *(ptrarr + i) == ptrarr[i]
-```
-- 포인터 배열의 원소들에 접근 (원소들은 주소값을 저장하고 있음)
-```c
-**(ptrarr + 0) == *ptrarr[0] -> **(ptrarr + i) == *ptrarr[i]
-```
-- 간접참조연산으로 저장된 주소(원소)에 접근하여 값을 가져옴
+- ㄱ 포인터 배열도 일차원 배열이므로 배열 표현으로도 쓸 수 있음
+- ㄴ1 **ptrarr == *ptrarr[0] 첫 번째 원소(주소)가 가리키는 값  |  **(ptrarr + i) == *ptrarr[i] i번째 원소(주소)가 가리키는 값
+- ㄴ2 출력 서식 문자 %s는 문자열의 시작 위치가 필요함. **(ptrarr + i) 하면 첫 글자만 나옴(%c)
+- ㄷ 각 문자열의 첫 글자의 주소를 저장함. 고로 포인터 배열.
 
 # 배열 포인터
 - 이차원 배열을 함수의 인자로 받을 때 
