@@ -77,8 +77,9 @@ int main(void)
 # const 선언
 - C에서 const는 "값의 수정을 막는다"는 의미임. 컴파일 시 상수가 되는 것이 아님.
 - 포인터의 const 선언도 값을 변경하는 방법에 제한을 두는 것
-- #include <stdio.h>
 ```c
+#include <stdio.h>
+
 int main(void)
 {
     int num1 = 20, num2 = 40, num3 = 60;
