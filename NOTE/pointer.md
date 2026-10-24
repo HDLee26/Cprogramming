@@ -146,7 +146,7 @@ int main(void)
 int main(void)
 {
 	double num = 3.141592;
-	int* ptr = &num;
+	double* ptr = &num;
 
 	printf("%p\n", ptr);
 	printf("%p\n", &ptr);
