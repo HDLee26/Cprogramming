@@ -159,7 +159,40 @@ int main(void)
 ```
 - 언제 쓰나
 	- 다른 함수에 있는 포인터 변수에 든 주소값을 변경하는 경우
-	- 함수의 인자로 포인터 배열을 넘기는 경우 매개변수는 이중 포인터로 선언
+	- 함수의 인자로 포인터 배열을 넘기는 경우 매개변수는 이중 포인터로
+ 
+### 함수의 매개변수
+- 함수의 인자로 포인터 배열을 넘기는 경우 매개변수는 이중 포인터로 선언해야 함
+- 배열명: 첫 번째 원소의 주소 -> 첫 번째 원소가 주소값, 주소의 주소 -> 이중포인터
+```c
+#include <stdio.h>
+
+void print(int** ptrarr, size_t len) { // void print(int* ptrarr[])
+	for (size_t i = 0; i < len; i++)
+		printf("%d ", **(ptrarr + i)); // *ptrarr[i]
+}
+
+int main(void) {
+	int num1 = 10, num2 = 20, num3 = 30;
+	int* ptrarr[] = {&num1, &num2, &num3};
+
+	print(ptrarr, sizeof(ptrarr) / sizeof(ptrarr[0]));
+	return 0;
+}
+```
+```c
+void func(int** ptrarr) == void func(int* ptarr[])
+// void func(int* arr) == void func(int arr[])
+```
+- 포인터 배열도 일차원 배열이므로 배열 표현으로도 쓸 수 있음
+```c
+*(ptrarr + 0) == ptrarr[0] -> *(ptrarr + i) == ptrarr[i]
+```
+- 포인터 배열의 원소들에 접근 (원소들은 주소값을 저장하고 있음)
+```c
+**(ptrarr + 0) == *ptrarr[0] -> **(ptrarr + i) == *ptrarr[i]
+```
+- 간접참조연산으로 저장된 주소(원소)에 접근하여 값을 가져옴
 
 # 배열 포인터
 - 이차원 배열을 함수의 인자로 받을 때 
