@@ -7,13 +7,13 @@ int main(void)
 	// 문자열 배열 (포인터 배열)
 	char* fruits[] = { "banana", "apple", "orange", "melon" };
 	size_t len = sizeof(fruits) / sizeof(fruits[0]); // 32 ÷ 8
-	const char* first; // 문자열을 저장할 char* 포인터
+	const char* first; // 문자열 하나를 가리킬 charr* 포인터 변수
 
 	first = fruits[0];
 	for (size_t i = 1; i < len; i++)
 	{
 		// 비교할 때는 문자열의 첫 글자를 꺼내서, 결과 저장은 첫 글자의 주소로.
-		if (*fruits[i] < *first) 
+		if (*fruits[i] < *first) // fruits[i][0] < first[0]
 			first = fruits[i];
 	}
 
