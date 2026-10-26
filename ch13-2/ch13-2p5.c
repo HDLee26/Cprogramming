@@ -7,7 +7,7 @@ int main(void)
 	// 문자열 배열 (포인터 배열)
 	char* fruits[] = { "banana", "apple", "orange", "melon" };
 	size_t len = sizeof(fruits) / sizeof(fruits[0]); // 32 ÷ 8
-	const char* first; // 문자열 하나를 가리킬 charr* 포인터 변수
+	const char* first; // 문자열 하나를 가리킬 char* 포인터 변수
 
 	first = fruits[0];
 	for (size_t i = 1; i < len; i++)
