@@ -2,13 +2,13 @@
 // 완전한 사전식 순서가 아님
 #include <stdio.h>
 
-char* get_first(const char* str[],  size_t len)
+const char* get_first(const char* str[],  size_t len) // const char** str
 {
-	const char* tmp = str[0];
+	const char* tmp = str[0]; // *str 'b'의 주소
 	for (size_t i = 1; i < len; i++)
 	{
-		if (str[i][0] < tmp[0])
-			tmp = str[i];
+		if (str[i][0] < tmp[0]) // **(str + i) < *tmp  첫글자
+			tmp = str[i];       // *(str + i)        첫글자의 주소
 	}
 	return tmp;
 }
