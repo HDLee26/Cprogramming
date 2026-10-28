@@ -24,12 +24,12 @@ int get_value(int* a, int (*fp)(int, int))
 			res = a[i]; 
 	return res;
 }
-int big(int a, int b)
+int small(int a, int b)
 {
 	if (a > b) return 1;
 	else return 0;
 }
-int small(int a, int b)
+int big(int a, int b)
 {
 	if (a > b) return 0;
 	else return 1;
