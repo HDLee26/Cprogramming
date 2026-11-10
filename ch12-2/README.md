@@ -88,7 +88,7 @@ printf("char형 변수 b의 값은: %c\n", *pb);
 ```
 - 변수 b의 값을 포인터와 간접참조 연산자를 통해 출력
 ```c
-printf("double형 변수 c의 값은: %lf\n", *pc);
+printf("double형 변수 c의 값은: %f\n", *pc);
 ```
 - 변수 c의 값을 포인터와 간접참조 연산자를 통해 출력
 ```c
