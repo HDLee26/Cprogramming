@@ -17,7 +17,7 @@ int main(void)
 
 	printf("int형 변수 a의 값은: %d\n", *pa);
 	printf("char형 변수 b의 값은: %c\n", *pb);
-	printf("double형 변수 c의 값은: %lf\n", *pc);
+	printf("double형 변수 c의 값은: %f\n", *pc);
 
 	return 0;
 }
