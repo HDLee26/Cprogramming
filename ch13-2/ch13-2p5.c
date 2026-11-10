@@ -22,4 +22,6 @@ int main(void)
 	return 0;
 }
 // const char* 가리키는 문자열의 내용을 수정하지 않겠다는 의미
-// *(fruits[i] + 0) == fruits[i][0] <- *(p + 0) == p[0]
+// fruits[1] <- 'a'의 주소
+// *(fruits[1] + 0) == fruits[1][0] <- 'a'
+// 복습  *(ptr + 0) == ptr[0]
