@@ -286,4 +286,8 @@ void AddByPointer(int* ptr)
 *ptr += 100;
 ```
 - 간접참조연산자를 이용해 ptr가 가리키는 변수의 값에 100을 더하고 저장
+
+### 실행결과
+<img width="278" height="72" alt="image" src="https://github.com/user-attachments/assets/53be50cc-be87-46bd-94a0-f46dce845008" />
+
 - AddByValue 함수는 매개변수에 인자의 값을 복사해 받아 매개변수에 100을 더했으므로 num에 아무런 영향이 없지만 AddByPointer 함수는 인자로 num의 주소를 넘기고 간접참조연산을 통해 num의 값을 변경했다.
