@@ -22,62 +22,79 @@
 ```
 - stdio.h 헤더파일을 포함하라
 ```c
+void get_data(int* arr, int n);
+```
+- 데이터를 입력 받는 함수 get_data 선언
+```c
 int get_max(int* arr, int n);
 ```
 - 최댓값 구하는 함수 get_max 선언
 ```c
 int main(void)
 ```
-- main함수 시작
+- main 함수 시작
 ```c
-int grade[5];
+	int grade[5];
 ```
-- 성적 5개를 저장할 정수형 배열 grade 선언 
+- 성적 저장할 배열 선언
 ```c
-int max;
+	int max;
 ```
-- 최댓값 저장할 변수 max 선언
+- 최댓값 저장할 변수 선언
 ```c
-for (int i = 0; i < 5; i++){
-  printf("성적을 입력하시오: ");
-  scanf("%d", &grade[i]);
-  }
+	int len = sizeof(grade) / sizeof(grade[0]);
 ```
-- 성적 5개 입력 받는 루프문
+- 배열의 길이를 저장할 변수 선언
 ```c
-max = get_max(grade, 5);
+	get_data(grade, len);
 ```
-- get_max 함수 호출하고 리턴값을 max에 저장
+- get_data 함수 호출
 ```c
-printf("최댓값 : %d\n", max);
+	max = get_max(grade, len);
+```
+- get_max 함수 호출하고 반환값 저장
+```c
+	printf("최댓값 : %d\n", max);
 ```
 - 최댓값 출력
 ```c
-return 0;
+	return 0;
 ```
 - 0을 반환하고 main함수 정상 종료
 ```c
+void get_data(int* arr, int n)
+```
+- get_data 함수 정의
+```c
+	for (int i = 0; i < 5; i++) {
+		printf("성적(%d)을 입력하시오: ", i+1);
+		scanf("%d", arr + i);
+  }
+```
+- 루프 돌며 성적 입력 받아 저장
+```c
 int get_max(int* arr, int n)
 ```
-- get_max 함수 정의 시작
+- get_max 함수 정의
 ```c
-int max;
+	int max;
 ```
-- 최댓값을 저장할 변수 max 선언
+- 최댓값 저장할 변수 선언
 ```c
-max = *arr;
+	max = *arr;
 ```
-- 우선 배열의 가장 첫번째 값을 최댓값으로 저장
+- 최댓값으로 배열의 첫 번째 원소를 임시 저장
 ```c
-for (int i = 1; i < n; i++)
-  if (*(arr + i) > max)
-    max = *(arr + i);
+	for (int i = 1; i < n; i++)
+		if (*(arr + i) > max)
+			max = *(arr + i);
 ```
 - max에 저장된 값을 배열의 두 번째 요소의 값부터 차례대로 비교하며 큰 수를 max에 갱신해 저장
 ```c
-return max;
+	return max;
 ```
-- 구한 최댓값을 리턴
+- 찾은 최댓값 반환
+
 ### 실행결과
 <img width="285" height="160" alt="image" src="https://github.com/user-attachments/assets/20dca238-f8ab-40d1-8389-f6ad5d1c9e4f" />
 
