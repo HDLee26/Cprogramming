@@ -116,44 +116,55 @@ int get_max(int* arr, int n)
 ```c
 void get_data(int* param, int len);
 ```
-- 입력 받은 데이터를 배열에 저장하는 함수 get_data 선언
+- 데이터를 입력 받는 함수 get_data 선언
+```c
+void show_data(int arr[], int len);
+```
+- 배열에 저장된 데이터를 출력하는 함수 show_data 선언
 ```c
 int main(void)
 ```
-- main함수 시작
+- main 함수 시작
 ```c
-int data[5] = { 0 };
+	int data[5] = { 0 };
 ```
-- 데이터 5개를 저장할 정수형 배열 data 선언
+- 성적 저장할 배열 선언
 ```c
-int len = sizeof(data) / sizeof(data[0]);
+	int len = sizeof(data) / sizeof(data[0]);
 ```
-- 배열의 요소의 개수를 구하여 변수 len에 저장
+- 배열의 길이를 저장할 변수 선언
 ```c
-get_data(data, len);
+	get_data(data, len);
 ```
-- get_data 함수 호출하고 배열명 data와 길이 len을 인자로 넘김
+- get_data 함수 호출
 ```c
-for (int i = 0; i < len; i++)
-  printf("%d번째 data: %d\n", i + 1, data[i]);
+	show_data(data, len);
 ```
-- 배열 data에 저장된 값을 차례대로 출력하는 루프
+- show_data 함수 호출
 ```c
-return 0;
+	return 0;
 ```
-- 0을 반환하고 main함수 정상 종료
+- 0을 반환하고 main 함수 정상 종료
 ```c
 void get_data(int* arr, int len)
 ```
-- 함수 get_data 정의 시작
+- get_data 함수 정의
 ```c
-for (int i = 0; i < len; i++){
-  printf("%d번째 data를 입력하시오: ", i+1);
-  scanf("%d", arr + i);
-}
+	for (int i = 0; i < len; i++) {
+		printf("%d번째 data를 입력하시오: ", i+1);
+		scanf("%d", arr + i);
+	}
 ```
-- 키보드로 입력한 값을 배열에 저장하기 위한 루프문\
-배열 data에 저장하기 위해 배열명으로 주소를 가져오고 인덱스 번호를 하나씩 키워 차례대로 저장하고 있다
+- 루프 돌며 성적 5개 입력 받아 배열에 저장
+```c
+void show_data(int arr[], int len)
+```
+- show_data 함수 정의
+```c
+	for (int i = 0; i < len; i++)
+		printf("%d번째 data: %d\n", i + 1, arr[i]);
+```
+-  루프 돌며 배열의 원소를 차례대로 출력
 
 ### 실행결과
 <img width="251" height="221" alt="image" src="https://github.com/user-attachments/assets/bdba0afe-1270-421b-bb1b-0f2b0eacaa07" />
