@@ -209,6 +209,8 @@ tmp = *px;
 *pz = tmp;
 ```
 - 간접참조연산으로 값 교환
+### 실행결과
+<img width="342" height="127" alt="image" src="https://github.com/user-attachments/assets/c983ad48-62b9-4be1-b629-35f17382ddc0" />
 
 ---
 # 실습과제 5
