@@ -13,7 +13,10 @@
  
 ---
 
+# 실습과제 2
 
-  
-  
+### 실행결과
+<img width="319" height="128" alt="image" src="https://github.com/user-attachments/assets/3479affe-97e4-4533-8371-c5ce78ff2054" />
+
+# 실습과제 3
   
