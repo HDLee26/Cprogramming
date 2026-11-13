@@ -58,7 +58,7 @@ void prn_str(const char** ptr, size_t len)
 ```c
 void prn_menu(const char* (*ptr)[3], size_t row)
 ```
-- 2차원 포인터 배열의 문자열 출력하는 함수
+- 2차원 포인터 배열의 문자열 출력하는 함수 정의
 ```c
 	puts("메뉴 출력");
 ```
@@ -77,6 +77,27 @@ void prn_menu(const char* (*ptr)[3], size_t row)
 <img width="289" height="134" alt="image" src="https://github.com/user-attachments/assets/2223110a-5434-4943-ae96-83bfa68b0e99" />
 
 ---
+
+# 문제 2
+- 다음 배열들의 올바른 매개변수 선언은?
+```
+int arr1[3] = { 0 };
+int arr2[3][4] = { 0 };
+
+int* arr3[3] = { NULL }; // 포인터 배열도 0으로 초기화해도 됨.
+int* arr4[3][4] = { NULL };
+int** arr5[3] = { NULL };     // 1차원 이중포인터 배열
+int*** arr6[3][4] = { NULL }; // 2차원 삼중포인터 배열
+```
+| 전달하는 배열 | 함수 매개변수의 포인터 표현 | 동등한 배열 표현 |
+|---|---|---|
+| `int arr1[3]` | `int* ptr` | `int ptr[]` |
+| `int arr2[3][4]` | `int (*ptr)[4]` | `int ptr[][4]` |
+| `int* arr3[3]` | `int** ptr` | `int* ptr[]` |
+| `int* arr4[3][4]` | `int* (*ptr)[4]` | `int* ptr[][4]` |
+| `int** arr5[3]` | `int*** ptr` | `int** ptr[]` |
+| `int*** arr6[3][4]` | `int*** (*ptr)[4]` | `int*** ptr[][4]` |
+- 아무튼 중요한 건 이차원 배열의 원소는 1차원 배열이므로 한 행을 가리키는 포인터 '''(*ptr)[col]'''을 써야한다는 것.
 
 
 
