@@ -250,8 +250,8 @@ int main(void)
 ```c
 #include <stdio.h>
 
-void fill(int (*ptr)[4],size_t row);
-void print(int (*ptr)[4], size_t row);
+void fill(int (*ptr)[4],size_t row);   // int ptr[][4]
+void print(int (*ptr)[4], size_t row); // int ptr[][4]
 
 int main(void)
 {
