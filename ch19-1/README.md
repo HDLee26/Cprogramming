@@ -17,3 +17,83 @@
   - 강제 형변환은 캐스팅 연산자를 이용해서 원하는 자료형으로 명시적으로 변환하는 것.
 <img width="546" height="99" alt="image" src="https://github.com/user-attachments/assets/d7305399-d850-49f3-bf8a-d33a18927fa5" />
  
+# 실습과제 2-1
+- 함수의 매개변수에 함수 포인터를 사용하는 예제를 찾아보고 코드를 설명하시오.
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#pragma warning(disable:6031)
+```
+- VS scanf 함수 보안 경보 방지용 & 리턴값 관련 경고 방지용
+```c
+#include <stdio.h>
+```
+- stdio.h 헤더파일을 포함하라
+```c
+double add(int a, int b) {
+    return a + b;
+}
+```
+- 덧셈 함수
+```c
+double sub(int a, int b) {
+    return a - b;
+}
+```
+- 뺄셈 함수
+```c
+double mul(int a, int b) {
+    return a * b;
+}
+```
+- 곱셈 함수
+```c
+double div(int a, int b) {
+    return (double)a / b;
+}
+```
+- 나눗셈 함수
+```c
+void calculate(int x, int y, double (*operation)(int, int)) {
+    printf("Result: %.2f\n", operation(x, y));
+}
+```
+- 만들어놓은 사칙연산 함수들 중 원하는 함수를 선택하여 연산 결과를 출력하는 함수
+```c
+void input(int* num_ptr) {
+    printf("정수 입력: ");
+    scanf("%d", num_ptr);
+}
+```
+- 정수 입력 받는 함수
+```c
+int main()
+```
+- main 함수 시작
+```c
+    int a, b;
+    input(&a);
+    input(&b);
+```
+- 정수 2개 a, b 입력 받음
+```c
+    puts("사칙연산 결과");
+    calculate(a, b, add);
+    calculate(a, b, sub);
+    calculate(a, b, mul);
+    if (b == 0)
+        puts("0으로 나눌 수 없음.");
+    else
+        calculate(a, b, div);
+```
+- 사칙연산 결과 출력
+```c
+    return 0;
+```
+- 0을 반환하고 main 함수 정상 종료
+
+### 실행결과
+<img width="279" height="186" alt="image" src="https://github.com/user-attachments/assets/34a6edf4-2560-47f2-a4a7-cff43f3f2380" />
+
+
+
+ 
