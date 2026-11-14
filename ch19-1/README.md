@@ -95,7 +95,7 @@ int main()
 <img width="279" height="186" alt="image" src="https://github.com/user-attachments/assets/34a6edf4-2560-47f2-a4a7-cff43f3f2380" />
 
 # 실습과제 2-2
-### 함수의 매개변수에 함수 포인터를 사용하는 예제를 찾아보고 코드를 설명하시오.
+### 함수의 매개변수에 void 포인터를 사용하는 예제를 찾아보고 코드를 설명하시오.
 ```c
 #include <stdio.h>
 ```
@@ -136,6 +136,7 @@ void printValue(const void *ptr, enum DataType type)
     default:
         printf("알 수 없는 자료형입니다.\n");
         break;
+    }
 ```
 - 잘못된 자료형을 넘겨받으면 출력할 안내문
 ```c
@@ -161,6 +162,65 @@ int main(void)
 
 ### 실행결과
 <img width="266" height="105" alt="image" src="https://github.com/user-attachments/assets/8d58945f-0cbb-44ba-b6c8-bc381506f270" />
+
+# 실습과제 2-3
+### 함수의 매개변수에 void 포인터를 사용하는 예제를 찾아보고 코드를 설명하시오.
+```c
+#include <stdio.h>
+```
+- stdio.h 헤더파일을 포함하라
+```c
+void copyMemory(void* dest, const void* src, size_t count)
+```
+- 서로 겹치지 않는 메모리 영역을 count바이트만큼 복붙하는 함수
+```c
+    unsigned char* d = (unsigned char*)dest;
+    const unsigned char* s = (const unsigned char*)src;
+```
+- 메모리를 1바이트씩 다루기 위해 변환
+```c
+    for (size_t i = 0; i < count; i++)
+        d[i] = s[i];
+```
+- src 데이터에서 1바이트씩 읽고 dest에 1바이트씩 씀
+```c
+int main(void)
+```
+- main 함수 시작
+```c
+    int originalNumber = 100;
+    int copiedNumber = 0;
+
+    double originalValue = 3.14;
+    double copiedValue = 0.0;
+
+    int originalArray[3] = { 10, 20, 30 };
+    int copiedArray[3] = { 0 };
+```
+- 원본 데이터와 복사본 저장할 변수 선언
+```c
+    copyMemory(&copiedNumber, &originalNumber, sizeof(originalNumber));
+    copyMemory(&copiedValue, &originalValue, sizeof(originalValue));
+    copyMemory(copiedArray, originalArray, sizeof(originalArray));
+```
+- 정수 하나 복사 4 B, 실수 하나 복사 8 B, 배열 전체 복사 12 B
+```c
+    printf("복사한 정수: %d\n", copiedNumber);
+    printf("복사한 실수: %.2f\n", copiedValue);
+    printf("복사한 배열: ");
+    for (int i = 0; i < 3; i++)
+        printf("%d ", copiedArray[i]);
+    putchar('\n');
+```
+- 복사본에 저장된 값 출력
+```c
+    return 0;
+```
+-  0을 반환하고 main 함수 정상 종료
+
+### 실행결과 
+<img width="253" height="101" alt="image" src="https://github.com/user-attachments/assets/97a1bf08-ae5b-4d9d-a340-78a51b83c6e2" />
+
 
 
 
