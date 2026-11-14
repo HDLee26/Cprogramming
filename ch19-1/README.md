@@ -18,7 +18,7 @@
 <img width="546" height="99" alt="image" src="https://github.com/user-attachments/assets/d7305399-d850-49f3-bf8a-d33a18927fa5" />
  
 # 실습과제 2-1
-- 함수의 매개변수에 함수 포인터를 사용하는 예제를 찾아보고 코드를 설명하시오.
+### 함수의 매개변수에 함수 포인터를 사용하는 예제를 찾아보고 코드를 설명하시오.
 ```c
 #define _CRT_SECURE_NO_WARNINGS
 #pragma warning(disable:6031)
@@ -93,6 +93,77 @@ int main()
 
 ### 실행결과
 <img width="279" height="186" alt="image" src="https://github.com/user-attachments/assets/34a6edf4-2560-47f2-a4a7-cff43f3f2380" />
+
+# 실습과제 2-2
+### 함수의 매개변수에 함수 포인터를 사용하는 예제를 찾아보고 코드를 설명하시오.
+```c
+#include <stdio.h>
+```
+- stdio.h 헤더파일을 포함하라
+```c
+enum DataType {
+    TYPE_INT,
+    TYPE_DOUBLE,
+    TYPE_CHAR
+};
+```
+- 열거형을 이용해 자료형 구분을 위한 번호를 붙임
+```c
+void printValue(const void *ptr, enum DataType type)
+```
+- 넘겨받은 변수의 주소와 값의 자료형을 이용해 자료형에 맞춰 결과를 출력하는 함수
+```c
+    switch (type)
+    {
+    case TYPE_INT:
+        printf("int 값: %d\n", *(const int *)ptr);
+        break;
+```
+- int형 자료형 데이터의 값 출력
+```c
+    case TYPE_DOUBLE:
+        printf("double 값: %.2f\n", *(const double *)ptr);
+        break;
+```
+- double형 자료형 데이터의 값 출력
+```c
+    case TYPE_CHAR:
+        printf("char 값: %c\n", *(const char *)ptr);
+        break;
+```
+- char형 자료형 데이터의 값 출력
+```c
+    default:
+        printf("알 수 없는 자료형입니다.\n");
+        break;
+```
+- 잘못된 자료형을 넘겨받으면 출력할 안내문
+```c
+int main(void)
+```
+- main 함수 시작
+```c
+    int age = 20;
+    double height = 175.5;
+    char grade = 'A';
+```
+- 사용할 데이터
+```c
+    printValue(&age, TYPE_INT);
+    printValue(&height, TYPE_DOUBLE);
+    printValue(&grade, TYPE_CHAR);
+```
+- 하나의 함수에 변수의 주소와 자료형을 인자로 넘기며 호출.
+```c
+    return 0;
+```
+- 0을 반환하고 main 함수 정상 종료
+
+### 실행결과
+<img width="266" height="105" alt="image" src="https://github.com/user-attachments/assets/8d58945f-0cbb-44ba-b6c8-bc381506f270" />
+
+
+
 
 
 
