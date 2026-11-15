@@ -356,6 +356,8 @@ double divide(int a, int b) {
 
 ### 실행결과
 <img width="254" height="131" alt="image" src="https://github.com/user-attachments/assets/cd77365f-84df-432d-985d-38c18f7b9e81" />
+<img width="310" height="141" alt="image" src="https://github.com/user-attachments/assets/19e9b4fd-7ad2-4c83-ac2f-4dff8fcd6d29" />
+
 
 
 
