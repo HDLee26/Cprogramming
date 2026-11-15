@@ -224,249 +224,135 @@ int main(void)
 # 실습과제 3
 ```c
 #define _CRT_SECURE_NO_WARNINGS
-```
--
-```c
 #pragma warning(disable:6031)
 ```
--
+- VS scanf 함수 보안 경보 방지용 & 리턴값 관련 경고 방지용
 ```c
 #include <stdio.h>
 ```
--
+- stdio.h 헤더파일을 포함하라
 ```c
-enum Operation
-```
--
-```c
+enum Operation {
 	ADD = 1, SUB, MUL, DIV
+};
 ```
--
+- 열거형으로 사용할 값만 있는 자료형 만듦
 ```c
 typedef double (*OperationFunc)(int, int);
 ```
--
+- 사용할 함수 포인터 자료형에 이름 붙임
 ```c
 void input(int* p1, int* p2);
-```
--
-```c
 int select(void);
-```
--
-```c
 void print_result(int x, int y, OperationFunc operation);
-```
--
-```c
 OperationFunc get_operation(int opt);
 ```
--
+- 정수 2개 입력 받는 함수
+- 실행할 연산 종류를 선택하는 함수
+- 연산 결과를 출력하는 함수
+- 선택한 번호에 해당하는 연산 함수의 **주소**를 반환하는 함수. 반환형이 함수 포인터임.
 ```c
 double add(int a, int b);
-```
--
-```c
 double sub(int a, int b);
-```
--
-```c
 double mul(int a, int b);
-```
--
-```c
 double divide(int a, int b);
 ```
--
+- 실제로 사칙연산을 수행하는 함수
 ```c
 int main(void)
 ```
--
+- main 함수 시작
 ```c
 	int a, b;
-```
--
-```c
 	int sel = 0;
-```
--
-```c
 	OperationFunc operation = NULL;
 ```
--
+- 정수 저장할 변수, 연산 종류 저장할 변수, 선택한 연산 함수의 주소를 저장할 변수(함수 포인터)
 ```c
 	input(&a, &b);
-```
--
-```c
 	sel = select();
-```
--
-```c
 	operation = get_operation(sel);
-```
--
-```c
 	print_result(a, b, operation);
 ```
--
+- operation은 선택한 사칙연산 함수의 **주소**를 저장함.
 ```c
 	return 0;
 ```
--
+- 0을 반환하고 main 함수 정상 종료
 ```c
-void input(int* p1, int* p2)
-```
--
-```c
+void input(int* p1, int* p2) {
 	printf("정수 2개 입력: ");
-```
--
-```c
 	scanf("%d %d", p1, p2);
+}
 ```
--
+- 정수 2개 입력 받는 함수 정의
 ```c
-int select(void)
-```
--
-```c
+int select(void) {
 	int opt;
-```
--
-```c
 	puts("연산을 선택하시오.");
-```
--
-```c
 	printf("%d:덧셈 %d:뺄셈 %d:곱셈 %d:나눗셈\n", ADD, SUB, MUL, DIV);
-```
--
-```c
 	printf("선택: ");
-```
--
-```c
 	scanf("%d", &opt);
-```
--
-```c
+
 	return opt;
+}
 ```
--
+- 사용자로부터 연산 종류를 선택 받고 선택된 번호를 넘기는 함수 정의
 ```c
-OperationFunc get_operation(int opt)
-```
--
-```c
+OperationFunc get_operation(int opt) {
 	switch (opt)
-```
--
-```c
+	{
 	case ADD:
-```
--
-```c
 		return add;
-```
--
-```c
 	case SUB:
-```
--
-```c
 		return sub;
-```
--
-```c
 	case MUL:
-```
--
-```c
 		return mul;
-```
--
-```c
 	case DIV:
-```
--
-```c
 		return divide;
-```
--
-```c
 	default:
-```
--
-```c
 		return NULL;
+	}
+}
 ```
--
+- 사용자가 선택한 번호에 해당하는 연산 함수의 '주소'를 반환하는 함수. 잘못된 번호를 입력하면 NULL반환.
 ```c
 void print_result(int x, int y, OperationFunc operation)
 ```
--
+- 선택한 연산의 결과를 출력하는 함수
 ```c
-	if (operation == NULL)
-```
--
-```c
+	if (operation == NULL) {
 		puts("잘못된 선택입니다.");
-```
--
-```c
 		return;
+}
 ```
--
+- 잘못된 번호를 입력한 경우 안내문 출력하고 함수 종료
 ```c
-	if ((operation == divide) && (y == 0))
-```
--
-```c
+	if ((operation == divide) && (y == 0)) {
 		puts("0으로 나눌 수 없음.");
-```
--
-```c
 		return;
+}
 ```
--
+- 전달받은 함수가 나눗셈 함수이고 제수가 0이면 안내문 출력하고 함수 종료
 ```c
 	printf("결과: %.2f\n", operation(x, y));
 ```
--
+- 넘겨받은 연산 함수의 주소를 이용해 원하는 연산 실행하고 결과값 출력
 ```c
-double add(int a, int b)
-```
--
-```c
+double add(int a, int b) {
 	return (double)a + b;
-```
--
-```c
-double sub(int a, int b)
-```
--
-```c
+}
+double sub(int a, int b) {
 	return (double)a - b;
-```
--
-```c
-double mul(int a, int b)
-```
--
-```c
+}
+double mul(int a, int b) {
 	return (double)a * b;
-```
--
-```c
-double divide(int a, int b)
-```
--
-```c
+}
+double divide(int a, int b) {
 	return (double)a / b;
+}
 ```
--  
-
+- 실제로 사칙연산을 수행할 함수. 큰 정수의 연산 시 오버플로우를 막기 위해 (double)연산 먼저 진행.
 
 ### 실행결과
 <img width="254" height="131" alt="image" src="https://github.com/user-attachments/assets/cd77365f-84df-432d-985d-38c18f7b9e81" />
