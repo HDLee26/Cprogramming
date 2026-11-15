@@ -15,7 +15,7 @@ void calculate(int x, int y, int opt);
 double add(int a, int b);
 double sub(int a, int b);
 double mul(int a, int b);
-double div(int a, int b);
+double divide(int a, int b);
 
 int main(void)
 {
@@ -46,24 +46,8 @@ int select(void)
 
 	return opt;
 }
-// 사칙연산 함수
-double add(int a, int b)
-{
-	return a + b;
-}
-double sub(int a, int b)
-{
-	return a - b;
-}
-double mul(int a, int b)
-{
-	return a * b;
-}
-double div(int a, int b)
-{
-	return (double)a / b;
-}
-// 연산 함수
+
+// 선택한 연산을 실행하고 결과를 출력하는 함수
 void calculate(int x, int y, int opt)
 {
 	double res;
@@ -90,7 +74,7 @@ void calculate(int x, int y, int opt)
 			return;
 		}
 
-		operation = div;
+		operation = divide;
 		break;
 
 	default : 
@@ -100,4 +84,21 @@ void calculate(int x, int y, int opt)
 
 	res = operation(x, y);
 	printf("결과: %.2f\n", res);
+}
+// 사칙연산 함수
+double add(int a, int b)
+{
+	return a + b;
+}
+double sub(int a, int b)
+{
+	return a - b;
+}
+double mul(int a, int b)
+{
+	return a * b;
+}
+double divide(int a, int b)
+{
+	return (double)a / b;
 }
