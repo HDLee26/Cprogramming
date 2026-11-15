@@ -222,6 +222,251 @@ int main(void)
 <img width="253" height="101" alt="image" src="https://github.com/user-attachments/assets/97a1bf08-ae5b-4d9d-a340-78a51b83c6e2" />
 
 # 실습과제 3
+```c
+#define _CRT_SECURE_NO_WARNINGS
+```
+-
+```c
+#pragma warning(disable:6031)
+```
+-
+```c
+#include <stdio.h>
+```
+-
+```c
+enum Operation
+```
+-
+```c
+	ADD = 1, SUB, MUL, DIV
+```
+-
+```c
+typedef double (*OperationFunc)(int, int);
+```
+-
+```c
+void input(int* p1, int* p2);
+```
+-
+```c
+int select(void);
+```
+-
+```c
+void print_result(int x, int y, OperationFunc operation);
+```
+-
+```c
+OperationFunc get_operation(int opt);
+```
+-
+```c
+double add(int a, int b);
+```
+-
+```c
+double sub(int a, int b);
+```
+-
+```c
+double mul(int a, int b);
+```
+-
+```c
+double divide(int a, int b);
+```
+-
+```c
+int main(void)
+```
+-
+```c
+	int a, b;
+```
+-
+```c
+	int sel = 0;
+```
+-
+```c
+	OperationFunc operation = NULL;
+```
+-
+```c
+	input(&a, &b);
+```
+-
+```c
+	sel = select();
+```
+-
+```c
+	operation = get_operation(sel);
+```
+-
+```c
+	print_result(a, b, operation);
+```
+-
+```c
+	return 0;
+```
+-
+```c
+void input(int* p1, int* p2)
+```
+-
+```c
+	printf("정수 2개 입력: ");
+```
+-
+```c
+	scanf("%d %d", p1, p2);
+```
+-
+```c
+int select(void)
+```
+-
+```c
+	int opt;
+```
+-
+```c
+	puts("연산을 선택하시오.");
+```
+-
+```c
+	printf("%d:덧셈 %d:뺄셈 %d:곱셈 %d:나눗셈\n", ADD, SUB, MUL, DIV);
+```
+-
+```c
+	printf("선택: ");
+```
+-
+```c
+	scanf("%d", &opt);
+```
+-
+```c
+	return opt;
+```
+-
+```c
+OperationFunc get_operation(int opt)
+```
+-
+```c
+	switch (opt)
+```
+-
+```c
+	case ADD:
+```
+-
+```c
+		return add;
+```
+-
+```c
+	case SUB:
+```
+-
+```c
+		return sub;
+```
+-
+```c
+	case MUL:
+```
+-
+```c
+		return mul;
+```
+-
+```c
+	case DIV:
+```
+-
+```c
+		return divide;
+```
+-
+```c
+	default:
+```
+-
+```c
+		return NULL;
+```
+-
+```c
+void print_result(int x, int y, OperationFunc operation)
+```
+-
+```c
+	if (operation == NULL)
+```
+-
+```c
+		puts("잘못된 선택입니다.");
+```
+-
+```c
+		return;
+```
+-
+```c
+	if ((operation == divide) && (y == 0))
+```
+-
+```c
+		puts("0으로 나눌 수 없음.");
+```
+-
+```c
+		return;
+```
+-
+```c
+	printf("결과: %.2f\n", operation(x, y));
+```
+-
+```c
+double add(int a, int b)
+```
+-
+```c
+	return (double)a + b;
+```
+-
+```c
+double sub(int a, int b)
+```
+-
+```c
+	return (double)a - b;
+```
+-
+```c
+double mul(int a, int b)
+```
+-
+```c
+	return (double)a * b;
+```
+-
+```c
+double divide(int a, int b)
+```
+-
+```c
+	return (double)a / b;
+```
+-  
+
 
 ### 실행결과
 <img width="254" height="131" alt="image" src="https://github.com/user-attachments/assets/cd77365f-84df-432d-985d-38c18f7b9e81" />
