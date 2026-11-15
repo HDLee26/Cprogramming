@@ -221,6 +221,10 @@ int main(void)
 ### 실행결과 
 <img width="253" height="101" alt="image" src="https://github.com/user-attachments/assets/97a1bf08-ae5b-4d9d-a340-78a51b83c6e2" />
 
+# 실습과제 3
+
+### 실행결과
+<img width="254" height="131" alt="image" src="https://github.com/user-attachments/assets/cd77365f-84df-432d-985d-38c18f7b9e81" />
 
 
 
