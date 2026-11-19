@@ -67,5 +67,52 @@ int main(void)
 ### 실행결과
 <img width="203" height="210" alt="image" src="https://github.com/user-attachments/assets/ae127841-846a-44b3-89ce-eef15499795a" />
 
+# 실습과제 3
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#pragma warning(disable:6031)
+```
+- VS scanf 함수 보안 경보 방지용 & 리턴값 관련 경고 방지용
+```c
+#include <stdio.h>
+```
+- stdio.h 파일을 포함하라
+```c
+int main(void)
+```
+- main 함수 시작
+```c
+	char name[10] = { '\0' };
+	char blood_type[5] = { '\0' };
+```
+- 이름과 혈액형 저장할 char형 배열
+```c
+	printf("이름을 입력하세요: ");
+	scanf("%s", name);
+```
+- 이름 입력 받고
+```c
+	getchar();
+```
+- 버퍼에 남은 '\n'을 읽어서 버림
+```c
+	printf("혈액형을 입력하세요: ");
+	scanf("%s", blood_type);
+```
+- 혈액형 입력 받음.
+```c
+	printf("이름: %s\n", name);
+	printf("혈액형: %s\n", blood_type);
+```
+- 이름과 혈액형 출력
+```c
+	return 0;
+```
+- 0을 반환하고 main 함수 정상 종료
+
+### 실행결과
+<img width="278" height="119" alt="image" src="https://github.com/user-attachments/assets/ea45be47-152b-401d-8b5e-21e6cdfd5921" />
+
+
   
   
