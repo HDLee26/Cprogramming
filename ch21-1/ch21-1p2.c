@@ -1,3 +1,4 @@
+// 'q'나 'Q'를 입력할 때까지 계속 문자 입력 받기
 #define _CRT_SECURE_NO_WARNINGS
 #pragma warning(disable:6031)
 
