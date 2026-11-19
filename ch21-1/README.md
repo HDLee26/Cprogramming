@@ -113,6 +113,34 @@ int main(void)
 ### 실행결과
 <img width="278" height="119" alt="image" src="https://github.com/user-attachments/assets/ea45be47-152b-401d-8b5e-21e6cdfd5921" />
 
+# 실습과제 4
+- 다음 코드의 실행결과를 설명하라.
+```c
+#include <stdio.h>
+
+int main(void) {
+	char ch;
+	for (int i = 0; i < 5; i++) {
+		printf("문자 입력: ");
+		scanf("%c", &ch);
+		printf("문자: %c\n", ch);
+	}
+	return 0;
+}
+// 입력값 abcde<엔터>
+```
+- 0번 루프
+	- 입력 버퍼에 'a' 'b' 'c' 'd' 'e' '\n' 저장
+	- 'a' 출력
+- 1번 루프
+  - 버퍼가 비어있지 않으므로 추가 입력을 요구하지 않음. \
+    첫 번째 printf에서 "문자 입력: " 출력하고 바로 두 번째 printf에서 'b'출력
+- 루프를 5번 돌므로 e까지 윗 문단을 반복. '\n'가 버퍼에 남음.
+
+# 실습과제 5
+
+
+
 
   
   
