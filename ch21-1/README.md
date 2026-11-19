@@ -24,6 +24,45 @@
   4 그런데 '\n'은 버퍼에 남음.
 
 # 실습과제 2
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#pragma warning(disable:6031)
+```
+- VS scanf 함수 보안 경보 방지용 & 리턴값 관련 경고 방지용
+```c
+#include <stdio.h>
+```
+- stdio.h 파일을 포함하라
+```c
+int main(void)
+```
+- main 함수 시작
+```c
+	char ch = '\0';
+```
+- 문자 저장할 변수 선언
+```c
+	while (1)
+```
+- 무한 루프 시작
+```c
+		if ((ch == 'q') || (ch == 'Q')) {
+			puts("프로그램 종료");
+			break;
+    }
+```
+- 탈출 조건 설정: 'q'나 'Q' 입력 받으면 루프 종료
+```c
+		printf("문자입력: ");
+		scanf(" %c", &ch);
+		printf("입력 된 문자는 %c\n", ch);
+```
+- 버퍼에서 공백문자가 아닌 문자가 나올 때까지 공백문자를 읽어서 버림.
+- 그러므로 'q'나 'Q'를 입력 받은 후에는 버퍼에 '\n'가 남음. 
+```c
+	return 0;
+```
+- 0을 반환하고 main 함수 정상 종료
 
 ### 실행결과
 <img width="203" height="210" alt="image" src="https://github.com/user-attachments/assets/ae127841-846a-44b3-89ce-eef15499795a" />
