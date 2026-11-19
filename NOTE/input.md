@@ -104,3 +104,12 @@ int main(void)
 	return 0;
 }
 ```
+# 버퍼를 비우자
+```c
+// '\n' 읽고 반환하는데 저장 안하니까 버려짐.
+scanf("%d", &x);
+getchar();   
+
+// whitespace가 아닌 문자가 나올 때까지 whitespace는 읽어서 버림
+scanf(" %s", str);  
+```
