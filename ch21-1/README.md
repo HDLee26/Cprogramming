@@ -23,6 +23,10 @@
   3 scanf()함수가 서식 지정자에 따라 입력 받은 문자를 알맞게 변수에 저장하고 버퍼에서 삭제.  \
   4 그런데 '\n'은 버퍼에 남음.
 
-    
+# 실습과제 2
+
+### 실행결과
+<img width="203" height="210" alt="image" src="https://github.com/user-attachments/assets/ae127841-846a-44b3-89ce-eef15499795a" />
+
   
   
