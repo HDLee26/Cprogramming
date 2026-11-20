@@ -111,5 +111,10 @@ scanf("%d", &x);
 getchar();   
 
 // whitespace가 아닌 문자가 나올 때까지 whitespace는 읽어서 버림
-scanf(" %s", str);  
+scanf(" %s", str);
+
+// 버퍼를 깔끔히 비우려면 함수로 만들어서 무한 반복시키자
+void ClearReadBuffer(void) {
+	while (getchar() != '\n');
+}
 ```
