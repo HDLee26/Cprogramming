@@ -145,6 +145,10 @@ int main(void) {
 
 # 실습과제 5
 
+### 실행결과
+<img width="279" height="92" alt="image" src="https://github.com/user-attachments/assets/02b92954-dc97-40b5-a418-9e74a34bf4b9" />
+<img width="404" height="85" alt="image" src="https://github.com/user-attachments/assets/567a81d1-788a-4945-8e86-31dc1b812044" />
+
 
 
 
