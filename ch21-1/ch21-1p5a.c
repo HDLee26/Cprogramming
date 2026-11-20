@@ -12,11 +12,11 @@ int main(void)
 
 	printf("문자열을 입력하세요: ");
 	
-	for (i = 0; i < sizeof(str); i++)
+	for (i = 0; i < sizeof(str) - 1; i++)
 	{
 		scanf("%c", &tmp);
 		
-		if ((tmp == '\n') || (i == sizeof(str) - 1 ))
+		if (tmp == '\n')
 		{
 			str[i] = '\0';
 			break;
