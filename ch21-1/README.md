@@ -68,6 +68,11 @@ int main(void)
 <img width="203" height="210" alt="image" src="https://github.com/user-attachments/assets/ae127841-846a-44b3-89ce-eef15499795a" />
 
 # 실습과제 3
+- 기존 코드의 문제점
+	- 처음 scanf에서 이름을 받아서 name에 저장한 후 버퍼에 '\n'이 남아 있으므로, 다음 scanf에서 입력 요구를 하지 않고 '\n'를 blood_type에 저장함.
+ - 수정하려면?
+	- getchar()로 버퍼에 남은 '\n' 읽어서 버리기
+ 	- " %s"처럼 앞에 공백 둬서 whitespace 문자 무시하도록 하기
 ```c
 #define _CRT_SECURE_NO_WARNINGS
 #pragma warning(disable:6031)
@@ -131,10 +136,11 @@ int main(void) {
 ```
 - 0번 루프
 	- 입력 버퍼에 'a' 'b' 'c' 'd' 'e' '\n' 저장
-	- 'a' 출력
+	- scanf가 문자 하나('a') 읽어서 ch에 저장
+ 	- "문자: a" 출력하고 개행
 - 1번 루프
-  - 버퍼가 비어있지 않으므로 추가 입력을 요구하지 않음. \
-    첫 번째 printf에서 "문자 입력: " 출력하고 바로 두 번째 printf에서 'b'출력
+  - 버퍼가 비어있지 않으므로 scanf가 추가 입력을 요구하지 않음. 
+  - 첫 번째 printf에서 "문자 입력: " 출력하고, 바로 두 번째 printf에서 "문자: b" 출력히고 개행
 - 루프를 5번 돌므로 e까지 윗 문단을 반복. '\n'가 버퍼에 남음.
 
 # 실습과제 5
