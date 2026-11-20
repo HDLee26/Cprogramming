@@ -169,10 +169,11 @@ while (word[len] != '\0')
 # 문자열을 입력 받자
 ## fgets() 함수
 ```c
+char str[20];
 fgets(str, sizeof(str), stdin);
 ```
-- str에 저장, sizeof(str) - 1까지 읽으라, 표준입력(키보드)
-- fgets()는 원래 파일 읽기 함수 나중에 배움. //26.10.07
+- str에 저장, sizeof(str) - 1까지 버퍼에서 읽으라, 표준입력(키보드)
+- fgets는 마지막 자리에 '\0'을 저장하기 때문에 n-1개를 버퍼에서 읽어들임.
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -183,8 +184,9 @@ int main(void)
     int idx = 0;
 
     printf("문자열 입력(50자 안): ");
-    fgets(str, sizeof(str), stdin);
-
+    if (fgets(str, sizeof str, stdin) == NULL) 
+        return 1;
+    
     // 개행문자 제거
     // str에서 \n이 처음 나오는 위치를 찾아 \0로 교체
     str[strcspn(str, "\n")] = '\0';
@@ -202,4 +204,4 @@ int main(void)
     return 0;
 }
 ```
-- gets는 버퍼 오버플로우 우려로 쓰면 안됨. gets_s는 MSVC에서만 지원.
+- strcspn(str, '\n')은 '\n' 전까지의 문자열 길이를 반환해줌. '\n'가 없으면 문자열 전체 길이를 반환함. 따라서 사용자가 딱 50자를 입력한 탓에 str에 '\n'가 없어도 문제 없이 작동함. 
