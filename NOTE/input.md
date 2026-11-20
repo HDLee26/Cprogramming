@@ -114,7 +114,15 @@ getchar();
 scanf(" %s", str);
 
 // 버퍼를 깔끔히 비우려면 함수로 만들어서 무한 반복시키자
-void ClearReadBuffer(void) {
-	while (getchar() != '\n');
+void ClearReadBuffer(void)
+{
+    int ch;  // 문자 값과 EOF를 구별하기 위해 int 사용
+
+    while ((ch = getchar()) != '\n' && ch != EOF) {
+		 // getchar로 읽은 문자를 ch에 저장하므 '\n'를 읽고 나서야 종료됨
+		 // 두 번째 조건은 문자열에 '\n'이 없는 경우를 위해 필요.
+		 // 파일 끝에 도달하면 getchar()는 EOF를 반환하기 때문.
+	}	
 }
+
 ```
