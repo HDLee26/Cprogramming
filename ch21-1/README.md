@@ -144,6 +144,59 @@ int main(void) {
 - 루프를 5번 돌므로 e까지 윗 문단을 반복. '\n'가 버퍼에 남음.
 
 # 실습과제 5
+- scanf("%c", ...)만 이용해서 문자열을 입력받아라.
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#pragma warning(disable:6031)
+```
+- VS scanf 함수 보안 경보 방지용 & 리턴값 관련 경고 방지용
+```c
+#include <stdio.h>
+```
+- stdio.h 파일을 포함하라
+```c
+int main(void)
+```
+- main 함수 시작
+```c
+	char str[20] = { '\0' };
+```
+- 문자열 저장할 배열
+```c
+	char tmp;
+```
+- 문자 하나 임시 저장할 변수
+```c
+	printf("문자열을 입력하세요: ");
+```
+- 안내문 출력
+```c
+	for (size_t i = 0; i < sizeof(str) - 1; i++)
+```
+- 문자열 길이가 20을 넘어도 딱 19개만 받고 마지막에 '\0' 붙이기 위해 -1 함.
+```c
+		scanf("%c", &tmp);
+```
+- 문자 하나 버퍼에서 읽고 임시로 tmp에 저장
+```c
+		if (tmp == '\n') {
+			str[i] = '\0';
+			break;
+		}
+```
+- tmp가 '\n' 이면 대신 '\0' 저장하고 루프 종료.
+```c
+		str[i] = tmp;
+```
+- 아니면 버퍼에서 읽은 문자 하나를 str에 저장하고 다음 루프로
+```c
+	printf("문자열: %s\n", str);
+```
+- 결과 출력
+```c
+	return 0;
+```
+- 0을 반환하고 main 함수 정상 종료
 
 ### 실행결과
 <img width="279" height="92" alt="image" src="https://github.com/user-attachments/assets/02b92954-dc97-40b5-a418-9e74a34bf4b9" />
