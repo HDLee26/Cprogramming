@@ -8,11 +8,10 @@ int main(void)
 {
 	char str[20] = { '\0' };
 	char tmp;
-	size_t i;
 
 	printf("문자열을 입력하세요: ");
 	
-	for (i = 0; i < sizeof(str) - 1; i++)
+	for (size_t i = 0; i < sizeof(str) - 1; i++)
 	{
 		scanf("%c", &tmp);
 		
