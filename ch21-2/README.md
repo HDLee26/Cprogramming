@@ -73,3 +73,9 @@ int main(void)
 ### 실행결과
 <img width="221" height="200" alt="image" src="https://github.com/user-attachments/assets/4378d24f-034b-4c07-a9c4-39ad482d6909" />
 
+# 실습과제 3
+
+### 실행결과
+<img width="228" height="159" alt="image" src="https://github.com/user-attachments/assets/5ac9b540-f844-4330-a26d-d202357833bc" />
+
+
