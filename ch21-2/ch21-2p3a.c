@@ -1,6 +1,6 @@
 // 한글 문자열 입출력
 // 한글은 cp949는 2바이트 utf-8은 3바이트 차지함.
-#define _CRT_SECURE_NO_WARNINGS
+
 #pragma warning(disable:6031)
 
 #include <stdio.h>
@@ -21,7 +21,6 @@ void input(char* str, int size)
 int main(void)
 {
 	Person std1 = { '\0' };
-	int check;
 
 	fputs("이름: ", stdout);
 	input(std1.name, sizeof(std1.name));
