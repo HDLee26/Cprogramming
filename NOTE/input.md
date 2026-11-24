@@ -91,19 +91,21 @@ int main(void)
 	int idx = 0;
 
 	// fgets함수
-	printf("문자열 입력(50자 제한): ");
-	fgets(str, sizeof(str), stdin);  // 배열 str에 sizeof(str)-1까지 읽어서 저장. 공백, 탭, 개행까지 모두 저장됨.
-	str[strcspn(str, "\n")] = '\0';  // 문자열에서 \n이 처음 나오는 위치를 찾아서 그자리를 \0로 바꿈
+	fputs("문자열 입력(50자 제한): ", stdout);
+	if (fgets(str, sizeof(str), stdin) != NULL) {
+		str[strcspn(str, "\n")] = '\0';
+	} // 문자열에서 \n이 처음 나오는 위치를 찾아서 그자리를 \0로 바꿈
 	printf("입력 받은 문자열: %s\n", str);
 
 	// 개행 문자 \n 있는 곳에서 끊기
-	printf("문자열 입력(50자 제한): ");
+	fputs("문자열 입력(50자 제한): ", stdout);
 	scanf("%[^\n]s", str);
 	printf("입력 받은 문자열: %s\n", str);
 
 	return 0;
 }
 ```
+- strcpn(str, '\n')은 문자열 str에서 '\n'이 나올 때까지의 문자열의 길이를 구해서 반환함. 만약 '\n'이 없으면 전체 문자열의 길이를 반환하므로 원래 '\0' 위치에 '\0' 덮어쓰는 것이 되므로 문제 없음.
 # 버퍼를 비우자
 ```c
 // '\n' 읽고 반환하는데 저장 안하니까 버려짐.
