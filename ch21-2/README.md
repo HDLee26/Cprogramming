@@ -74,6 +74,65 @@ int main(void)
 <img width="221" height="200" alt="image" src="https://github.com/user-attachments/assets/4378d24f-034b-4c07-a9c4-39ad482d6909" />
 
 # 실습과제 3
+```c
+#pragma warning(disable:6031)
+```
+- 리턴값 관련 경고 방지용
+```c
+#include <stdio.h>
+```
+- stdio.h 파일을 포함하라
+```c
+#include <string.h>
+```
+- string.h 파일을 포함하라
+```c
+typedef struct person {
+	char name[20];
+	char address[30];
+	char car_number[20];
+} Person;
+```
+- 이름, 주소, 자동차번호 저장할 수 있는 구조체 정의하고 typedef로 Person으로 자료형 재정의
+```c
+void input(char* str, int size)
+```
+-  문자열 입력 받는 함수
+```c
+	if (fgets(str, size, stdin) != NULL)
+		str[strcspn(str, "\n")] = '\0';
+```
+- 문자열 입력 받고 문자열 중에 '\n'은 '\0'으로 바꿔 저장
+```c
+int main(void)
+```
+- main 함수 시작
+```c
+	Person std1 = { '\0' };
+```
+- 구조체 변수 std1 선언
+```c
+	fputs("이름: ", stdout);
+	input(std1.name, sizeof(std1.name));
+	fputs("주소: ", stdout);
+	input(std1.address, sizeof(std1.address));
+	fputs("자동차번호: ", stdout);
+	input(std1.car_number, sizeof(std1.car_number));
+```
+- 이름 주소 자동차번호 차례로 입력 받고 각 멤버변수에 저장
+```c
+	fputs("이름: ", stdout);
+	puts(std1.name);
+	fputs("주소: ", stdout);
+	puts(std1.address);
+	fputs("자동차번호: ", stdout);
+	puts(std1.car_number);
+```
+- 입력 받은 문자열 출력
+```c
+	return 0;
+```
+-  0을 반환하고 main 함수 정상 종료
 
 ### 실행결과
 <img width="228" height="159" alt="image" src="https://github.com/user-attachments/assets/5ac9b540-f844-4330-a26d-d202357833bc" />
