@@ -162,4 +162,47 @@ int main(void)
 <img width="200" height="66" alt="image" src="https://github.com/user-attachments/assets/42bbcf94-bed2-4f29-b398-be156d9e1a0e" />
 - 문자열 출력 후 개행이 없음
 
+# 실습과제 5
+```c
+#include <stdio.h>
+#include <string.h>
+```
+- stdio.h & string.h 파일 포함
+```c
+int main(void)
+```
+- main 함수 시작
+```c
+	char str[50] = { '\0' };
+```
+- 문자열 저장할 배열
+```c
+	int cnt = 0;
+```
+- 공백 개수 저장할 변수
+```c
+	fputs("문자열 입력: ", stdout);
+	fgets(str, sizeof(str), stdin);
+```
+- 문자열 입력 받음
+```c
+	for (size_t i = 0; i < strlen(str); i++)
+		if (str[i] == ' ')
+			cnt++;
+```
+- 문자열의 공백 개수 셈
+```c
+	printf("단어 수: %d\n", cnt + 1);
+```
+- 단어 수 출력
+```c
+	return 0;
+```
+- 0을 반환하고 main 함수 정상 종료
+
+### 실행결과
+<img width="235" height="63" alt="image" src="https://github.com/user-attachments/assets/9b2556c6-aef7-445b-bfc4-9e68434a759c" />
+
+
+
 
