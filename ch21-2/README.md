@@ -137,4 +137,29 @@ int main(void)
 ### 실행결과
 <img width="228" height="159" alt="image" src="https://github.com/user-attachments/assets/5ac9b540-f844-4330-a26d-d202357833bc" />
 
+# 실습과제 4
+```c
+// strcspn 없이 fgets로 받은 문자열의 '\n' -> '\0' 교체
+#include <stdio.h>
+
+int main(void)
+{
+	char str[20]; 
+	size_t i = 0;
+
+	fputs("문자열 입력: ", stdout);
+	fgets(str, sizeof(str), stdin);
+
+	for (i = 0; str[i] != '\n'; i++)
+	{	}
+	str[i] = '\0';
+
+	fputs(str, stdout);
+	return 0;
+}
+```
+### 실행결과
+<img width="200" height="66" alt="image" src="https://github.com/user-attachments/assets/42bbcf94-bed2-4f29-b398-be156d9e1a0e" />
+- 문자열 출력 후 개행이 없음
+
 
