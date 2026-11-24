@@ -11,3 +11,65 @@
 - NULL문자와 NULL포인터의 용도를 설명하시오.
   - NULL 문자는 문자열의 끝을 표시해주는 용도, NULL포인터는 아무것도 가리키지 않겠다는 용도로 씀.
   - NULL포인터는 0번지를 가리키는데 실제로 접근 가능한 것은 아니므로 유효한 대상을 가리키지 않음.
+ 
+# 실습과제 2
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#pragma warning(disable:6031)
+```
+- VS scanf 함수 보안 경보 방지용 & 리턴값 관련 경고 방지용
+```c
+#include <stdio.h>
+```
+- stdio.h 파일을 포함하라
+```c
+int main(void)
+```
+- main 함수 시작
+```c
+	char ch = '\0';
+```
+- 문자 저장할 변수 선언
+```c
+	while (1)
+```
+- 무한 루프 시작
+```c
+		if ((ch == 'q') || (ch == 'Q')) {
+			puts("프로그램 종료");
+			break;
+}
+```
+- 탈출 조건 설정: 'q'나 'Q' 입력 받으면 루프 종료
+```c
+		fputs("문자입력: ", stdout);
+```
+- 안내문, 자동개행을 피하기 위해 fputs 사용
+```c
+		ch = getchar();
+```
+- 버퍼에서 문자 하나 읽어서 ch에 저장
+```c
+		getchar();
+```
+- 버퍼에 남은 '\n'읽어서 버림
+```c
+		fputs("입력 된 문자는 ", stdout);
+```
+- 안내문, 자동개행을 피하기 위해 fputs 사용
+```c
+		putchar(ch);
+```
+- ch에 저장된 문자 출력
+```c
+		putchar('\n');
+```
+- 개행
+```c
+	return 0;
+```
+- 0을 반환하고 main 함수 정상 종료
+
+### 실행결과
+<img width="221" height="200" alt="image" src="https://github.com/user-attachments/assets/4378d24f-034b-4c07-a9c4-39ad482d6909" />
+
