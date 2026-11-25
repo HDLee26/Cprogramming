@@ -92,9 +92,9 @@ int main(void)
 
 	// fgets함수
 	fputs("문자열 입력(50자 제한): ", stdout);
-	fgets(str, sizeof(str), stdin);
-	str[strlen(str) - 1] = '\0';
-
+	if (fgets(str, sizeof(str), stdin) != NULL) {
+		str[strlen(str) - 1] = '\0';
+	}
 	if (fgets(str, sizeof(str), stdin) != NULL) {
 		str[strcspn(str, "\n")] = '\0';
 	} // 문자열에서 \n이 처음 나오는 위치를 찾아서 그자리를 \0로 바꿈
