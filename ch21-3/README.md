@@ -34,21 +34,22 @@ int main(void)
 		if (strcmp(cat, "quit") == 0) {
 			puts("종료");
 			break;
-    }
+		}
 ```
 - 입력한 문자열이 quit이면 무한루프 탈출
 ```c
 		if (strlen(cat) + 2 <= sizeof(str) - strlen(str)) {
 			strcat(str, " ");
 			strcat(str, cat);
-    }
+		}
 ```
 - str에 빈 공간이 남아있는지 체크하고 cat의 내용을 이어붙임
+- 공백 문자, '\0' 문자 2칸이 더 필요함.
 ```c
 		else {
 			puts("더이상 빈 공간이 없습니다.");
 			break;
-    }
+    	}
 ```
 - 빈 공간이 없으면 안내문 출력하고 루프 종료
 ```c
