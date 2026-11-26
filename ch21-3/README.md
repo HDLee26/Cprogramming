@@ -129,5 +129,74 @@ void removeBSN(char* str) {
 ### 실행결과 
 <img width="284" height="96" alt="image" src="https://github.com/user-attachments/assets/d7075df1-2a3a-443c-a722-f00797315d53" />
 
+# 실습과제 3
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#pragma warning(disable:6031)
+```
+- 문자열 관련 함수들의 보안 경고 무시용 & 리턴값 관련 경고 방지용
+```c
+#include <stdio.h>
+#include <string.h>
+```
+- stdio.h, string.h 파일을 포함하라
+```c
+char* my_strcpy(char* dest, size_t size, char* src)
+```
+- 문자열을 통째로 옮기는 함수 자작
+```c
+	size_t i = 0;
+```
+- 제어변수
+```c
+	if (strlen(src) <= size)
+```
+- 옮길 문자열의 길이가 저장할 배열 크기보다 작으면 실행
+```c
+		while(src[i] != '\0') {
+			dest[i] = src[i];
+			i++;
+		}
+```
+- 옮길 문자열의 '\0'까지 문자를 하나씩 dest 배열에 옮김
+```c
+	dest[i] = '\0';
+```
+- 문자 다 옮긴 후 '\0' 붙여줌
+```c
+	return dest;
+```
+- dest의 주소 리턴
+```c
+int main(void)
+```
+- main 함수 시작
+```c
+	char str1[20] = "1234567890";
+	char str2[20];
+```
+- 옮길 문자열 저장한 배열과 복사본 저장할 배열
+```c
+	char* ptr;
+```
+- 함수 반환값 저장할 포인터 변수
+```c
+	ptr = my_strcpy(str2, sizeof(str2), str1);
+```
+- my_strcpy 함수 호출
+```c
+	printf("문자열 %s 길이 %zu\n", str1, strlen(str1));
+	printf("주소(str2) %p 주소(반환값) %p\n", str2, ptr);
+```
+- 결과 출력
+```c
+	return 0;
+```
+- 0을 반환하고 main 함수 정상 종료
+
+### 실행결과
+<img width="464" height="69" alt="image" src="https://github.com/user-attachments/assets/3fee7a38-d2fc-46b1-bbae-5df2ab5c67d2" />
+
+
 
 
