@@ -70,7 +70,7 @@ int main(void)
 #define _CRT_SECURE_NO_WARNINGS
 #pragma warning(disable:6031)
 ```
-- 문자열 관련 함수들의 보안 경고 무시용
+- 문자열 관련 함수들의 보안 경고 무시용 & 리턴값 관련 경고 방지용
 ```c
 #include <stdio.h>
 ```
