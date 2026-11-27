@@ -264,6 +264,12 @@ int main(void)
 ### 실행결과
 <img width="472" height="76" alt="image" src="https://github.com/user-attachments/assets/013e5926-3b6b-42bc-b36d-4dade91c88af" />
 
+# 실습과제 5
+
+### 실행결과
+<img width="271" height="181" alt="image" src="https://github.com/user-attachments/assets/20bcebc4-1b23-4e32-aa48-a92bc9dea93c" />
+
+
 
 
 
