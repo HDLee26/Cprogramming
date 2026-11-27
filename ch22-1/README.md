@@ -228,6 +228,65 @@ void printRectangleInfo(double w, double h, double area) {
 <img width="292" height="142" alt="image" src="https://github.com/user-attachments/assets/5f21720a-e63c-4871-acce-d49579c17daa" />
 <img width="273" height="112" alt="image" src="https://github.com/user-attachments/assets/4a0fe876-6096-4f02-9f4c-282580b89a7d" />
 
+# 실습과제 5
+```c
+#include <stdio.h>
+```
+- stdio.h 파일을 포함하라
+```c
+typedef struct {
+	int x;
+	int y;
+}Point2D;
+```
+- 좌표 저장할 구조체에 이름 붙여줌
+```c
+void swap(Point2D* ptr1, Point2D* ptr2)
+```
+- 좌표의 멤버 변수끼리 값을 스왑하는 함수
+```c
+	int tmpx = 0, tmpy = 0;
+```
+- 좌표값 임시 저장할 변수
+```c
+	tmpx = ptr1->x;
+	ptr1->x = ptr2->x;
+	ptr2->x = tmpx;
+```
+- x좌표끼리 교환
+```c
+	tmpy = ptr1->y;
+	ptr1->y = ptr2->y;
+	ptr2->y = tmpy;
+```
+- y좌표끼리 교환
+```c
+int main(void)
+```
+- main 함수 시작
+```c
+	Point2D p1 = { 15, 15 }, p2 = { 30, 30 };
+```
+- 좌표 설정
+```c
+	printf("교환전 p1의 좌표: (%d, %d)\n", p1.x, p1.y);
+	printf("교환전 p2의 좌표: (%d, %d)\n", p2.x, p2.y);
+```
+- 교환전 좌표 출력
+```c
+	swap(&p1, &p2);
+```
+- 스왑함수 호출하며 점의 주소를 넘김 (멤버 변수에 접근해야 하므로)
+```c
+	printf("교환후 p1의 좌표: (%d, %d)\n", p1.x, p1.y);
+	printf("교환후 p2의 좌표: (%d, %d)\n", p2.x, p2.y);
+```
+- 교환후 좌표 출력
+```c
+	return 0;
+```
+- 0을 반환하고 main 함수 정상 종료
+
 
 
 
