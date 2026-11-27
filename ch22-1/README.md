@@ -10,8 +10,6 @@
 - 구조체 정의와 구조체 변수 선언의 의미를 각각 설명하라
   - 서로 관련된 여러 변수를 멤버로 묶어 새로운 사용자 정의 자료형을 만드는 것.
   - 정의한 구조체 자료형의 변수를 선언하여, 멤버들의 값을 저장할 메모리 공간을 확보하는 것.
- 
----
 
 # 실습과제 2
 ```c
@@ -127,5 +125,104 @@ int main(void)
 
 ### 실행결과 
 <img width="268" height="140" alt="image" src="https://github.com/user-attachments/assets/a969810f-5440-431d-b812-2dc78f2b782b" />
+
+# 실습과제 4
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#pragma warning(disable:6031)
+```
+- 문자열 관련 함수들의 보안 경고 무시용 & 리턴값 관련 경고 방지용
+```c
+#include <stdio.h>
+#include <stdlib.h>
+```
+- stdio.h, stdlib.h 파일을 포함하라
+```c
+typedef struct {
+	double x;
+	double y;
+}dot2D;
+```
+- 구조체로 좌표 저장할 수 있는 사용자 자료형 정의
+```c
+void inputPoint2D(dot2D* inputDot);
+void getRectangleInfo(dot2D ULDot, dot2D BRDot, double* w, double* h, double* area);
+void printRectangleInfo(double w, double h, double area);
+```
+- 좌표 입력 받는 함수
+- 두 좌표에서 사각형의 폭, 높이, 넓이 구하는 함수
+- 결과 출력 함수
+```c
+int main(void)
+```
+- main 함수 시작
+```c
+	dot2D UpLeft;
+	dot2D BottomRight;
+	double width, height, area;
+```
+- 좌상단 좌표, 우하단 좌표, 폭, 높이, 넓이 저장할 변수들
+```c
+	fputs("좌측상단의 좌표 입력: ", stdout);
+	inputPoint2D(&UpLeft);
+	fputs("우측하단의 좌표 입력: ", stdout);
+	inputPoint2D(&BottomRight);
+```
+- 좌표 입력 받아 실수로 바꿔 저장
+- 멤버 변수에 접근해야 하므로 주소를 인자로 넘김
+```c
+	if ((UpLeft.x >= BottomRight.x) || (UpLeft.y <= BottomRight.y)) {
+		puts("점의 위치가 잘못되었습니다.");
+		return 0;
+	}
+```
+- 좌표 위치가 올바른지 확인
+```c
+	else
+		getRectangleInfo(UpLeft, BottomRight, &width, &height, &area);
+```
+- 폭, 높이, 넓이 구함.
+- 멤버변수의 값만 필요하니까 그냥 변수로 넘김
+```c
+	printRectangleInfo(width, height, area);
+```
+- 결과 출력하는 함수 호출
+```c
+	return 0;
+```
+- 0을 반환하고 main 함수 정상 종료
+```c
+void inputPoint2D(dot2D *inputDot)
+	char tmp[10] = { '\0' };
+	char* end = NULL;
+```
+- 입력 받은 숫자를 임시 저장할 배열
+- 숫자 변환이 끝난 위치를 기록할 포인터 변수
+```c
+	if (fgets(tmp, sizeof(tmp), stdin) != NULL) {
+		inputDot->x = strtod(tmp, &end);   // (*inputDot).x
+		inputDot->y = strtod(end, NULL);   // (*inputDot).y
+	}
+```
+- fgets로 숫자 입력 받고 strtod로 실수로 변환
+- ㄱ end는 변환이 끝난 위치(char*)를 가리켜야 하므로 인자로 넘겨야 하는 건 그 위치의 주소임(char**)
+- ㄴ end 위치부터 읽기 시작하는데 공백 문자는 무시해줌
+```c
+void getRectangleInfo(dot2D ULDot, dot2D BRDot, double* w, double* h, double* area) {
+	*w = BRDot.x - ULDot.x;
+	*h = ULDot.y - BRDot.y;
+	*area = (*w) * (*h);
+}
+```
+- 두 좌표를 통해 사각형 폭, 높이, 넓이 구하는 함수
+```c
+void printRectangleInfo(double w, double h, double area) {
+	printf("사각형의 폭: %f\n", w);
+	printf("사각형의 높이: %f\n", h);
+	printf("사각형의 넓이: %f\n", area);
+}
+```
+- 결과 출력 함수  
+
 
 
