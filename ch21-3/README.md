@@ -365,7 +365,7 @@ int is_after(int cmp) {
 	}
 ```
 -  반환값이 양수이면 참, strs[i]가 사전상 뒤, index 갱신
--  (ㄱ) 만약 반환값이 0인 경우 if문 건너뛰므로 index가 유지됨
+-  (ㄱ) 만약 반환값이 0인 경우 두 함수 모두 반환값이 거짓이므로 index 유지
 
 ### 실행결과
 <img width="271" height="181" alt="image" src="https://github.com/user-attachments/assets/20bcebc4-1b23-4e32-aa48-a92bc9dea93c" />
