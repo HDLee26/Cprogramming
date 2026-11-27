@@ -265,6 +265,107 @@ int main(void)
 <img width="472" height="76" alt="image" src="https://github.com/user-attachments/assets/013e5926-3b6b-42bc-b36d-4dade91c88af" />
 
 # 실습과제 5
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#pragma warning(disable:6031)
+```
+- 문자열 관련 함수들의 보안 경고 무시용 & 리턴값 관련 경고 방지용
+```c
+#include <stdio.h>
+#include <string.h>
+```
+- stdio.h, string.h 파일을 포함하라
+```c
+void input(char (*strs)[50], size_t len);
+int is_before(int cmp);
+int is_after(int cmp);
+size_t find_index(char (*strs)[50], size_t rows, int (*update_index)(int));
+```
+-　문자열 입력 받는 함수
+- 사전상 앞 순서인 문자열 인덱스 반환하는 함수
+- 사전상 뒤 순서인 문자열 인덱스 반환하는 함수
+- 사전상 순서를 찾는 함수
+```c
+int main(void)
+```
+- main 함수 시작
+```c
+	char strs[5][50] = { '\0' };
+	size_t rows = sizeof(strs) / sizeof(strs[0]);
+	size_t first, end;
+```
+- 49자 문자열 5개 모아 저장할 이차원 배열
+- 문자열 개수
+- 사전상 가장 앞, 뒤 인덱스 저장할 변수
+```c
+	input(strs, rows);
+```
+- 문자열 입력 받는 함수 호출
+```c
+	first = find_index(strs, rows, is_before);
+	end = find_index(strs, rows, is_after);
+```
+- 사전 상 가장 앞 뒤 문자열 인덱스 찾아 저장
+```c
+	printf("사전 제일 앞: %s \n", strs[first]);
+	printf("사전 제일 뒤: %s \n", strs[end]);
+```
+- 결과 출력
+```c
+	return 0;
+```
+- 0을 반환하고 main 함수 정상 종료
+```c
+void input(char (*strs)[50], size_t rows)
+```
+- 문자열 5개 입력 받아 이차원 배열에 저장하는 함수
+```c
+	for (size_t i = 0; i < rows; i++) {
+		printf("문자열 입력(%zu): ", i + 1);
+		if (fgets(strs[i], 50, stdin) != NULL)
+			strs[i][strcspn(strs[i], "\n")] = '\0';
+		}
+```
+- fgets로 문자열 입력 받고 '\n' 지우고 저장
+```c
+size_t find_index(char (*strs)[50], size_t rows, int (*update_index)(int))
+```
+- 사전상 순서를 찾는 함수
+```c
+	size_t index = 0;
+```
+- 첫번째 문자열을 임시로 찾을 인덱스로 저장
+```c
+	for (size_t i = 1; i < rows; i++)
+```
+- 두 번째 문자열부터 index 문자열과 비교
+```c
+		int cmp = strcmp(strs[i], strs[index]);
+```
+- strcmp 함수로 두 문자열 비교하고 양수 0 음수 중에서 반환값 받음 (ㄱ)
+```c
+		if (update_index(cmp))
+			index = i;
+		
+```
+- is_before함수, is_after함수에 따라 가장 앞, 뒤 문자열 인덱스 찾아 갱신
+```c
+	return index;
+```
+- 찾은 인덱스 반환
+```c
+int is_before(int cmp) {
+	return cmp < 0;
+	}
+```
+- 반환값이 음수이면 참, strs[i]가 사전상앞, index 갱신
+```c
+int is_after(int cmp) {
+	return cmp > 0;
+	}
+```
+-  반환값이 양수이면 참, strs[i]가 사전상 뒤, index 갱신
+-  (ㄱ) 만약 반환값이 0인 경우 if문 건너뛰므로 index가 유지됨
 
 ### 실행결과
 <img width="271" height="181" alt="image" src="https://github.com/user-attachments/assets/20bcebc4-1b23-4e32-aa48-a92bc9dea93c" />
