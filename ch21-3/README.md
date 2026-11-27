@@ -281,7 +281,7 @@ int is_before(int cmp);
 int is_after(int cmp);
 size_t find_index(char (*strs)[50], size_t rows, int (*update_index)(int));
 ```
--　문자열 입력 받는 함수
+- 문자열 입력 받는 함수
 - 사전상 앞 순서인 문자열 인덱스 반환하는 함수
 - 사전상 뒤 순서인 문자열 인덱스 반환하는 함수
 - 사전상 순서를 찾는 함수
