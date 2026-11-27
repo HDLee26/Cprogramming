@@ -287,6 +287,9 @@ int main(void)
 ```
 - 0을 반환하고 main 함수 정상 종료
 
+### 실행결과
+<img width="251" height="107" alt="image" src="https://github.com/user-attachments/assets/05917551-eb37-4072-9e98-657efa8c62d3" />
+
 
 
 
