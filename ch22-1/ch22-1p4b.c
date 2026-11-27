@@ -1,3 +1,4 @@
+// 구조체 연습3b
 #define _CRT_SECURE_NO_WARNINGS
 #pragma warning(disable:6031)
 #include <stdio.h>
@@ -19,7 +20,8 @@ int main(void)
 	dot2D BottomRight;
 	double width, height, area;
 	
-	// 좌표 입력 받아 실수로 바꿔 저장
+	// 좌표 입력 받아 실수로 바꿔 저장할건데
+	// 멤버 변수에 접근해야 하니까 주소를 인자로 넘겨야 함
 	fputs("좌측상단의 좌표 입력: ", stdout);
 	inputPoint2D(&UpLeft);
 	fputs("우측하단의 좌표 입력: ", stdout);
@@ -31,7 +33,8 @@ int main(void)
 		puts("점의 위치가 잘못되었습니다.");
 		return 0;
 	}
-	// 폭, 높이, 넓이 구함
+	// 폭, 높이, 넓이 구할 건데
+	// 멤버변수의 값만 필요하니까 그냥 변수로 넘김
 	else
 		getRectangleInfo(UpLeft, BottomRight, &width, &height, &area);
 
