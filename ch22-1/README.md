@@ -224,5 +224,10 @@ void printRectangleInfo(double w, double h, double area) {
 ```
 - 결과 출력 함수  
 
+### 실행결과
+<img width="292" height="142" alt="image" src="https://github.com/user-attachments/assets/5f21720a-e63c-4871-acce-d49579c17daa" />
+<img width="273" height="112" alt="image" src="https://github.com/user-attachments/assets/4a0fe876-6096-4f02-9f4c-282580b89a7d" />
+
+
 
 
