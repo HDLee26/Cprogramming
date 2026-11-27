@@ -14,9 +14,69 @@
 ---
 
 # 실습과제 2
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#pragma warning(disable:6031)
+```
+- 문자열 관련 함수들의 보안 경고 무시용 & 리턴값 관련 경고 방지용
+```c
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+```
+- stdio.h, string.h, stdlib.h 파일을 포함하라
+```c
+struct student {
+	int id;
+	char name[21];
+	char address[31];
+  }
+```
+- 학번, 이름, 주소 저정할 수 있는 구조체 정의 
+```c
+int main(void)
+```
+- main 함수 시작
+```c
+	struct student std;
+```
+- 구조체 변수 선언
+```c
+	char input[10];
+```
+- 학번을 문자열로 임시 저장할 배열
+```c
+	fputs("학번을 입력하시오: ", stdout);
+	if (fgets(input, sizeof(input), stdin) != NULL)
+		input[strcspn(input, "\n")] = '\0';
+	std.id = strtol(input, NULL, 10);
+```
+- 학번을 문자열로 입력 받고 '\n' 지운 뒤 strtol 함수로 정수로 변환. (숫자만 올바르게 입력 받는다고 가정함.)
+```c
+	fputs("이름을 입력하시오: ", stdout);
+	if (fgets(std.name, sizeof(std.name), stdin) != NULL)
+		std.name[strcspn(std.name, "\n")] = '\0';
+```
+- 이름 입력 받아 멤버 변수에 저장
+```c
+	fputs("주소를 입력하시오: ", stdout);
+	if (fgets(std.address, sizeof(std.address), stdin) != NULL)
+		std.address[strcspn(std.address, "\n")] = '\0';
+```
+- 주소 입력 받아 멤버 변수에 저장
+```c
+	printf("학번: %d\n", std.id);
+	printf("이름: %s\n", std.name);
+	printf("주소: %s\n", std.address);
+```
+- 결과 출력
+```c
+	return 0;
+```
+- 0을 반환하고 main 함수 정상 종료
 
 ### 실행결과
-<img width="319" height="128" alt="image" src="https://github.com/user-attachments/assets/3479affe-97e4-4533-8371-c5ce78ff2054" />
+<img width="301" height="157" alt="image" src="https://github.com/user-attachments/assets/932ca92b-e6f6-4f71-9044-df4f3677e356" />
 
 # 실습과제 3
   
