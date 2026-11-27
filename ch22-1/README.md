@@ -79,4 +79,53 @@ int main(void)
 <img width="301" height="157" alt="image" src="https://github.com/user-attachments/assets/932ca92b-e6f6-4f71-9044-df4f3677e356" />
 
 # 실습과제 3
-  
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#pragma warning(disable:6031)
+```
+- 문자열 관련 함수들의 보안 경고 무시용 & 리턴값 관련 경고 방지용
+```c
+#include <stdio.h>
+#include <string.h>
+```
+- stdio.h, string.h 파일을 포함하라
+```c
+struct car {
+	char model[11];
+	char plate_number[21];
+	int mileage;
+	}
+```
+- 모델명, 번호판, 주행 거리 저장할 구조체 정의
+```c
+int main(void)
+```
+- main 함수 시작
+```c
+	struct car c1 = { '\0', '\0', 0 };
+```
+- 구조체 변수 선언
+```c
+	fputs("모델을 입력하시오: ", stdout);
+	scanf(" %s", c1.model);
+	fputs("번호판을 입력하시오: ", stdout);
+	scanf(" %s", c1.plate_number);
+	fputs("주행거리를 입력하시오: ", stdout);
+	scanf("%d", &c1.mileage);
+```
+- 모델명, 차량 번호, 주행 거리 입력 받고 각각의 멤버 변수에 저장
+```c
+	printf("모델: %s\n", c1.model);
+	printf("번호판: %s\n", c1.plate_number);
+	printf("주행거리: %d km\n", c1.mileage);
+```
+- 결과 출력
+```c
+	return 0;
+```
+- 0을 반환하고 main 함수 정상 종료
+
+### 실행결과 
+<img width="268" height="140" alt="image" src="https://github.com/user-attachments/assets/a969810f-5440-431d-b812-2dc78f2b782b" />
+
+
