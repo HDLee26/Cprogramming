@@ -33,7 +33,7 @@ int main(void)
 ```c
 	size_t n = sizeof(stdList) / sizeof(stdList[0]);
 ```
-- 배열 개수
+- 구조체 배열의 원소 개수
 ```c
 	size_t topIndex;
 ```
@@ -91,4 +91,84 @@ size_t getTopStd(const STD* lst, size_t n)
 
 ### 실행결과
 <img width="406" height="172" alt="image" src="https://github.com/user-attachments/assets/aceea9e3-8a99-42bb-9077-4e4eb9293649" />
+
+# 실습과제 2
+```c
+#define _CRT_SECURE_NO_WARNINGS
+#pragma warning(disable:6031)
+```
+- 문자 문자열 관련 함수들 보안 경고 무시용 & 반환값 관련 경고 무시용
+```c
+#include <stdio.h>
+#include <string.h>
+```
+- stdio.h, string.h 파일을 포함하라
+```c
+typedef struct student {
+	char name[11];
+	int score;
+} STD;
+```
+- 학생 이름과 성적을 저장할 구조체 정의
+```c
+void inputScore(STD* lst, size_t n);
+size_t getFirstStd(STD* lst, size_t n);
+```
+- 성적 입력하는 함수, 명부상 가장 앞에 나오는 학생의 인덱스 구하는 함수
+```c
+int main(void)
+```
+- main 함수 시작
+```c
+	STD stdList[3] = { { { '\0' }, 0 } };
+	size_t n = sizeof(stdList) / sizeof(stdList[0]);
+	size_t first;
+```
+- 구조체 배열, 배열의 원소의 개수, 명부상 가장 앞에 나오는 학생의 인덱스 
+```c
+	inputScore(stdList, n);
+	first = getFirstStd(stdList, n);
+```
+- 함수 호출
+```c
+	printf("출석부에서 가장 먼저 나오는 학생: %s의 성적: %d \n", stdList[first].name, stdList[first].score);
+```
+- 결과 출력
+```c
+	return 0;
+```
+- 0을 반환하고 main 함수 정상 종료
+```c
+void inputScore(STD* lst, size_t n) {
+	for (size_t i = 0; i < n; i++) {
+		fputs("이름을 입력하시오: ", stdout);
+		if (fgets(lst[i].name, sizeof(lst[i].name), stdin) != NULL)
+			lst[i].name[strcspn(lst[i].name, "\n")] = '\0';
+		printf("성적을 입력하시오: ");
+		scanf("%d", &lst[i].score);
+		getchar();
+	}
+}
+```
+- 각 배열에 접근하면서 이름과 성적 입력 받음
+```c
+size_t getFirstStd(STD* lst, size_t n)
+	size_t firstStdIndex = 0;
+```
+- 0번째 학생을 가장 앞에 나오는 학생으로 임시 설정
+```c
+	for (size_t i = 1; i < n; i++)
+		if (strcmp(lst[i].name, lst[firstStdIndex].name) < 0)
+			firstStdIndex = i;
+```
+- 나머지 두 배열에 담긴 name에 접근하여 가장 앞에 나오는 학생의 인덱스를 찾고
+```c
+	return firstStdIndex;
+```
+- 그 인덱스를 반환함.
+
+### 실행결과
+<img width="439" height="174" alt="image" src="https://github.com/user-attachments/assets/77ccf513-5744-4364-bd9c-6636f3920b32" />
+
+
 
