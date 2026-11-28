@@ -1,4 +1,4 @@
-﻿#define _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS
 #pragma warning(disable:6031)
 #include <stdio.h>
 #include <string.h>
@@ -21,6 +21,7 @@ int main(void)
 	topIndex = getTopStd(stdList, n);
 
 	printf("최우수 학생의 이름은 %s, 점수는 %d점\n", stdList[topIndex].name, stdList[topIndex].score); 
+	// printf("%zu \n", strlen(stdList[topIndex].name));
 	return 0;
 }
 
