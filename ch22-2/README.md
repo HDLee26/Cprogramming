@@ -92,7 +92,7 @@ size_t getTopStd(const STD* lst, size_t n)
 ### 실행결과
 <img width="406" height="172" alt="image" src="https://github.com/user-attachments/assets/aceea9e3-8a99-42bb-9077-4e4eb9293649" />
 
-# 실습과제 2
+# 실습과제 2, 3
 ```c
 #define _CRT_SECURE_NO_WARNINGS
 #pragma warning(disable:6031)
@@ -142,10 +142,10 @@ int main(void)
 void inputScore(STD* lst, size_t n) {
 	for (size_t i = 0; i < n; i++) {
 		fputs("이름을 입력하시오: ", stdout);
-		if (fgets(lst[i].name, sizeof(lst[i].name), stdin) != NULL)
-			lst[i].name[strcspn(lst[i].name, "\n")] = '\0';
+		if (fgets((lst + i)->name, sizeof(lst[i].name), stdin) != NULL) 
+			(*(lst + i)).name[strcspn(lst[i].name, "\n")] = '\0';
 		printf("성적을 입력하시오: ");
-		scanf("%d", &lst[i].score);
+		scanf("%d", &(lst + i)->score);      // &lst[i].score  &(*(lst + i)).score
 		getchar();
 	}
 }
@@ -158,7 +158,7 @@ size_t getFirstStd(STD* lst, size_t n)
 - 0번째 학생을 가장 앞에 나오는 학생으로 임시 설정
 ```c
 	for (size_t i = 1; i < n; i++)
-		if (strcmp(lst[i].name, lst[firstStdIndex].name) < 0)
+		(strcmp((lst + i)->name, lst[firstStdIndex].name) < 0)   
 			firstStdIndex = i;
 ```
 - 나머지 두 배열에 담긴 name에 접근하여 가장 앞에 나오는 학생의 인덱스를 찾고
