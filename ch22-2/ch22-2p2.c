@@ -31,10 +31,10 @@ void inputScore(STD* lst, size_t n)
 	{
 		fputs("이름을 입력하시오: ", stdout);
 
-		if (fgets(lst[i].name, sizeof(lst[i].name), stdin) != NULL)   //  (*(lst + i)).name  (lst + i)->name  
-			lst[i].name[strcspn(lst[i].name, "\n")] = '\0';           //  name 자체도 배열이라 & 필요없음.
+		if (fgets((lst + i)->name, sizeof(lst[i].name), stdin) != NULL)  
+			(*(lst + i)).name[strcspn(lst[i].name, "\n")] = '\0';
 		printf("성적을 입력하시오: ");
-		scanf("%d", &lst[i].score);                                   //  score는 변수라서 & 필요함.
+		scanf("%d", &(lst + i)->score);      // &lst[i].score  &(*(lst + i)).score
 		getchar();
 	}
 }
@@ -44,10 +44,13 @@ size_t getFirstStd(STD* lst, size_t n)
 	size_t firstStdIndex = 0;
 	for (size_t i = 1; i < n; i++)
 	{
-		if (strcmp(lst[i].name, lst[firstStdIndex].name) < 0)
+		if (strcmp((lst + i)->name, lst[firstStdIndex].name) < 0)   
 			firstStdIndex = i;
 	}
 	return firstStdIndex;
 }
 
 // strcmp는 두 문자열을 1바이트씩 비교하는데 한글은 utf-8 기준 한 글자당 3바이트씩 해석하니까 문제가 있을 수도?
+// 배열 인덱스 lst[i].name 
+// 구조체 포인터 (lst + i)->name
+// (lst + i) i번째 구조체 주소 || (*(lst + i)) i번째 구조체 자체 == lst[i]
