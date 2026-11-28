@@ -170,5 +170,9 @@ size_t getFirstStd(STD* lst, size_t n)
 ### 실행결과
 <img width="439" height="174" alt="image" src="https://github.com/user-attachments/assets/77ccf513-5744-4364-bd9c-6636f3920b32" />
 
+- (lst + i) i번째 구조체 주소 || (*(lst + i)) i번째 구조체 자체
+- 구조체 포인터 (lst + i)->score  || 인덱스 연산 lst[i].score  || 역참조 (*(lst + i)).score
+- 주소 구하려면 &만 붙이면 되고.
+
 
 
